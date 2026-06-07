@@ -1,0 +1,220 @@
+<h2>Paper plane iconography — where should it live?</h2>
+<p class="subtitle">Pick any that feel right. These are placements on the homepage + site-wide.</p>
+
+<style>
+  .mockup-strip {
+    background: #f4f1e9;
+    border: 1px solid #141414;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+    padding: 0;
+    overflow: hidden;
+    margin-bottom: 0;
+    position: relative;
+  }
+  .ms-header {
+    background: #f4f1e9;
+    border-bottom: 1px solid rgba(20,20,20,0.5);
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 11px;
+    font-family: ui-monospace, monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: #141414;
+    font-weight: 700;
+  }
+  .ms-hero {
+    display: grid;
+    grid-template-columns: 1.55fr 1fr;
+    border-bottom: 1px solid #141414;
+  }
+  .ms-hero-left {
+    padding: 20px 24px;
+    border-right: 1px solid #141414;
+    position: relative;
+  }
+  .ms-hero-right {
+    background: #b7e3f4;
+    padding: 20px;
+  }
+  .ms-h1 {
+    font-size: 22px;
+    font-weight: 900;
+    line-height: 1;
+    color: #141414;
+    letter-spacing: -0.02em;
+    margin: 4px 0 8px;
+  }
+  .ms-h1 em {
+    font-family: Georgia, serif;
+    font-weight: 400;
+    font-style: italic;
+  }
+  .ms-body {
+    font-size: 10px;
+    color: rgba(20,20,20,0.75);
+    line-height: 1.5;
+    margin-bottom: 12px;
+  }
+  .ms-btns { display: flex; gap: 8px; }
+  .ms-btn-ink {
+    background: #141414; color: #f4f1e9;
+    padding: 5px 10px; font-size: 8px;
+    font-family: ui-monospace,monospace;
+    text-transform: uppercase; letter-spacing: 0.14em;
+    border: 1px solid #141414;
+    display: inline-flex; align-items: center; gap: 4px;
+  }
+  .ms-btn-ghost {
+    background: transparent; color: #141414;
+    padding: 5px 10px; font-size: 8px;
+    font-family: ui-monospace,monospace;
+    text-transform: uppercase; letter-spacing: 0.14em;
+    border: 1px solid #141414;
+    display: inline-flex; align-items: center; gap: 4px;
+  }
+  .ms-label {
+    font-family: ui-monospace,monospace;
+    font-size: 7px; text-transform: uppercase;
+    letter-spacing: 0.18em; color: rgba(20,20,20,0.7);
+    margin-bottom: 4px;
+  }
+  .ms-ink-band {
+    background: #141414; color: #f4f1e9;
+    padding: 16px 24px;
+    border-bottom: 1px solid #141414;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .ms-ink-band-text { font-size: 9px; opacity: 0.7; font-family: ui-monospace,monospace; text-transform: uppercase; letter-spacing: 0.16em; }
+  .ms-section {
+    padding: 16px 24px;
+    border-bottom: 1px solid rgba(20,20,20,0.15);
+  }
+  .ms-section-head { font-size: 14px; font-weight: 900; color: #141414; margin: 4px 0 8px; letter-spacing: -0.01em; }
+  .ms-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .ms-card { border: 1px solid #141414; padding: 10px; background: #f4f1e9; font-size: 8px; }
+  .ms-cta {
+    background: #f7e48f;
+    border-top: 1px solid #141414;
+    padding: 16px 24px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .ms-cta-head { font-size: 13px; font-weight: 900; color: #141414; }
+
+  /* the plane SVG */
+  .plane-svg { display: inline-block; }
+  .plane-svg svg { display: block; }
+
+  /* placement highlights */
+  .highlight-a .place-a { outline: 2px solid #f26a6a; }
+  .highlight-b .place-b { outline: 2px solid #f26a6a; }
+  .highlight-c .place-c { outline: 2px solid #f26a6a; }
+  .highlight-d .place-d { outline: 2px solid #f26a6a; }
+  .label-tag {
+    display: inline-block;
+    background: #f26a6a; color: white;
+    font-size: 7px; font-family: ui-monospace,monospace;
+    text-transform: uppercase; letter-spacing: 0.1em;
+    padding: 1px 4px; margin-left: 4px; vertical-align: middle;
+  }
+</style>
+
+<div class="options" data-multiselect>
+
+  <!-- Option A: trailing after hero CTA buttons -->
+  <div class="option" data-choice="a" onclick="toggleSelect(this)">
+    <div class="letter">A</div>
+    <div class="content">
+      <h3>Plane trails the CTA buttons in the hero</h3>
+      <p>A single larger plane (48–64px) floats to the right of the two CTA buttons, mid-air. Static but with a subtle hover glide. Reinforces the "launch something" feeling right at the action point.</p>
+      <div class="mockup" style="margin-top:12px">
+        <div class="mockup-header">Hero — left column, bottom</div>
+        <div class="mockup-body" style="padding:12px; background:#f4f1e9; border:1px solid #141414;">
+          <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+            <div class="ms-btn-ink">＋ Add to the Hangar</div>
+            <div class="ms-btn-ghost">↘ Find a skill</div>
+            <span style="color:rgba(20,20,20,0.35)">
+              <svg width="48" height="36" viewBox="0 0 24 18" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round" stroke-linecap="round">
+                <path d="M 1 1 L 23 9 L 1 17 L 7 9 Z" /><path d="M 7 9 L 23 9" />
+              </svg>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Option B: scattered small planes as section dividers -->
+  <div class="option" data-choice="b" onclick="toggleSelect(this)">
+    <div class="letter">B</div>
+    <div class="content">
+      <h3>Small planes as section dividers / kickers</h3>
+      <p>Replace the "→" arrow in section headers with a paper plane, and use a small plane as a leading glyph on section kicker labels ("01 / Recently hangared ✈"). Light, repeated motif throughout the page.</p>
+      <div class="mockup" style="margin-top:12px">
+        <div class="mockup-header">Section header kicker</div>
+        <div class="mockup-body" style="padding:12px; background:#f4f1e9; border:1px solid #141414;">
+          <div style="display:flex; align-items:baseline; gap:6px; font-family:ui-monospace,monospace; font-size:9px; text-transform:uppercase; letter-spacing:0.18em; color:rgba(20,20,20,0.7)">
+            <svg width="10" height="8" viewBox="0 0 24 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" style="transform:translateY(1px)">
+              <path d="M 1 1 L 23 9 L 1 17 L 7 9 Z" /><path d="M 7 9 L 23 9" />
+            </svg>
+            01 / Recently hangared
+          </div>
+          <div style="font-size:18px; font-weight:900; color:#141414; margin-top:4px; letter-spacing:-0.01em">Latest <em style="font-family:Georgia,serif;font-weight:400;font-style:italic">drops</em>.</div>
+          <div style="margin-top:8px; font-family:ui-monospace,monospace; font-size:8px; text-transform:uppercase; letter-spacing:0.14em; color:rgba(20,20,20,0.6)">
+            Browse the catalogue
+            <svg width="10" height="8" viewBox="0 0 24 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" style="display:inline;transform:translateY(1px)">
+              <path d="M 1 1 L 23 9 L 1 17 L 7 9 Z" /><path d="M 7 9 L 23 9" />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Option C: large decorative plane in the ink spotlight band -->
+  <div class="option" data-choice="c" onclick="toggleSelect(this)">
+    <div class="letter">C</div>
+    <div class="content">
+      <h3>Large decorative plane in the ink spotlight band</h3>
+      <p>A big (120–160px) outlined plane sits to the right inside the black featured-skill band, faded to ~20% opacity. Creates a strong visual moment mid-page without being noisy.</p>
+      <div class="mockup" style="margin-top:12px">
+        <div class="mockup-header">Featured spotlight band</div>
+        <div class="mockup-body" style="padding:16px 20px; background:#141414; border:1px solid #141414; display:flex; align-items:center; justify-content:space-between; position:relative; overflow:hidden;">
+          <div>
+            <div style="font-family:ui-monospace,monospace; font-size:7px; text-transform:uppercase; letter-spacing:0.16em; color:rgba(244,241,233,0.6); margin-bottom:6px">00 / Skill spotlight</div>
+            <div style="color:#f4f1e9; font-size:14px; font-weight:900; letter-spacing:-0.01em">Writing a tight<br><em style="font-family:Georgia,serif;font-weight:400;font-style:italic">design brief</em>.</div>
+          </div>
+          <div style="opacity:0.15; color:#f4f1e9;">
+            <svg width="120" height="90" viewBox="0 0 24 18" fill="none" stroke="currentColor" stroke-width="0.8" stroke-linejoin="round" stroke-linecap="round">
+              <path d="M 1 1 L 23 9 L 1 17 L 7 9 Z" /><path d="M 7 9 L 23 9" />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Option D: animated glide across the hero on load -->
+  <div class="option" data-choice="d" onclick="toggleSelect(this)">
+    <div class="letter">D</div>
+    <div class="content">
+      <h3>One-shot glide animation across the hero on page load</h3>
+      <p>A paper plane flies across the hero section once on page load — enters from the left, arcs gently upward, exits right. Very subtle (low opacity, small, ~1.5s). Only fires once per visit. Gives the page life without being distracting.</p>
+      <div class="mockup" style="margin-top:12px">
+        <div class="mockup-header">Hero — full width, on load</div>
+        <div class="mockup-body" style="padding:12px 20px; background:#f4f1e9; border:1px solid #141414; position:relative; overflow:hidden; min-height:50px;">
+          <div style="font-size:9px; color:rgba(20,20,20,0.5); font-style:italic">Plane glides through once on page load ···</div>
+          <div style="position:absolute; top:50%; right:30%; transform:translateY(-50%); color:rgba(20,20,20,0.25); animation: glide-demo 2s ease-in-out infinite alternate;">
+            <svg width="36" height="27" viewBox="0 0 24 18" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round" stroke-linecap="round">
+              <path d="M 1 1 L 23 9 L 1 17 L 7 9 Z" /><path d="M 7 9 L 23 9" />
+            </svg>
+          </div>
+          <style>@keyframes glide-demo { from { transform: translateY(-50%) translateX(-20px) rotate(-5deg); } to { transform: translateY(-60%) translateX(20px) rotate(3deg); } }</style>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

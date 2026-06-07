@@ -1,0 +1,59 @@
+{
+  "$schema": "https://cdn.jsdelivr.net/npm/@anthropic-ai/claude-code@latest/resources/marketplace.schema.json",
+  "name": "planes-hangar",
+  "description": "The Hangar: Planes' AI skills library. Skills, prompts and recipes by discipline.",
+  "owner": {
+    "name": "Planes",
+    "email": "hello@planes.studio"
+  },
+  "plugins": [
+    {
+      "name": "hangar-general",
+      "displayName": "General Bay Pack",
+      "source": "./plugins/hangar-general",
+      "description": "Cross-discipline Claude skills useful in every bay at Planes.",
+      "category": "productivity",
+      "keywords": ["planes", "general", "thinking", "writing", "research"]
+    },
+    {
+      "name": "hangar-product",
+      "displayName": "Product Bay Pack",
+      "source": "./plugins/hangar-product",
+      "description": "Product skills: JTBDs, research synthesis, A/B testing, analytics, onboarding.",
+      "category": "product",
+      "keywords": ["planes", "product", "research", "jtbd", "analytics", "growth"]
+    },
+    {
+      "name": "hangar-design",
+      "displayName": "Design Bay Pack",
+      "source": "./plugins/hangar-design",
+      "description": "Design skills: briefs, copy editing, image generation, copywriting.",
+      "category": "design",
+      "keywords": ["planes", "design", "brief", "copy", "writing", "image"]
+    },
+    {
+      "name": "hangar-dev",
+      "displayName": "Dev Bay Pack",
+      "source": "./plugins/hangar-dev",
+      "description": "Dev skills: PR reviews, prompt caching, site architecture, analytics.",
+      "category": "engineering",
+      "keywords": ["planes", "dev", "code", "review", "claude-api", "architecture"]
+    },
+    {
+      "name": "hangar-new-business",
+      "displayName": "New Business Bay Pack",
+      "source": "./plugins/hangar-new-business",
+      "description": "New business skills: credentials, competitor research, product marketing, launch, SEO.",
+      "category": "marketing",
+      "keywords": ["planes", "new-business", "pitch", "marketing", "seo", "launch"]
+    },
+    {
+      "name": "hangar-just-for-fun",
+      "displayName": "Just For Fun Bay Pack",
+      "source": "./plugins/hangar-just-for-fun",
+      "description": "Playful Claude skills with no agenda. Just good prompts worth having.",
+      "category": "fun",
+      "keywords": ["planes", "fun", "creative", "play"]
+    }
+  ]
+}

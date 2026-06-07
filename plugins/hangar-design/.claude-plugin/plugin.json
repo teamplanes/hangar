@@ -1,0 +1,9 @@
+{
+  "name": "hangar-design",
+  "displayName": "Design Bay Pack",
+  "description": "Design skills: briefs, copy editing, image generation, copywriting.",
+  "version": "1.0.0",
+  "author": { "name": "Planes", "email": "hello@planes.studio" },
+  "homepage": "https://hangar.planes.studio/bay/design",
+  "keywords": ["planes", "design", "brief", "copy", "writing", "image"]
+}

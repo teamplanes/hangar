@@ -1,0 +1,11 @@
+node_modules
+.next
+.DS_Store
+.env*.local
+out
+build
+tsconfig.tsbuildinfo
+.vercel
+
+# Skill bundles (zips) staged for import
+*.skill

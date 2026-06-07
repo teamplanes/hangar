@@ -1,0 +1,9 @@
+{
+  "name": "hangar-just-for-fun",
+  "displayName": "Just For Fun Bay Pack",
+  "description": "Playful Claude skills with no agenda. Just good prompts worth having.",
+  "version": "1.0.0",
+  "author": { "name": "Planes", "email": "hello@planes.studio" },
+  "homepage": "https://hangar.planes.studio/bay/just-for-fun",
+  "keywords": ["planes", "fun", "creative", "play"]
+}

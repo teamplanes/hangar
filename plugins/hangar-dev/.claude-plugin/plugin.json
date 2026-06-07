@@ -1,0 +1,9 @@
+{
+  "name": "hangar-dev",
+  "displayName": "Dev Bay Pack",
+  "description": "Dev skills: PR reviews, prompt caching, site architecture, analytics.",
+  "version": "1.0.0",
+  "author": { "name": "Planes", "email": "hello@planes.studio" },
+  "homepage": "https://hangar.planes.studio/bay/dev",
+  "keywords": ["planes", "dev", "code", "review", "claude-api", "architecture"]
+}

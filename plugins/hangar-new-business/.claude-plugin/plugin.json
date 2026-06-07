@@ -1,0 +1,9 @@
+{
+  "name": "hangar-new-business",
+  "displayName": "New Business Bay Pack",
+  "description": "New business skills: credentials, competitor research, product marketing, launch, SEO.",
+  "version": "1.0.0",
+  "author": { "name": "Planes", "email": "hello@planes.studio" },
+  "homepage": "https://hangar.planes.studio/bay/new-business",
+  "keywords": ["planes", "new-business", "pitch", "marketing", "seo", "launch"]
+}

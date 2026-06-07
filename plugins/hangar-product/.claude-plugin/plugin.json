@@ -1,0 +1,9 @@
+{
+  "name": "hangar-product",
+  "displayName": "Product Bay Pack",
+  "description": "Product skills: JTBDs, research synthesis, A/B testing, analytics, onboarding.",
+  "version": "1.0.0",
+  "author": { "name": "Planes", "email": "hello@planes.studio" },
+  "homepage": "https://hangar.planes.studio/bay/product",
+  "keywords": ["planes", "product", "research", "jtbd", "analytics", "growth"]
+}
