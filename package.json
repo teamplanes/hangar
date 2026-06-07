@@ -6,7 +6,13 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "desktop:icons": "APP_NAME='The Hangar' APP_SLUG='hangar' ./scripts/desktop-icons.sh",
+    "desktop:icons:preview": "APP_NAME='The Hangar' APP_SLUG='hangar' ./scripts/desktop-icons-preview.sh",
+    "desktop:build": "./scripts/desktop-build.sh",
+    "desktop:install": "./scripts/desktop-install.sh",
+    "desktop:quit": "./scripts/desktop-quit.sh",
+    "desktop:doctor": "./scripts/desktop-doctor.sh"
   },
   "dependencies": {
     "next": "^15.1.6",

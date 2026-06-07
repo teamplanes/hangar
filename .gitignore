@@ -9,3 +9,8 @@ tsconfig.tsbuildinfo
 
 # Skill bundles (zips) staged for import
 *.skill
+
+# app-it desktop launcher (generated artifacts)
+desktop/
+assets/icons/build/
+assets/icons/hangar/
