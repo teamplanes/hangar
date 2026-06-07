@@ -77,7 +77,7 @@ export default function CockpitPage() {
             <span className="serif-italic font-normal italic">at Planes</span>.
           </h1>
           <p className="mt-6 max-w-2xl text-[1.05rem] text-cream/75 leading-relaxed">
-            Your out-of-the-box skills set up. These are some of the best skills we've found and started reaching for on a regular basis. Where it made sense, we've shaped them around how we already work at Planes.
+            Your out-of-the-box skills, set up. These are some of the best skills we've found and started reaching for regularly. Where it made sense, we've shaped them around how we already work at Planes.
           </p>
         </div>
       </section>

@@ -18,7 +18,7 @@ export default function FlightTipsPage() {
               <span className="serif-italic font-normal italic">Tips</span>.
             </h1>
             <p className="mt-4 max-w-prose text-[1.05rem] text-ink/80">
-              Sharper prompts get sharper answers. Six worked examples below, then a checker that scores your own prompt against the rules of thumb the studio actually uses.
+              Sharper prompts get sharper answers. Six worked examples below, then a checker that scores your own prompt against the rules of thumb the studio uses.
             </p>
           </div>
           <aside className="border-t lg:border-t-0 lg:border-l border-ink p-8 sm:p-10 lg:p-12 bg-butter relative">
