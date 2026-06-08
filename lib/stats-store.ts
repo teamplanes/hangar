@@ -6,18 +6,27 @@ import { Redis } from "@upstash/redis";
 // no-ops and the board shows zeros, no crashes. Connect Upstash via the Vercel
 // Marketplace and set UPSTASH_REDIS_REST_URL + UPSTASH_REDIS_REST_TOKEN.
 
+// Accept whichever names the integration provisions (native Upstash uses
+// UPSTASH_REDIS_REST_*, the Vercel KV/marketplace flavour uses KV_REST_API_*).
+function creds(): { url?: string; token?: string } {
+  return {
+    url: process.env.UPSTASH_REDIS_REST_URL || process.env.KV_REST_API_URL,
+    token: process.env.UPSTASH_REDIS_REST_TOKEN || process.env.KV_REST_API_TOKEN,
+  };
+}
+
 let client: Redis | null = null;
 function redis(): Redis | null {
   if (client) return client;
-  const url = process.env.UPSTASH_REDIS_REST_URL;
-  const token = process.env.UPSTASH_REDIS_REST_TOKEN;
+  const { url, token } = creds();
   if (!url || !token) return null;
   client = new Redis({ url, token });
   return client;
 }
 
 export function statsConfigured(): boolean {
-  return !!(process.env.UPSTASH_REDIS_REST_URL && process.env.UPSTASH_REDIS_REST_TOKEN);
+  const { url, token } = creds();
+  return !!(url && token);
 }
 
 export type StatEvent = "copy" | "view";
