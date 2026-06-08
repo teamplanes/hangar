@@ -1,10 +1,19 @@
 import { NextRequest, NextResponse } from "next/server";
-import fs from "node:fs";
-import path from "node:path";
 import matter from "gray-matter";
 import { DISCIPLINES } from "@/lib/skills-types";
+import { isAdminRequest } from "@/lib/admin-auth";
+import { getFile, putFile, deleteFile, githubConfigured } from "@/lib/github-write";
 
+// Hosted, admin-only. Moves a skill to a new bay by committing the new file
+// and deleting the old one on main. The GitHub Action re-syncs plugins.
 export async function POST(req: NextRequest) {
+  if (!isAdminRequest(req)) {
+    return NextResponse.json({ error: "Not signed in as admin." }, { status: 401 });
+  }
+  if (!githubConfigured()) {
+    return NextResponse.json({ error: "GITHUB_TOKEN not configured." }, { status: 503 });
+  }
+
   const { slug, newDiscipline } = (await req.json()) as {
     slug: string[];
     newDiscipline: string;
@@ -14,26 +23,23 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Invalid discipline" }, { status: 400 });
   }
 
-  const SKILLS_DIR = path.join(process.cwd(), "skills");
-  const filename = slug.slice(1).join("/") + ".md";
-  const currentPath = path.join(SKILLS_DIR, slug[0], filename);
-  const newDir = path.join(SKILLS_DIR, newDiscipline);
-  const newPath = path.join(newDir, filename);
+  const oldPath = `skills/${slug.join("/")}.md`;
+  const basename = slug.slice(1).join("/");
+  const newSlug = [newDiscipline, ...slug.slice(1)];
+  const newPath = `skills/${newDiscipline}/${basename}.md`;
 
-  if (!fs.existsSync(currentPath)) {
-    return NextResponse.json({ error: "File not found: " + currentPath }, { status: 404 });
+  if (oldPath === newPath) {
+    return NextResponse.json({ ok: true, newSlug });
   }
 
-  const raw = fs.readFileSync(currentPath, "utf8");
-  const { data, content } = matter(raw);
-  data.discipline = newDiscipline;
-
-  fs.mkdirSync(newDir, { recursive: true });
-  fs.writeFileSync(newPath, matter.stringify(content, data));
-
-  if (currentPath !== newPath) {
-    fs.unlinkSync(currentPath);
+  try {
+    const { content, sha } = await getFile(oldPath);
+    const { data, content: body } = matter(content);
+    data.discipline = newDiscipline;
+    await putFile(newPath, matter.stringify(body, data), `chore(curation): move ${basename} to ${newDiscipline} bay`);
+    await deleteFile(oldPath, `chore(curation): move ${basename} to ${newDiscipline} bay (remove old)`, sha);
+    return NextResponse.json({ ok: true, newSlug });
+  } catch (e) {
+    return NextResponse.json({ error: String(e) }, { status: 500 });
   }
-
-  return NextResponse.json({ ok: true, newSlug: [newDiscipline, ...slug.slice(1)] });
 }

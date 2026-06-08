@@ -2,13 +2,20 @@ import Link from "next/link";
 import { allSkills, DISCIPLINE_LABEL } from "@/lib/skills";
 import { BaySelector } from "./BaySelector";
 import { PluginToggle } from "./PluginToggle";
+import { AdminLogin } from "./AdminLogin";
+import { SignOut } from "./SignOut";
 import { SpiceChip } from "@/components/SpiceMeter";
+import { isAdmin, adminConfigured } from "@/lib/admin-auth";
 
 export const metadata = { title: "Admin · The Hangar" };
 
 export const dynamic = "force-dynamic";
 
-export default function AdminPage() {
+export default async function AdminPage() {
+  if (!(await isAdmin())) {
+    return <AdminLogin configured={adminConfigured()} />;
+  }
+
   const skills = allSkills();
 
   const byDiscipline = Object.groupBy(skills, (s) => s.discipline);
@@ -21,8 +28,8 @@ export default function AdminPage() {
           Curation
         </h1>
         <p className="mt-2 text-ink/70 text-sm max-w-prose">
-          Set a skill&apos;s bay and whether it&apos;s in that bay&apos;s installable plugin. Changes write to disk and regenerate the plugin folders to match. Commit and push to ship them.{" "}
-          <span className="font-mono text-[0.7rem] text-ink/50 uppercase tracking-[0.14em]">Dev / maintainers only</span>
+          Set a skill&apos;s bay and whether it&apos;s in that bay&apos;s installable plugin. Each change commits straight to the repo and goes live in about a minute; the installable plugins re-sync automatically.{" "}
+          <SignOut />
         </p>
       </div>
 

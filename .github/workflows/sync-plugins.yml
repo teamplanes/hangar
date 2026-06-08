@@ -1,0 +1,41 @@
+name: Sync plugins
+
+# When skills change (e.g. an admin toggles plugin membership on /admin, which
+# commits to skills/**), regenerate plugins/hangar-<bay>/skills so the installable
+# marketplace matches the site. Commits the result back to main.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "skills/**"
+      - "scripts/sync-plugins.mjs"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-plugins
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: npm ci
+      - run: npm run sync:plugins
+      - name: Commit synced plugins
+        run: |
+          if [ -n "$(git status --porcelain plugins)" ]; then
+            git config user.name "hangar-bot"
+            git config user.email "hangar-bot@planes.studio"
+            git add plugins
+            git commit -m "chore(plugins): sync to match pack:true [skip ci]"
+            git push
+          else
+            echo "plugins already in sync"
+          fi

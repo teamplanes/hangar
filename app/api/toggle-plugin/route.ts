@@ -1,45 +1,38 @@
 import { NextRequest, NextResponse } from "next/server";
-import fs from "node:fs";
-import path from "node:path";
-import { execFileSync } from "node:child_process";
 import matter from "gray-matter";
+import { isAdminRequest } from "@/lib/admin-auth";
+import { getFile, putFile, githubConfigured } from "@/lib/github-write";
 
-// Admin-only by construction: writes to the local filesystem, so it only
-// works when a maintainer runs the repo locally. On the read-only Vercel
-// filesystem this fails, which is the gate.
+// Hosted, admin-only. Commits the pack flag change straight to main in
+// teamplanes/hangar. A GitHub Action regenerates the installable plugin
+// folders on push, so the marketplace stays in sync.
 export async function POST(req: NextRequest) {
-  const { slug, inPlugin } = (await req.json()) as {
-    slug: string[];
-    inPlugin: boolean;
-  };
-
-  const SKILLS_DIR = path.join(process.cwd(), "skills");
-  const filePath = path.join(SKILLS_DIR, slug.join("/") + ".md");
-
-  if (!fs.existsSync(filePath)) {
-    return NextResponse.json({ error: "File not found: " + filePath }, { status: 404 });
+  if (!isAdminRequest(req)) {
+    return NextResponse.json({ error: "Not signed in as admin." }, { status: 401 });
+  }
+  if (!githubConfigured()) {
+    return NextResponse.json({ error: "GITHUB_TOKEN not configured." }, { status: 503 });
   }
 
-  const raw = fs.readFileSync(filePath, "utf8");
-  const { data, content } = matter(raw);
+  const { slug, inPlugin } = (await req.json()) as { slug: string[]; inPlugin: boolean };
+  const path = `skills/${slug.join("/")}.md`;
 
-  if (inPlugin) {
-    data.pack = true;
-  } else {
-    delete data.pack;
-  }
-
-  fs.writeFileSync(filePath, matter.stringify(content, data));
-
-  // Regenerate the installable plugin folders so the marketplace matches.
   try {
-    execFileSync("node", ["scripts/sync-plugins.mjs"], { cwd: process.cwd() });
-  } catch (e) {
-    return NextResponse.json(
-      { ok: true, synced: false, warning: "Flag saved but sync-plugins failed: " + String(e) },
-      { status: 200 },
-    );
-  }
+    const { content, sha } = await getFile(path);
+    const { data, content: body } = matter(content);
 
-  return NextResponse.json({ ok: true, synced: true, inPlugin });
+    if (inPlugin) data.pack = true;
+    else delete data.pack;
+
+    const updated = matter.stringify(body, data);
+    await putFile(
+      path,
+      updated,
+      `chore(curation): ${slug.join("/")} ${inPlugin ? "added to" : "removed from"} its plugin`,
+      sha,
+    );
+    return NextResponse.json({ ok: true, inPlugin });
+  } catch (e) {
+    return NextResponse.json({ error: String(e) }, { status: 500 });
+  }
 }
