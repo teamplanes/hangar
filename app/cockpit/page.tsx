@@ -31,7 +31,7 @@ const SETUP_STEPS: SetupStep[] = [
     body: (
       <>
         <p>
-          Open Claude Code and add The Hangar marketplace once, then install whichever bay packs you want:
+          Open Claude Code and add The Hangar marketplace once, then install whichever plugins you want:
         </p>
         <div className="mt-3 space-y-1.5">
           <code className="block bg-ink/8 border border-ink/15 px-3 py-2 font-mono text-[0.78rem] leading-snug">

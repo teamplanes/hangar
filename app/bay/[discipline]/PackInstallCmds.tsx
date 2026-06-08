@@ -30,7 +30,7 @@ export function PackInstallCmds({ discipline }: { discipline: Discipline }) {
         onCopy={() => copy(marketplaceCmd, "market")}
       />
       <CmdLine
-        label="2. Install this pack"
+        label="2. Install this plugin"
         cmd={installCmd}
         copied={copiedInstall}
         onCopy={() => copy(installCmd, "install")}

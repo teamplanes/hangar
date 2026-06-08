@@ -44,7 +44,7 @@ export function SkillCard({
         <span className="inline-flex items-center gap-2">
           {inPack && (
             <span className="inline-block border border-ink/50 px-1.5 py-px text-[0.6rem] uppercase tracking-[0.14em] text-ink/80">
-              In Pack
+              In Plugin
             </span>
           )}
           {DISCIPLINE_LABEL[skill.discipline]}

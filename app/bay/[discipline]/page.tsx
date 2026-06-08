@@ -63,7 +63,7 @@ export default async function BayPage({
               <div className="flex gap-8 sm:justify-end">
                 <div className="text-right">
                   <div className="font-mono text-[0.65rem] uppercase tracking-[0.18em] text-ink/60">
-                    In the pack
+                    In the plugin
                   </div>
                   <div className="text-[2.4rem] leading-none font-black tabular-nums">
                     {String(packSkills.length).padStart(2, "0")}
@@ -101,7 +101,7 @@ export default async function BayPage({
         </div>
       </section>
 
-      {/* ── Bay Pack ─────────────────────────────────────────── */}
+      {/* ── Plugin ───────────────────────────────────────────── */}
       {hasPack && (
         <section className="border-x border-b border-ink bg-cream">
           {/* Header: bay-colour accent stripe on the left, install commands on the right */}
@@ -115,19 +115,19 @@ export default async function BayPage({
                     className={`inline-block w-2 h-2 border border-ink/40 ${CARD_BG[d]}`}
                     aria-hidden
                   />
-                  Bay Pack
+                  Plugin
                 </div>
                 <h2 className="text-[1.5rem] sm:text-[1.8rem] font-black tracking-tight leading-tight">
                   The{" "}
                   <span className="serif-italic font-normal italic">
                     {DISCIPLINE_LABEL[d]}
                   </span>{" "}
-                  Bay Pack
+                  plugin
                 </h2>
                 <p className="mt-2 text-[0.93rem] text-ink/70 max-w-prose">
                   {packSkills.length} curated skill
                   {packSkills.length === 1 ? "" : "s"} ready to drop into
-                  Claude Code. Add the marketplace once, then install the pack.
+                  Claude Code. Add the marketplace once, then install the plugin.
                   Skills land as slash commands and stay between sessions.
                 </p>
               </div>
@@ -163,7 +163,7 @@ export default async function BayPage({
               </h2>
               {hasPack && (
                 <p className="mt-0.5 text-[0.85rem] text-ink/55">
-                  Not in the pack. Browse and take what&apos;s useful.
+                  Not in the plugin. Browse and take what&apos;s useful.
                 </p>
               )}
             </div>
