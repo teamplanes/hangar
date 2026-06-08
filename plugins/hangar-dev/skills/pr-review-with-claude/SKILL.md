@@ -1,7 +1,20 @@
 ---
 name: pr-review-with-claude
-description: "A two-pass PR review with Claude that catches the boring stuff *and* asks the questions a senior engineer at Planes would actually ask."
+description: >-
+  A two-pass PR review with Claude that catches the boring stuff *and* asks the
+  questions a senior engineer at Planes would actually ask.
 ---
+## What it does
+
+A two-pass PR review with Claude that catches the boring stuff *and* asks the questions a senior engineer at Planes would actually ask.
+
+## When to use
+
+- Any PR larger than ~150 lines
+- Refactors or migrations where the diff lies about intent
+- When you're the only reviewer and want a second pair of eyes before merging
+
+## The skill
 
 **Pass 1. Mechanics.** From the repo root:
 
@@ -23,3 +36,7 @@ Don't list nits or style. Don't congratulate."
 **Pass 3 (optional). Tests.** If the PR doesn't touch tests:
 
 > Suggest the two highest-leverage test cases this PR should add. For each: the scenario, the expected outcome, and where the test should live in this repo.
+
+## Notes
+
+The "delete one change" question is the killer one. It usually surfaces the scope creep nobody noticed. If Claude can't restate the PR's intent in one sentence, that's the review feedback right there: the PR doesn't know what it is.

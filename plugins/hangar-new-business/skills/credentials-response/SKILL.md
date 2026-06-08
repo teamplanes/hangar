@@ -1,7 +1,20 @@
 ---
 name: credentials-response
-description: "Drafts the credentials section of an RFP response in Planes' voice. Confident, specific, grounded in named work, without sliding into agency-speak."
+description: >-
+  Drafts the credentials section of an RFP response in Planes' voice. Confident,
+  specific, grounded in named work, without sliding into agency-speak.
 ---
+## What it does
+
+Drafts the credentials section of an RFP response in Planes' voice. Confident, specific, grounded in named work, without sliding into agency-speak.
+
+## When to use
+
+- Responding to an RFP with a short window
+- Tailoring boilerplate creds to a specific brief
+- Drafting the opening 2 pages of a pitch deck
+
+## The skill
 
 You are helping a New Business lead at Planes draft the credentials section of an RFP response. Planes' voice in pitch writing is: short sentences, named work over abstractions, opinions over capabilities, no "passionate about", no "robust", no "leverage".
 
@@ -23,3 +36,7 @@ Produce:
 Rules:
 - If the past-projects context isn't relevant, say which case study we should swap in rather than forcing a bad fit.
 - Don't write the rest of the response. Just credentials.
+
+## Notes
+
+The "push back on the brief" section is what differentiates a Planes response from a templated one. It scares people the first time they use it. Do it anyway. Mark draft until the NB lead has reviewed. The model is good at structure but the *opinions* need a human pass.

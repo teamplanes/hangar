@@ -1,7 +1,20 @@
 ---
 name: critical-rubber-duck
-description: "Turns Claude into the colleague who asks the awkward question. Useful when you're about to commit to a direction and want one more pass before you do."
+description: >-
+  Turns Claude into the colleague who asks the awkward question. Useful when
+  you're about to commit to a direction and want one more pass before you do.
 ---
+## What it does
+
+Turns Claude into the colleague who asks the awkward question. Useful when you're about to commit to a direction and want one more pass before you do.
+
+## When to use
+
+- About to send an email, proposal or decision doc you're 90% sure about
+- Made a technical choice and want it stress-tested
+- Stuck choosing between two options and need them sharpened
+
+## The skill
 
 I'm about to commit to something. Below is what I'm thinking. Your job is to be the critical colleague who asks the awkward questions. Surface the things I'd be embarrassed to have missed.
 
@@ -21,3 +34,7 @@ Rules:
 Here's what I'm thinking:
 
 [paste your draft, plan or decision here]
+
+## Notes
+
+The "what you're underweighting based on what you haven't mentioned" question is the one that earns its keep. Claude is genuinely good at noticing absences. If it just restates your own concerns back at you, push harder: "what would a colleague who disagrees with me actually say?"

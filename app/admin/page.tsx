@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { allSkills, DISCIPLINE_LABEL } from "@/lib/skills";
 import { BaySelector } from "./BaySelector";
+import { PluginToggle } from "./PluginToggle";
 import { SpiceChip } from "@/components/SpiceMeter";
 
 export const metadata = { title: "Admin · The Hangar" };
@@ -17,11 +18,11 @@ export default function AdminPage() {
       <div>
         <div className="label mb-2">Admin</div>
         <h1 className="text-[2rem] font-black tracking-tight">
-          Bay allocation
+          Curation
         </h1>
         <p className="mt-2 text-ink/70 text-sm max-w-prose">
-          Change a skill&apos;s bay using the dropdown. The file moves on disk instantly. Reload the page to confirm.{" "}
-          <span className="font-mono text-[0.7rem] text-ink/50 uppercase tracking-[0.14em]">Dev only</span>
+          Set a skill&apos;s bay and whether it&apos;s in that bay&apos;s installable plugin. Changes write to disk and regenerate the plugin folders to match. Commit and push to ship them.{" "}
+          <span className="font-mono text-[0.7rem] text-ink/50 uppercase tracking-[0.14em]">Dev / maintainers only</span>
         </p>
       </div>
 
@@ -31,6 +32,7 @@ export default function AdminPage() {
             <tr className="border-b border-ink bg-ink text-cream">
               <th className="text-left px-4 py-2.5 font-mono text-[0.7rem] uppercase tracking-[0.14em] font-normal">Skill</th>
               <th className="text-left px-4 py-2.5 font-mono text-[0.7rem] uppercase tracking-[0.14em] font-normal w-[220px]">Bay</th>
+              <th className="text-left px-4 py-2.5 font-mono text-[0.7rem] uppercase tracking-[0.14em] font-normal w-[180px]">In plugin</th>
               <th className="text-left px-4 py-2.5 font-mono text-[0.7rem] uppercase tracking-[0.14em] font-normal hidden sm:table-cell">Type</th>
               <th className="text-left px-4 py-2.5 font-mono text-[0.7rem] uppercase tracking-[0.14em] font-normal hidden md:table-cell">Spice</th>
               <th className="text-left px-4 py-2.5 font-mono text-[0.7rem] uppercase tracking-[0.14em] font-normal hidden lg:table-cell">Source</th>
@@ -56,6 +58,9 @@ export default function AdminPage() {
                 </td>
                 <td className="px-4 py-2.5">
                   <BaySelector slug={s.slug} currentDiscipline={s.discipline} />
+                </td>
+                <td className="px-4 py-2.5">
+                  <PluginToggle slug={s.slug} inPlugin={s.pack === true} />
                 </td>
                 <td className="px-4 py-2.5 hidden sm:table-cell">
                   <span className="font-mono text-[0.7rem] uppercase tracking-[0.12em] text-ink/60">

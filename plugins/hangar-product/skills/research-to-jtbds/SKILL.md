@@ -1,7 +1,21 @@
 ---
 name: research-to-jtbds
-description: "Takes a stack of raw user interview transcripts and pulls out Jobs To Be Done in the format Planes uses. Situation-led, in the user's own language, with quoted evidence."
+description: >-
+  Takes a stack of raw user interview transcripts and pulls out Jobs To Be Done
+  in the format Planes uses. Situation-led, in the user's own language, with
+  quoted evidence.
 ---
+## What it does
+
+Takes a stack of raw user interview transcripts and pulls out Jobs To Be Done in the format Planes uses. Situation-led, in the user's own language, with quoted evidence.
+
+## When to use
+
+- After 5+ user interviews when you're starting synthesis
+- When sticky-note synthesis is bogging down and you want a fast first pass
+- To pressure-test a JTBD you've drafted by hand
+
+## The skill
 
 You are helping a product researcher at Planes synthesise interview transcripts into Jobs To Be Done. Planes JTBDs always follow this shape:
 
@@ -21,3 +35,7 @@ Rules:
 - Don't invent jobs that aren't grounded in at least two transcripts.
 - Don't smooth over contradiction. Planes treats tension as the most useful output.
 - If a transcript is too thin to draw from, say so explicitly rather than padding.
+
+## Notes
+
+The "surprises" section is the one teams actually use in playback. If Claude doesn't find any, push back. Either the research wasn't broad enough or the team's hypothesis was airtight (rare). The model is good at JTBDs but bad at the situation vs state-of-mind distinction. A second prompt asking it to "rewrite any situation that is actually a mood" usually does it.

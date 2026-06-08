@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "typecheck": "tsc --noEmit",
+    "sync:plugins": "node scripts/sync-plugins.mjs",
     "desktop:icons": "APP_NAME='The Hangar' APP_SLUG='hangar' ./scripts/desktop-icons.sh",
     "desktop:icons:preview": "APP_NAME='The Hangar' APP_SLUG='hangar' ./scripts/desktop-icons-preview.sh",
     "desktop:build": "./scripts/desktop-build.sh",

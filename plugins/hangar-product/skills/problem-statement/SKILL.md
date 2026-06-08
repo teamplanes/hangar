@@ -1,27 +1,9 @@
 ---
-title: Problem statement sharpener
-discipline: product
-type: prompt
-tags:
-  - discovery
-  - framing
-  - briefs
-added_by: julian
-added_on: 2026-05-27T00:00:00.000Z
-status: stable
-source:
-  kind: curated
-  url: 'https://claudskills.com/skills/problem-statement/'
-  credit: deanpeters / product-manager-prompts
-spice: mild
-downloads_week: 24
-featured: true
-summary: >-
+name: problem-statement
+description: >-
   Turn a vague problem description into a sharp, well-scoped statement with user
   context, root cause, and a measurable success signal.
-pack: true
 ---
-
 ## What it does
 Takes a rough problem description and sharpens it into a properly framed problem statement, user, root cause, what's out of scope, and a clear signal for done.
 

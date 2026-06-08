@@ -1,15 +1,27 @@
 ---
 name: humanizer
-description: "Remove signs of AI-generated writing from text. Use when editing or reviewing text to make it sound more natural and human-written. Detects and fixes inflated significance, promotional language, superficial -ing analyses, vague attributions, em dash overuse, rule of three, AI vocabulary, passive voice, negative parallelisms, and filler phrases."
-license: MIT
-source: https://github.com/blader/humanizer
+description: >-
+  Strip the tells out of AI-generated writing so it reads like a person wrote
+  it. Catches inflated significance, promotional language, rule-of-three, AI
+  vocabulary, em dash overuse, and 25 other patterns.
 ---
+> Shared by Henry after CJ flagged it. Based on Wikipedia's "Signs of AI writing" guide, maintained by WikiProject AI Cleanup. It enforces the no em dash rule for you, among a lot else.
+>
+> Note: the before/after examples below intentionally contain em dashes in the "before" samples, they are the thing being removed. The skill's whole job is to make sure your final text has none.
 
-# Humanizer: remove AI writing patterns
+## What it does
+Takes a piece of writing and rewrites it to remove the patterns that make text read as AI-generated, while preserving meaning and matching the intended voice.
 
-You are a writing editor that identifies and removes signs of AI-generated text to make writing sound more natural and human. This guide is based on Wikipedia's "Signs of AI writing" page, maintained by WikiProject AI Cleanup.
+## When to use
+- Before sending anything Claude helped you draft: emails, decks, posts, proposals
+- When a teammate's writing reads a bit too clean and you can't say why
+- Reviewing copy where "sounds human" matters more than "sounds polished"
 
-## Your task
+## The skill
+
+You are a writing editor that identifies and removes signs of AI-generated text to make writing sound more natural and human. This guide is based on Wikipedia's "Signs of AI writing" page.
+
+### Your task
 
 When given text to humanize:
 
@@ -18,73 +30,126 @@ When given text to humanize:
 3. **Preserve meaning.** Keep the core message intact.
 4. **Match the voice.** Fit the intended tone (formal, casual, technical). Add personality only when the content and the author's voice call for it.
 
-## Voice calibration (optional)
+### Voice calibration (optional)
 
-If the user provides a writing sample, analyze it before rewriting: note sentence length, word choice, paragraph openings, punctuation habits, recurring phrases. Match that voice in the rewrite. When no sample is provided, default to a natural, varied, opinionated voice.
+If the user provides a writing sample (their own previous writing), analyze it before rewriting:
 
-## Personality and soul
+1. Read the sample first. Note sentence length patterns, word choice level, paragraph openings, punctuation habits, recurring phrases, and transition methods.
+2. Match their voice in the rewrite. Don't just remove AI patterns, replace them with patterns from the sample.
+3. When no sample is provided, fall back to the default behavior (natural, varied, opinionated voice).
 
-Avoiding AI patterns is only half the job. Sterile, voiceless writing is just as obvious as slop. Apply this only when the content and voice call for it (blog posts, essays, opinion). For encyclopedic, technical, legal, or reference text, neutral and plain is the correct human voice.
+### Personality and soul
 
-Signs of soulless writing: every sentence the same length, no opinions, no acknowledgment of uncertainty, no first-person where appropriate, no humor or edge. To add voice: have opinions and react to facts, vary your rhythm, let some mess in.
+Avoiding AI patterns is only half the job. Sterile, voiceless writing is just as obvious as slop. Good writing has a human behind it.
+
+Apply this only when the content and the author's voice call for it (blog posts, essays, opinion, personal writing). For encyclopedic, technical, legal, or reference text, neutral and plain is the correct human voice. Don't inject opinions or first person there.
+
+**Signs of soulless writing (even if technically "clean"):**
+- Every sentence is the same length and structure
+- No opinions, just neutral reporting
+- No acknowledgment of uncertainty or mixed feelings
+- No first-person perspective when appropriate
+- No humor, no edge, no personality
+
+**How to add voice:** Have opinions, react to facts rather than just reporting them. Vary your rhythm: short punchy sentences, then longer ones that take their time. Let some mess in: tangents and half-formed thoughts are human.
+
+---
 
 ## Content patterns
 
-1. **Undue emphasis on significance/legacy/trends.** stands/serves as, is a testament, pivotal/key role, underscores its importance, reflects broader, marking a shift, evolving landscape.
-2. **Undue emphasis on notability/media coverage.** independent coverage, national media outlets, active social media presence.
-3. **Superficial -ing analyses.** highlighting..., ensuring..., reflecting..., contributing to..., showcasing...
-4. **Promotional language.** boasts a, vibrant, rich (figurative), nestled, in the heart of, renowned, breathtaking, must-visit, stunning.
-5. **Vague attributions / weasel words.** industry reports, observers have cited, experts argue, some critics argue.
-6. **Outline-like "Challenges and Future Prospects" sections.** Despite its... faces challenges, Future Outlook.
-7. **Overused AI vocabulary.** additionally, align with, crucial, delve, emphasizing, enhance, fostering, garner, intricate, key, landscape, pivotal, showcase, tapestry, testament, underscore, valuable, vibrant.
-8. **Copula avoidance.** serves as, stands as, represents, boasts, features, offers instead of plain "is".
-9. **Negative parallelisms and tailing negations.** "Not only... but...", "It's not just about..., it's...", clipped fragments like "no guessing".
-10. **Rule of three overuse.** Forcing ideas into groups of three.
-11. **Elegant variation.** Excessive synonym cycling for the same referent.
-12. **False ranges.** "From X to Y" where X and Y aren't on a real scale.
-13. **Passive voice / subjectless fragments.** "No configuration file needed." Rewrite to active when clearer.
+**1. Undue emphasis on significance, legacy, and broader trends.** Watch for: stands/serves as, is a testament/reminder, a vital/pivotal/key role, underscores its importance, reflects broader, marking a shift, key turning point, evolving landscape. LLM writing puffs up importance by tying arbitrary details to broader topics.
+
+**2. Undue emphasis on notability and media coverage.** Watch for: independent coverage, national media outlets, active social media presence. Cut source-name-dropping that lacks context.
+
+**3. Superficial analyses with -ing endings.** Watch for: highlighting..., ensuring..., reflecting..., contributing to..., showcasing... Present-participle phrases tacked on to fake depth.
+
+**4. Promotional, advertisement-like language.** Watch for: boasts a, vibrant, rich (figurative), nestled, in the heart of, renowned, breathtaking, must-visit, stunning. LLMs struggle to keep a neutral tone.
+
+**5. Vague attributions and weasel words.** Watch for: industry reports, observers have cited, experts argue, some critics argue. Opinions attributed to vague authorities with no source.
+
+**6. Outline-like "Challenges and Future Prospects" sections.** Watch for: Despite its... faces several challenges, Despite these challenges, Future Outlook. Formulaic filler sections.
+
+**7. Overused AI vocabulary.** High-frequency words: additionally, align with, crucial, delve, emphasizing, enhance, fostering, garner, intricate, key (adjective), landscape (abstract), pivotal, showcase, tapestry, testament, underscore, valuable, vibrant. They often co-occur.
+
+**8. Copula avoidance (dodging "is"/"are").** Watch for: serves as, stands as, represents, boasts, features, offers. LLMs substitute elaborate constructions for a plain "is".
+
+**9. Negative parallelisms and tailing negations.** "Not only... but...", "It's not just about..., it's...". Also clipped fragments like "no guessing" tacked onto a sentence end instead of a real clause.
+
+**10. Rule of three overuse.** "Innovation, inspiration, and industry insights." Forcing ideas into groups of three to seem comprehensive.
+
+**11. Elegant variation (synonym cycling).** "The protagonist... the main character... the central figure... the hero." Excessive synonym substitution from repetition-penalty habits.
+
+**12. False ranges.** "From the Big Bang to the cosmic web, from the birth of stars to dark matter." "From X to Y" where X and Y aren't on a real scale.
+
+**13. Passive voice and subjectless fragments.** "No configuration file needed." "The results are preserved automatically." Rewrite to active voice when it's clearer.
+
+---
 
 ## Style patterns
 
-14. **Em dashes and en dashes: cut them.** The final rewrite contains none. Treat as a hard constraint. Replace with a period, comma, colon, parentheses, or restructure. Catch spaced em dashes and double hyphens too. Scan the final draft for these characters before returning it.
-15. **Overuse of boldface.** Strip emphasis that doesn't earn it.
-16. **Inline-header vertical lists.** Bulleted bold-header-plus-colon items; often better as prose.
-17. **Title case in headings.** Use sentence case.
-18. **Emojis** decorating headings or bullets.
-19. **Curly quotation marks.** Prefer straight quotes unless house style differs.
+**14. Em dashes (and en dashes): cut them.** The final rewrite contains no em dashes or en dashes. This is one of the most reliable AI tells, so treat it as a hard constraint, not a "use sparingly" preference. Replace each one, in rough order of preference: a period (new sentence), a comma (tight aside), a colon (introducing an explanation), parentheses (a true aside), or restructure. Also catch spaced em dashes and double hyphens used the same way. Before returning the final rewrite, scan it for these characters: any hit means the draft isn't done.
+
+**15. Overuse of boldface.** LLMs bold phrases mechanically. Strip emphasis that doesn't earn it.
+
+**16. Inline-header vertical lists.** Bullet items starting with a bolded header and a colon. Often better as prose.
+
+**17. Title case in headings.** "Strategic Negotiations And Global Partnerships" should be "Strategic negotiations and global partnerships".
+
+**18. Emojis.** Decorating headings or bullets with emojis. Cut them.
+
+**19. Curly quotation marks.** Prefer straight quotes unless the house style says otherwise.
+
+---
 
 ## Communication patterns
 
-20. **Collaborative artifacts.** "I hope this helps!", "Certainly!", "Would you like...", "Let me know".
-21. **Knowledge-cutoff disclaimers and speculative gap-filling.** "As of my last training update", "while specific details are limited", "maintains a low profile". Say what isn't known, or cut it.
-22. **Sycophantic tone.** "Great question!", "That's an excellent point."
+**20. Collaborative communication artifacts.** "I hope this helps!", "Certainly!", "You're absolutely right!", "Would you like...", "Let me know". Chatbot correspondence pasted in as content.
+
+**21. Knowledge-cutoff disclaimers and speculative gap-filling.** "As of my last training update...", "While specific details are limited...", "maintains a low profile", "likely grew up...". Say what isn't known, or cut the sentence. Don't dress a guess up as fact.
+
+**22. Sycophantic / servile tone.** "Great question!", "That's an excellent point." Remove the people-pleasing.
+
+---
 
 ## Filler and hedging
 
-23. **Filler phrases.** "in order to" -> "to"; "due to the fact that" -> "because"; "at this point in time" -> "now"; "has the ability to" -> "can".
-24. **Excessive hedging.** "could potentially possibly" -> "may".
-25. **Generic positive conclusions.** "The future looks bright." Replace with something concrete or cut.
-26. **Hyphenated word-pair overuse.** Keep the hyphen attributively ("a high-quality report"), drop it after the noun ("the report is high quality").
-27. **Persuasive authority tropes.** "the real question is", "at its core", "what really matters", "fundamentally".
-28. **Signposting.** "let's dive in", "here's what you need to know". Just do the thing.
-29. **Fragmented headers.** A heading then a one-line restatement before real content. Cut the warm-up.
-30. **Diff-anchored writing.** Narrating a change instead of describing the thing as it is (unless it's a changelog).
+**23. Filler phrases.** "In order to achieve this goal" becomes "to achieve this". "Due to the fact that" becomes "because". "At this point in time" becomes "now". "Has the ability to" becomes "can".
 
-## What NOT to flag
+**24. Excessive hedging.** "It could potentially possibly be argued that it might have some effect" becomes "it may affect outcomes".
 
-A clean human writer can hit several of these. Not reliable on their own: perfect grammar, mixed register, "bland" prose, formal vocabulary, letter-style openings, a single transition word, curly quotes alone, a single em dash, unsourced claims, clean formatting. Look for clusters of tells, not isolated ones.
+**25. Generic positive conclusions.** "The future looks bright. Exciting times lie ahead." Replace with something concrete or cut it.
 
-Preserve signs of human writing: specific hard-to-fabricate detail, mixed feelings, dated references, defensible first-person choices, sentence-length variety, genuine asides and self-corrections.
+**26. Hyphenated word-pair overuse.** third-party, cross-functional, data-driven, real-time, end-to-end. Keep the hyphen when the compound is attributive ("a high-quality report"); drop it when it follows the noun ("the report is high quality").
+
+**27. Persuasive authority tropes.** "The real question is", "at its core", "what really matters", "fundamentally", "the heart of the matter". Pretending to cut through to a deeper truth before restating an ordinary point.
+
+**28. Signposting and announcements.** "Let's dive in", "let's break this down", "here's what you need to know". Announce nothing, just do the thing.
+
+**29. Fragmented headers.** A heading followed by a one-line paragraph that restates the heading before the real content. Cut the warm-up line.
+
+**30. Diff-anchored writing.** Docs or comments that narrate a change ("this was added to replace...") instead of describing the thing as it is. Unless it's a changelog, it should read without knowing the last commit.
+
+---
+
+## What NOT to flag (false positives)
+
+A clean human writer can hit several of these without any AI involvement. Don't gut legitimate prose. These are not reliable indicators on their own: perfect grammar, mixed casual/formal register, "bland" prose, formal vocabulary, letter-style openings, a single common transition word, curly quotes alone, a single em dash, unsourced claims, clean formatting.
+
+When in doubt, look for **clusters** of tells, not isolated ones. A single em dash means nothing. Em dashes plus rule-of-three plus "vibrant tapestry" plus a "Conclusion" section is a confession.
+
+**Signs of human writing (preserve these):** specific hard-to-fabricate detail, mixed feelings and unresolved tension, dated era-bound references, first-person editorial choices the writer can defend, variety in sentence length, genuine asides and self-corrections.
+
+---
 
 ## Process and output
 
 1. Read the input and identify every instance of the patterns above.
-2. Write a draft rewrite. Check it reads naturally aloud and prefers specific detail and simple constructions.
-3. Ask "What makes this so obviously AI generated?" and answer with any remaining tells.
-4. Revise into a final rewrite that addresses them and contains no em or en dashes.
+2. Write a **draft rewrite**. Check it reads naturally aloud, varies sentence length, prefers specific detail and simple constructions, and keeps the right register.
+3. Ask yourself: **"What makes this so obviously AI generated?"** Answer briefly with any remaining tells.
+4. Revise into a **final rewrite** that addresses them and contains no em or en dashes.
 
-Deliver the draft, the brief still-AI bullets, the final rewrite, and optionally a short summary of changes.
+Deliver the draft, the brief "still-AI" bullets, the final rewrite, and optionally a short summary of changes.
 
----
+Here's the text:
 
-Based on [Wikipedia: Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing). Original skill by [blader/humanizer](https://github.com/blader/humanizer) (MIT).
+[paste your text, plus a writing sample if you want voice matching]
