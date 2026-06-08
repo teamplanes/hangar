@@ -166,7 +166,8 @@ export default async function CockpitPage() {
             <span className="w-2.5 flex-shrink-0" aria-hidden />
             <span className="flex-1 font-mono text-[0.6rem] uppercase tracking-[0.18em] text-cream/50">Skill</span>
             <span className="hidden sm:block font-mono text-[0.6rem] uppercase tracking-[0.18em] text-cream/50 flex-shrink-0 w-28 text-right">Spice</span>
-            <span className="hidden md:block font-mono text-[0.6rem] uppercase tracking-[0.18em] text-cream/50 flex-shrink-0 w-24 text-right">Copies</span>
+            <span className="hidden md:block font-mono text-[0.6rem] uppercase tracking-[0.18em] text-cream/50 flex-shrink-0 w-20 text-right">Copies</span>
+            <span className="hidden md:block font-mono text-[0.6rem] uppercase tracking-[0.18em] text-cream/50 flex-shrink-0 w-20 text-right">Views</span>
             <span className="w-4 flex-shrink-0" aria-hidden />
           </div>
 
@@ -205,9 +206,12 @@ export default async function CockpitPage() {
                 </span>
               ) : null}
 
-              {/* Copies this week (real) */}
-              <span className="font-mono text-[0.72rem] uppercase tracking-[0.12em] text-ink/60 flex-shrink-0 tabular-nums hidden md:block">
-                {s.stats.copiesWeek} {s.stats.copiesWeek === 1 ? "copy" : "copies"}
+              {/* Copies + views this week (real) */}
+              <span className="font-mono text-[0.72rem] uppercase tracking-[0.12em] text-ink/70 flex-shrink-0 tabular-nums hidden md:block w-20 text-right">
+                {s.stats.copiesWeek}
+              </span>
+              <span className="font-mono text-[0.72rem] uppercase tracking-[0.12em] text-ink/45 flex-shrink-0 tabular-nums hidden md:block w-20 text-right">
+                {s.stats.viewsWeek}
               </span>
 
               <span className="font-mono text-ink/30 group-hover:text-ink/70 transition-colors" aria-hidden>
