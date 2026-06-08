@@ -1,0 +1,16 @@
+{
+  "extraKnownMarketplaces": {
+    "planes-hangar": {
+      "source": { "source": "github", "repo": "teamplanes/hangar" },
+      "autoUpdate": true
+    }
+  },
+  "enabledPlugins": {
+    "hangar-general@planes-hangar": true,
+    "hangar-product@planes-hangar": true,
+    "hangar-design@planes-hangar": true,
+    "hangar-dev@planes-hangar": true,
+    "hangar-new-business@planes-hangar": true,
+    "hangar-just-for-fun@planes-hangar": true
+  }
+}

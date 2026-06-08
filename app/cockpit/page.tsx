@@ -69,7 +69,7 @@ const SETUP_STEPS: SetupStep[] = [
   }
 }`}</code>
         <p className="mt-3">
-          Prefer to pull manually? <code>claude plugin marketplace update</code> then <code>claude plugin update hangar-&lt;bay&gt;</code>.
+          Prefer to pull manually? <code>claude plugin marketplace update</code> then <code>claude plugin update hangar-&lt;bay&gt;</code>. After an update, run <code>/hangar-general:whats-new</code> for a rundown of what landed. Whole team? Drop our <code>.claude/settings.json</code> into a repo and everyone gets it on auto-update.
         </p>
       </>
     ),

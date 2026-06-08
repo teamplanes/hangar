@@ -1,0 +1,44 @@
+name: Notify Slack of new skills
+
+# When a new skill markdown file is added on main, post it to Slack so the team
+# knows, even though Claude Code's own update gives no rundown of what's new.
+# Needs a repo secret SLACK_WEBHOOK_URL (a Slack incoming webhook).
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "skills/**/*.md"
+
+permissions:
+  contents: read
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: npm ci
+      - name: Find newly-added skills and post
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          BEFORE: ${{ github.event.before }}
+        run: |
+          # Diff range: handle first-push / unknown before SHA.
+          if [ -z "$BEFORE" ] || [ "$BEFORE" = "0000000000000000000000000000000000000000" ]; then
+            RANGE="HEAD~1 HEAD"
+          else
+            RANGE="$BEFORE ${{ github.sha }}"
+          fi
+          ADDED=$(git diff --diff-filter=A --name-only $RANGE -- 'skills/**/*.md' || true)
+          if [ -z "$ADDED" ]; then
+            echo "No newly-added skills."
+            exit 0
+          fi
+          echo "Added:"; echo "$ADDED"
+          node scripts/slack-new-skills.mjs $ADDED
