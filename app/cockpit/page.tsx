@@ -54,6 +54,26 @@ const SETUP_STEPS: SetupStep[] = [
     heading: "Use Projects for ongoing client work",
     body: "Claude.ai Projects keep your work in one place between sessions. Drop in brand guidelines, research docs, briefs. Whatever Claude needs to stay sharp for that client. One project per client or workstream.",
   },
+  {
+    n: "05",
+    heading: "Stay up to date",
+    body: (
+      <>
+        <p>
+          New skills land in The Hangar all the time. Turn on auto-update once and Claude pulls the latest at the start of each session (you&apos;ll get a <code>/reload-plugins</code> nudge when something new arrives). Run <code>/plugin</code>, open Marketplaces, select planes-hangar, enable auto-update. Or add to your settings:
+        </p>
+        <code className="block bg-ink/8 border border-ink/15 px-3 py-2 mt-3 font-mono text-[0.72rem] leading-snug whitespace-pre-wrap">{`"extraKnownMarketplaces": {
+  "planes-hangar": {
+    "source": { "source": "github", "repo": "teamplanes/hangar" },
+    "autoUpdate": true
+  }
+}`}</code>
+        <p className="mt-3">
+          Prefer to pull manually? <code>claude plugin marketplace update</code> then <code>claude plugin update hangar-&lt;bay&gt;</code>.
+        </p>
+      </>
+    ),
+  },
 ];
 
 export default async function CockpitPage() {
@@ -96,7 +116,7 @@ export default async function CockpitPage() {
             <span className="serif-italic font-normal italic">cockpit</span>.
           </h2>
           <p className="mt-3 text-ink/70 max-w-prose">
-            Four things that change how well Claude works for you. Do them once.
+            Five things that change how well Claude works for you. Do them once.
           </p>
         </div>
 
