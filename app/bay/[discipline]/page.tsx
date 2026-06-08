@@ -128,11 +128,7 @@ export default async function BayPage({
                   {packSkills.length} curated skill
                   {packSkills.length === 1 ? "" : "s"} ready to drop into
                   Claude Code. Add the marketplace once, then install the plugin.
-                  Skills land as slash commands and stay between sessions. Turn
-                  on auto-update (run <code className="font-mono">/plugin</code>) and
-                  new skills arrive automatically, run{" "}
-                  <code className="font-mono">/hangar-general:whats-new</code> to see
-                  what landed.
+                  Skills land as slash commands and stay between sessions.
                 </p>
               </div>
               <PackInstallCmds discipline={d} />

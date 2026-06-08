@@ -17,7 +17,7 @@ export function PackInstallCmds({ discipline }: { discipline: Discipline }) {
   }
 
   return (
-    <div className="flex flex-col gap-2.5 w-full lg:w-auto lg:min-w-[340px]">
+    <div className="flex flex-col gap-2.5 w-full lg:w-[380px]">
       <CmdLine
         label="1. Add The Hangar marketplace"
         cmd={marketplaceCmd}
