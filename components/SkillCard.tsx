@@ -3,7 +3,6 @@ import { type Skill, DISCIPLINE_LABEL, summary } from "@/lib/skills-types";
 import { CARD_BG, CARD_INK } from "@/components/disciplineStyles";
 import { PaperPlane } from "@/components/PaperPlane";
 import { SpiceChip } from "@/components/SpiceMeter";
-import { hotness } from "@/components/SkillStats";
 
 const TYPE_LABEL: Record<Skill["type"], string> = {
   prompt: "Prompt",
@@ -62,17 +61,11 @@ export function SkillCard({
       </p>
 
       {/* Stat strip */}
-      <div className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[0.7rem]">
-        {skill.spice ? <SpiceChip spice={skill.spice} /> : null}
-        {typeof skill.downloads_week === "number" ? (
-          <HotnessChip skill={skill} />
-        ) : null}
-        {typeof skill.usage_count === "number" ? (
-          <span className="font-mono uppercase tracking-[0.14em] text-ink/65">
-            {skill.usage_count} {skill.usage_count === 1 ? "user" : "users"}
-          </span>
-        ) : null}
-      </div>
+      {skill.spice ? (
+        <div className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[0.7rem]">
+          <SpiceChip spice={skill.spice} />
+        </div>
+      ) : null}
 
       {/* Meta row */}
       <div className="mt-4 flex items-center justify-between gap-3 text-[0.8rem]">
@@ -105,21 +98,3 @@ export function SkillCard({
   );
 }
 
-function HotnessChip({ skill }: { skill: Skill }) {
-  const h = hotness(skill);
-  const tone =
-    h.label === "Hot"
-      ? "text-coral"
-      : h.label === "Cooling"
-        ? "text-ink/60"
-        : "text-ink/70";
-  return (
-    <span
-      className={`font-mono uppercase tracking-[0.14em] inline-flex items-center gap-1 ${tone}`}
-    >
-      <span aria-hidden>{h.arrow}</span>
-      {h.delta > 0 ? "+" : ""}
-      {h.delta}% · {h.label}
-    </span>
-  );
-}

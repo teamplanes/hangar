@@ -8,6 +8,7 @@ import {
 import { Markdown } from "@/components/Markdown";
 import { GiscusStub } from "@/components/Giscus";
 import { CopyButton } from "@/components/CopyButton";
+import { ViewTracker } from "@/components/ViewTracker";
 import { CARD_BG, SWATCH_CLASS } from "@/components/disciplineStyles";
 import { PaperPlane } from "@/components/PaperPlane";
 import { SkillStatsRail } from "@/components/SkillStats";
@@ -39,6 +40,7 @@ export default async function SkillPage({
 
   return (
     <article className="grid lg:grid-cols-[1fr_20rem] gap-12">
+      <ViewTracker slug={skill.slug.join("/")} />
       {/* MAIN */}
       <div className="min-w-0">
         {/* Crumb */}
@@ -94,7 +96,7 @@ export default async function SkillPage({
 
         {/* Action rail */}
         <div className="mt-6 border-t border-ink pt-6">
-          <CopyButton text={skill.body} label="Copy skill body" />
+          <CopyButton text={skill.body} label="Copy skill body" trackSlug={skill.slug.join("/")} />
           <span className="ml-3 font-mono text-[0.7rem] uppercase tracking-[0.14em] text-ink/60">
             paste into Claude, or drop the file into a Claude Code skills dir
           </span>

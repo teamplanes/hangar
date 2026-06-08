@@ -98,7 +98,7 @@ export default function HomePage() {
                 00 / Skill spotlight
               </div>
               <div className="font-mono text-[0.7rem] uppercase tracking-[0.16em] text-cream/55 hidden sm:block">
-                Picked weekly · auto-promoted on downloads
+                Featured pick · the board ranks by real copies
               </div>
             </div>
             <FeaturedSpotlight skill={featured} />

@@ -1,12 +1,14 @@
 import React from "react";
 import Link from "next/link";
-import { allSkills, byDownloads, DISCIPLINE_LABEL } from "@/lib/skills";
+import { allSkills, DISCIPLINE_LABEL } from "@/lib/skills";
+import { rankedSkills } from "@/lib/leaderboard";
 import { SWATCH_CLASS } from "@/components/disciplineStyles";
 import { SpiceChip } from "@/components/SpiceMeter";
 import { packByDiscipline } from "@/lib/cockpit";
 import { EssentialSkillsTabs } from "./EssentialSkillsTabs";
 
 export const metadata = { title: "The Cockpit · The Hangar" };
+export const dynamic = "force-dynamic";
 
 type SetupStep = {
   n: string;
@@ -54,9 +56,10 @@ const SETUP_STEPS: SetupStep[] = [
   },
 ];
 
-export default function CockpitPage() {
+export default async function CockpitPage() {
   const skills = allSkills();
-  const topSkills = byDownloads().slice(0, 12);
+  const { ranked } = await rankedSkills();
+  const topSkills = ranked.slice(0, 12);
 
   const essentials = packByDiscipline(skills);
 
@@ -145,7 +148,7 @@ export default function CockpitPage() {
               reaching for.
             </h2>
             <p className="mt-3 text-ink/60 text-sm max-w-prose">
-              Ranked by weekly downloads. Data, not editorial.
+              Ranked by copies this week. Real usage, not editorial.
             </p>
           </div>
           <Link
@@ -163,7 +166,7 @@ export default function CockpitPage() {
             <span className="w-2.5 flex-shrink-0" aria-hidden />
             <span className="flex-1 font-mono text-[0.6rem] uppercase tracking-[0.18em] text-cream/50">Skill</span>
             <span className="hidden sm:block font-mono text-[0.6rem] uppercase tracking-[0.18em] text-cream/50 flex-shrink-0 w-28 text-right">Spice</span>
-            <span className="hidden md:block font-mono text-[0.6rem] uppercase tracking-[0.18em] text-cream/50 flex-shrink-0 w-24 text-right">This week</span>
+            <span className="hidden md:block font-mono text-[0.6rem] uppercase tracking-[0.18em] text-cream/50 flex-shrink-0 w-24 text-right">Copies</span>
             <span className="w-4 flex-shrink-0" aria-hidden />
           </div>
 
@@ -202,12 +205,10 @@ export default function CockpitPage() {
                 </span>
               ) : null}
 
-              {/* Downloads */}
-              {typeof s.downloads_week === "number" && s.downloads_week > 0 ? (
-                <span className="font-mono text-[0.72rem] uppercase tracking-[0.12em] text-ink/60 flex-shrink-0 tabular-nums hidden md:block">
-                  {s.downloads_week} this week
-                </span>
-              ) : null}
+              {/* Copies this week (real) */}
+              <span className="font-mono text-[0.72rem] uppercase tracking-[0.12em] text-ink/60 flex-shrink-0 tabular-nums hidden md:block">
+                {s.stats.copiesWeek} {s.stats.copiesWeek === 1 ? "copy" : "copies"}
+              </span>
 
               <span className="font-mono text-ink/30 group-hover:text-ink/70 transition-colors" aria-hidden>
                 →
