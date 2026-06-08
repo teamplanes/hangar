@@ -106,6 +106,29 @@ export default function HomePage() {
         </section>
       ) : null}
 
+      {/* STAY CURRENT reminder */}
+      <section className="border border-ink bg-sky px-6 sm:px-10 py-5 flex flex-col sm:flex-row sm:items-center gap-4 justify-between">
+        <div className="flex items-start gap-3">
+          <span className="text-xl leading-none" aria-hidden>↻</span>
+          <div>
+            <div className="font-mono text-[0.7rem] uppercase tracking-[0.18em] text-ink/70">
+              Already flying?
+            </div>
+            <p className="mt-1 text-[0.95rem] text-ink/85 leading-snug">
+              New skills land here often. Turn on auto-update (<code className="font-mono text-[0.85em]">/plugin</code>) so installed plugins refresh themselves, or pull now with{" "}
+              <code className="font-mono text-[0.85em]">claude plugin marketplace update</code>. Then run{" "}
+              <code className="font-mono text-[0.85em]">/hangar-general:whats-new</code> for the rundown.
+            </p>
+          </div>
+        </div>
+        <Link
+          href="/cockpit"
+          className="btn-ink font-mono uppercase tracking-[0.14em] text-sm shrink-0 self-start sm:self-auto"
+        >
+          How to stay current →
+        </Link>
+      </section>
+
       {/* LATEST */}
       <section>
         <SectionHeader

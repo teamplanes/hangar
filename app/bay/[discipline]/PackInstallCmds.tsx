@@ -6,19 +6,14 @@ import type { Discipline } from "@/lib/skills-types";
 export function PackInstallCmds({ discipline }: { discipline: Discipline }) {
   const marketplaceCmd = "claude plugin marketplace add teamplanes/hangar";
   const installCmd = `claude plugin install hangar-${discipline}@planes-hangar`;
+  const updateCmd = "/plugin";
 
-  const [copiedMarket, setCopiedMarket] = useState(false);
-  const [copiedInstall, setCopiedInstall] = useState(false);
+  const [copied, setCopied] = useState<"market" | "install" | "update" | null>(null);
 
-  function copy(text: string, which: "market" | "install") {
+  function copy(text: string, which: "market" | "install" | "update") {
     navigator.clipboard.writeText(text);
-    if (which === "market") {
-      setCopiedMarket(true);
-      setTimeout(() => setCopiedMarket(false), 2000);
-    } else {
-      setCopiedInstall(true);
-      setTimeout(() => setCopiedInstall(false), 2000);
-    }
+    setCopied(which);
+    setTimeout(() => setCopied(null), 2000);
   }
 
   return (
@@ -26,15 +21,25 @@ export function PackInstallCmds({ discipline }: { discipline: Discipline }) {
       <CmdLine
         label="1. Add The Hangar marketplace"
         cmd={marketplaceCmd}
-        copied={copiedMarket}
+        copied={copied === "market"}
         onCopy={() => copy(marketplaceCmd, "market")}
       />
       <CmdLine
         label="2. Install this plugin"
         cmd={installCmd}
-        copied={copiedInstall}
+        copied={copied === "install"}
         onCopy={() => copy(installCmd, "install")}
       />
+      <CmdLine
+        label="3. Turn on auto-update, so new skills arrive automatically"
+        cmd={updateCmd}
+        copied={copied === "update"}
+        onCopy={() => copy(updateCmd, "update")}
+      />
+      <p className="font-mono text-[0.62rem] uppercase tracking-[0.12em] text-ink/45 leading-relaxed">
+        In <span className="text-ink/70">/plugin</span> &rarr; Marketplaces &rarr; planes-hangar &rarr; enable auto-update. Then run{" "}
+        <span className="text-ink/70">/hangar-general:whats-new</span> to see what landed.
+      </p>
     </div>
   );
 }

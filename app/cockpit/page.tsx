@@ -14,6 +14,7 @@ type SetupStep = {
   n: string;
   heading: string;
   body: React.ReactNode;
+  wide?: boolean;
 };
 
 const SETUP_STEPS: SetupStep[] = [
@@ -56,6 +57,7 @@ const SETUP_STEPS: SetupStep[] = [
   },
   {
     n: "05",
+    wide: true,
     heading: "Stay up to date",
     body: (
       <>
@@ -122,16 +124,19 @@ export default async function CockpitPage() {
 
         <div className="grid sm:grid-cols-2 gap-5">
           {SETUP_STEPS.map((step) => (
-            <div key={step.n} className="border border-ink p-6 bg-cream relative">
+            <div
+              key={step.n}
+              className={`border border-ink p-6 bg-cream relative ${step.wide ? "sm:col-span-2" : ""}`}
+            >
               <div className="font-mono text-[0.65rem] uppercase tracking-[0.18em] text-ink/40 mb-3">
                 {step.n}
               </div>
               <h3 className="font-black text-[1.15rem] tracking-tight leading-snug">
                 {step.heading}
               </h3>
-              <p className="mt-3 text-[0.93rem] text-ink/75 leading-relaxed">
+              <div className="mt-3 text-[0.93rem] text-ink/75 leading-relaxed">
                 {step.body}
-              </p>
+              </div>
             </div>
           ))}
         </div>
