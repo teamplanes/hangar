@@ -14,3 +14,6 @@ tsconfig.tsbuildinfo
 desktop/
 assets/icons/build/
 assets/icons/hangar/
+
+# Dock app's isolated dev build dir
+.next-app/

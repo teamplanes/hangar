@@ -4,7 +4,7 @@
       "name": "The Hangar",
       "slug": "hangar",
       "port": 3020,
-      "start_command": "npm run dev",
+      "start_command": "npm run dev:app",
       "bundle_id": "com.planes.hangar",
       "version": "0.1.0",
       "polyfill_path": "",
