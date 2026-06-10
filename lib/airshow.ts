@@ -12,6 +12,17 @@ export type AirshowEntry = {
 
 export const AIRSHOW: AirshowEntry[] = [
   {
+    title: "Arc",
+    source: "The Browser Company",
+    sourceUrl: "https://arc.net/",
+    spottedBy: "julian",
+    spottedOn: "2026-06-10",
+    tags: ["browser", "design", "productivity"],
+    what: "A browser that rethinks the basics, with tabs in a sidebar, separate spaces for different parts of your life, and small touches like split view and quick previews.",
+    why: "A rare case of someone redesigning a thing we all take for granted, and clearly sweating every detail.",
+    color: "cream",
+  },
+  {
     title: "Cursor Composer",
     source: "Cursor",
     sourceUrl: "https://www.cursor.com",
