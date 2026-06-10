@@ -1,5 +1,5 @@
-import Link from "next/link";
 import { AIRSHOW } from "@/lib/airshow";
+import { AirshowClient } from "@/components/AirshowClient";
 import { GITHUB_NEW_FILE_BASE } from "@/lib/config";
 
 export const metadata = { title: "Airshow · The Hangar" };
@@ -22,14 +22,6 @@ const submitUrl = (() => {
   u.searchParams.set("value", TEMPLATE);
   return u.toString();
 })();
-
-const COLOR_BG: Record<string, string> = {
-  sky: "bg-sky",
-  butter: "bg-butter",
-  coral: "bg-coral",
-  mint: "bg-mint",
-  cream: "bg-cream-deep",
-};
 
 export default function AirshowPage() {
   return (
@@ -62,53 +54,7 @@ export default function AirshowPage() {
         </div>
       </section>
 
-      <section className="grid md:grid-cols-2 gap-5">
-        {AIRSHOW.map((e, i) => (
-          <article
-            key={e.title}
-            className={`paper-card border border-ink ${COLOR_BG[e.color]} p-6 sm:p-8`}
-          >
-            <div className="flex items-center justify-between gap-3 font-mono text-[0.65rem] uppercase tracking-[0.16em] text-ink/75">
-              <span>{String(i + 1).padStart(2, "0")} · {e.source}</span>
-              <span>{e.spottedOn}</span>
-            </div>
-            <h3 className="mt-3 text-2xl sm:text-[1.75rem] leading-[1.05] font-black tracking-tight">
-              {e.title}
-            </h3>
-            <p className="mt-3 text-[0.95rem] leading-relaxed text-ink/85">
-              {e.what}
-            </p>
-            <div className="mt-4 pt-4 border-t border-ink/20">
-              <div className="font-mono text-[0.65rem] uppercase tracking-[0.16em] text-ink/75">
-                Why we noticed
-              </div>
-              <p className="mt-1 serif-italic text-[1.05rem] leading-snug">
-                {e.why}
-              </p>
-            </div>
-            <div className="mt-4 flex items-center justify-between text-[0.75rem]">
-              <div className="flex flex-wrap gap-x-3 gap-y-1 font-mono text-ink/65">
-                {e.tags.slice(0, 4).map((t) => (
-                  <span key={t}>[{t}]</span>
-                ))}
-              </div>
-              <div className="font-mono text-[0.65rem] uppercase tracking-[0.14em] text-ink/65">
-                spotted by @{e.spottedBy}
-              </div>
-            </div>
-            <div className="mt-4">
-              <a
-                href={e.sourceUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-mono text-[0.72rem] uppercase tracking-[0.14em] text-ink hover:text-coral underline decoration-ink/30 underline-offset-4 hover:decoration-coral"
-              >
-                Open source ↗
-              </a>
-            </div>
-          </article>
-        ))}
-      </section>
+      <AirshowClient entries={AIRSHOW} />
     </div>
   );
 }

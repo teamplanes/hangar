@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { AVIATORS, AVIATOR_TAG_LABEL } from "@/lib/aviators";
+import { AVIATORS } from "@/lib/aviators";
 import { GITHUB_NEW_FILE_BASE } from "@/lib/config";
 
 export const metadata = { title: "Aviators · The Hangar" };
@@ -60,30 +60,18 @@ export default function AviatorsPage() {
             key={a.handle}
             className="paper-card border border-ink bg-cream p-5"
           >
-            <div className="flex items-start justify-between gap-3">
-              <div>
-                <div className="font-black text-xl leading-tight tracking-tight">
-                  {a.name}
-                </div>
-                <a
-                  href={a.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-mono text-[0.7rem] uppercase tracking-[0.14em] text-ink/65 hover:text-coral"
-                >
-                  {a.handle} ↗
-                </a>
+            <div>
+              <div className="font-black text-xl leading-tight tracking-tight">
+                {a.name}
               </div>
-              <div className="flex flex-wrap gap-1 justify-end max-w-[8rem]">
-                {a.tags.map((t) => (
-                  <span
-                    key={t}
-                    className="font-mono text-[0.6rem] uppercase tracking-[0.14em] border border-ink/40 px-1.5 py-0.5"
-                  >
-                    {AVIATOR_TAG_LABEL[t]}
-                  </span>
-                ))}
-              </div>
+              <a
+                href={a.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-mono text-[0.7rem] uppercase tracking-[0.14em] text-ink/65 hover:text-coral"
+              >
+                {a.handle} ↗
+              </a>
             </div>
             <p className="mt-4 text-[0.95rem] text-ink/80 leading-relaxed">
               {a.bio}
@@ -95,10 +83,6 @@ export default function AviatorsPage() {
               <p className="mt-1 serif-italic text-[1.05rem] leading-snug">
                 {a.why}
               </p>
-            </div>
-            <div className="mt-4 flex items-center justify-between font-mono text-[0.65rem] uppercase tracking-[0.14em] text-ink/55">
-              <span>Added by @{a.addedBy}</span>
-              <span>{a.addedOn}</span>
             </div>
           </article>
         ))}

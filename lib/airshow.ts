@@ -1,3 +1,5 @@
+export type AirshowCategory = "ai" | "craft" | "tools" | "money" | "wellbeing";
+
 export type AirshowEntry = {
   title: string;
   source: string;
@@ -5,10 +7,28 @@ export type AirshowEntry = {
   spottedBy: string;
   spottedOn: string;
   tags: string[];
+  categories: AirshowCategory[];
   what: string;
   why: string;
   color: "sky" | "butter" | "coral" | "mint" | "cream";
 };
+
+export const AIRSHOW_CATEGORY_LABEL: Record<AirshowCategory, string> = {
+  ai: "AI tools",
+  craft: "Design & craft",
+  tools: "Tools we work in",
+  money: "Money",
+  wellbeing: "Wellbeing",
+};
+
+// Display order for the filter row (All is prepended in the UI).
+export const AIRSHOW_CATEGORY_ORDER: AirshowCategory[] = [
+  "ai",
+  "craft",
+  "tools",
+  "money",
+  "wellbeing",
+];
 
 export const AIRSHOW: AirshowEntry[] = [
   {
@@ -18,6 +38,7 @@ export const AIRSHOW: AirshowEntry[] = [
     spottedBy: "julian",
     spottedOn: "2026-06-10",
     tags: ["browser", "design", "productivity"],
+    categories: ["tools", "craft"],
     what: "A browser that rethinks the basics, with tabs in a sidebar, separate spaces for different parts of your life, and small touches like split view and quick previews.",
     why: "A rare case of someone redesigning a thing we all take for granted, and clearly sweating every detail.",
     color: "cream",
@@ -29,6 +50,7 @@ export const AIRSHOW: AirshowEntry[] = [
     spottedBy: "julian",
     spottedOn: "2026-06-10",
     tags: ["product", "tools", "craft"],
+    categories: ["tools", "craft"],
     what: "Issue tracking and project planning built for speed, with keyboard-first navigation and a clear opinion about how teams should plan work.",
     why: "It moved the bar for how good an internal tool can feel. Hard to go back to anything slower.",
     color: "sky",
@@ -40,6 +62,7 @@ export const AIRSHOW: AirshowEntry[] = [
     spottedBy: "julian",
     spottedOn: "2026-06-10",
     tags: ["mac", "productivity", "ai"],
+    categories: ["tools", "ai"],
     what: "A Mac launcher that quietly replaces a dozen small tools, from clipboard history to window management, with AI and an extension store layered on top.",
     why: "A masterclass in small, well-made interactions. Every command feels like someone cared about it.",
     color: "butter",
@@ -51,6 +74,7 @@ export const AIRSHOW: AirshowEntry[] = [
     spottedBy: "julian",
     spottedOn: "2026-06-09",
     tags: ["creative", "inspiration", "design"],
+    categories: ["craft"],
     what: "A visual discovery tool for collecting and arranging images, videos and references into boards that actually look good.",
     why: "Designers tend to fall for it fast. A calmer, more beautiful way to gather inspiration.",
     color: "coral",
@@ -62,6 +86,7 @@ export const AIRSHOW: AirshowEntry[] = [
     spottedBy: "julian",
     spottedOn: "2026-06-09",
     tags: ["voice", "writing", "ai"],
+    categories: ["ai"],
     what: "Voice dictation that turns speech into clean, punctuated text in any app, fast enough to use instead of typing.",
     why: "One of those tools that feels like magic the first time. It quietly changes how you write at a desk.",
     color: "mint",
@@ -73,6 +98,7 @@ export const AIRSHOW: AirshowEntry[] = [
     spottedBy: "julian",
     spottedOn: "2026-06-09",
     tags: ["design", "diagrams", "ai"],
+    categories: ["ai", "craft"],
     what: "Paste in your writing and it generates editable diagrams and visuals to match, ready to drop into a deck or doc.",
     why: "Takes the worst part of making a deck and makes it quick. Handy whenever words need a picture.",
     color: "cream",
@@ -84,6 +110,7 @@ export const AIRSHOW: AirshowEntry[] = [
     spottedBy: "julian",
     spottedOn: "2026-06-09",
     tags: ["presentations", "design", "collaboration"],
+    categories: ["tools", "craft"],
     what: "Presentation software built for teams, with sharp templates, real-time collaboration and a level of polish most deck tools skip.",
     why: "Proof that deck software doesn't have to feel dated. The defaults alone make better-looking slides.",
     color: "butter",
@@ -95,6 +122,7 @@ export const AIRSHOW: AirshowEntry[] = [
     spottedBy: "julian",
     spottedOn: "2026-05-22",
     tags: ["coding", "agents", "ide"],
+    categories: ["ai", "tools"],
     what: "Multi-file agent inside the editor. You describe an intent across the whole repo and it edits, runs, and iterates until tests pass.",
     why: "Feels like the first version of an AI pair that actually understands a codebase. Worth seeing how they made the diff review feel safe.",
     color: "sky",
@@ -106,6 +134,7 @@ export const AIRSHOW: AirshowEntry[] = [
     spottedBy: "julian",
     spottedOn: "2026-05-19",
     tags: ["meetings", "notes", "audio"],
+    categories: ["ai", "tools"],
     what: "Meeting notes that combine your hand-typed shorthand with full audio transcription. The output is a single doc that reads like your notes, only better.",
     why: "Beautifully restrained AI. Doesn't try to take over the meeting, helps you write the note you would have written.",
     color: "butter",
@@ -117,6 +146,7 @@ export const AIRSHOW: AirshowEntry[] = [
     spottedBy: "julian",
     spottedOn: "2026-06-09",
     tags: ["analytics", "product", "open-source"],
+    categories: ["tools"],
     what: "An all-in-one product analytics platform that bundles event tracking, session replay, feature flags and experiments, with an AI layer that pulls insights and builds experiments from a plain question.",
     why: "It does a lot, but what stays with you is the brand. It is opinionated, funny, and clearly made by the people who use it.",
     color: "coral",
@@ -128,6 +158,7 @@ export const AIRSHOW: AirshowEntry[] = [
     spottedBy: "julian",
     spottedOn: "2026-06-08",
     tags: ["creative", "webgl", "studio"],
+    categories: ["craft"],
     what: "A Bristol studio making award-winning interactive web work, mixing 3D, motion and development into sites that feel closer to an experience than a page.",
     why: "Reference-grade craft for the web. Worth a look whenever you need reminding how high the bar can go.",
     color: "mint",
@@ -139,6 +170,7 @@ export const AIRSHOW: AirshowEntry[] = [
     spottedBy: "julian",
     spottedOn: "2026-05-15",
     tags: ["image", "generative", "creative"],
+    categories: ["ai", "craft"],
     what: "Generates images at the speed you can sketch. Draw a rough shape and a finished illustration appears as you move.",
     why: "Wired generative AI directly into the hand. Feels less like a tool and more like an instrument.",
     color: "cream",
@@ -150,6 +182,7 @@ export const AIRSHOW: AirshowEntry[] = [
     spottedBy: "julian",
     spottedOn: "2026-06-07",
     tags: ["fintech", "mobile", "money"],
+    categories: ["money"],
     what: "A mobile app that helps you pay off your mortgage sooner, rounding up spending and turning retailer cashback into overpayments, with remortgage deals built in.",
     why: "A clear, single job done well. It takes something dull and a little scary and makes it feel manageable.",
     color: "sky",
@@ -161,6 +194,7 @@ export const AIRSHOW: AirshowEntry[] = [
     spottedBy: "julian",
     spottedOn: "2026-06-06",
     tags: ["design", "interface", "speculative"],
+    categories: ["craft"],
     what: "A gallery of twenty working interfaces from imagined futures by designer Annas Rahman, from terraforming consoles to particle accelerators, all interactive and free to poke at.",
     why: "A lovely bit of speculative interface design. Good fuel when you want to push past the obvious layout.",
     color: "butter",
@@ -172,6 +206,7 @@ export const AIRSHOW: AirshowEntry[] = [
     spottedBy: "julian",
     spottedOn: "2026-06-05",
     tags: ["simulation", "finance", "learning"],
+    categories: ["money"],
     what: "A simulation that drops you in as the interim CFO of a struggling company, making real calls on M&A, board dynamics and cash, with feedback after each decision.",
     why: "A smart use of simulation for learning. You practise the hard decisions somewhere they don't cost anything.",
     color: "mint",
@@ -183,6 +218,7 @@ export const AIRSHOW: AirshowEntry[] = [
     spottedBy: "julian",
     spottedOn: "2026-06-04",
     tags: ["wellbeing", "focus", "mobile"],
+    categories: ["wellbeing"],
     what: "A screen-time app built around blocks you can't easily skip, so cutting down on doomscrolling leans on friction you set up in advance rather than willpower.",
     why: "It understands that the honest fix is making the bad habit harder, not nagging you about it.",
     color: "coral",
@@ -194,6 +230,7 @@ export const AIRSHOW: AirshowEntry[] = [
     spottedBy: "julian",
     spottedOn: "2026-05-05",
     tags: ["email", "summarisation", "productivity"],
+    categories: ["ai", "tools"],
     what: "Inbox triage that writes a one-line summary of every thread, drafts a reply in your tone, and surfaces what needs you today.",
     why: "Restraint as a feature. Doesn't summarise everything, only what you would have skimmed.",
     color: "coral",
