@@ -12,13 +12,13 @@ export function PromptCheckerClient() {
 
   const verdict = !text.trim()
     ? "Paste a prompt to see what's missing."
-    : score >= 85
-      ? "Very tight. Ship it."
-      : score >= 60
-        ? "Solid. A couple of tweaks would sharpen it."
-        : score >= 35
-          ? "Workable, but you'll get an average answer."
-          : "Loose. Add specificity before you send.";
+    : score >= 100
+      ? "Tight. This gives Claude what it needs."
+      : score >= 75
+        ? "Strong. One more detail would sharpen it."
+        : score >= 50
+          ? "Workable. Add what's missing for a better answer."
+          : "Thin. Claude will have to fill the gaps itself.";
 
   return (
     <div className="grid lg:grid-cols-[1.4fr_1fr] gap-8">
@@ -90,7 +90,7 @@ export function PromptCheckerClient() {
         </ul>
 
         <p className="mt-5 font-mono text-[0.65rem] uppercase tracking-[0.14em] text-ink/55 leading-relaxed">
-          This is a rule-of-thumb checklist, not an LLM call. It flags what's missing. Pasting your prompt into Claude with the checklist applied does the rest.
+          A quick rule-of-thumb check, not an AI call. It catches the obvious gaps but can't read your pasted material the way Claude will. Treat it as a nudge, then let Claude do the rest.
         </p>
       </aside>
     </div>
