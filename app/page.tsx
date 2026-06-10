@@ -99,7 +99,7 @@ export default function HomePage() {
       ) : null}
 
       {/* STAY CURRENT reminder */}
-      <section className="border border-ink bg-sky px-6 sm:px-10 py-7 grid lg:grid-cols-[1fr_auto] gap-6 lg:gap-10 items-center">
+      <section className="!mt-12 border border-ink bg-sky px-6 sm:px-10 py-7 grid lg:grid-cols-[1fr_auto] gap-6 lg:gap-10 items-center">
         <div>
           <div className="font-mono text-[0.7rem] uppercase tracking-[0.18em] text-ink/70">
             Already flying?
@@ -121,7 +121,7 @@ export default function HomePage() {
       </section>
 
       {/* LATEST */}
-      <section>
+      <section className="!mt-12">
         <SectionHeader
           kicker="01 / Recently hangared"
           title={
