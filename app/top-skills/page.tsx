@@ -24,9 +24,8 @@ export default async function TopSkillsPage() {
               Skills
             </h1>
             <p className="mt-4 max-w-prose text-[1.05rem] text-ink/85">
-              Ranked by how often people copy each skill&apos;s body this week, the
-              closest real signal we have to what the studio actually reaches for.
-              Updates live.
+              Ranked by how often people copy each skill&apos;s body this week.
+              Updates live as the studio reach for new skills.
             </p>
           </div>
           <div className="flex flex-col sm:items-end gap-2">

@@ -38,7 +38,7 @@ export default function AviatorsPage() {
               Worth following
             </h1>
             <p className="mt-4 max-w-prose text-[1.05rem] text-ink/85">
-              People we read, listen to and steal from. A curated short-list across writing, research, design and engineering. Updated when the studio finds someone new.
+              People we read, listen to and borrow from. A curated short-list across writing, research, design and engineering. Updated when the studio finds someone new.
             </p>
             <div className="mt-6">
               <a

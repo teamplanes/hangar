@@ -86,11 +86,10 @@ export default function FlightTipsPage() {
             02 / Try yours
           </div>
           <h2 className="mt-2 text-[2rem] sm:text-[2.5rem] leading-tight font-black tracking-tight">
-            Score a{" "}
-            <span className="serif-italic font-normal">real</span> one
+            Score a real one
           </h2>
           <p className="mt-3 max-w-prose text-ink/80">
-            Paste a prompt you'd actually send. The checker flags what's missing. It won't rewrite for you, that's your job (or Claude's).
+            Paste a prompt you&apos;d send for real and the checker flags what&apos;s missing. It won&apos;t rewrite it for you, that part is your job (or Claude&apos;s).
           </p>
         </div>
         <PromptCheckerClient />

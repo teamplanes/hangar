@@ -22,12 +22,21 @@ const SETUP_STEPS: SetupStep[] = [
   {
     n: "01",
     heading: "Pick the right model",
-    body: "Sonnet handles 90% of what you'll throw at it and won't keep you waiting. Move to Opus when the task demands it: deep research, complex code, writing that has to be genuinely good. Opus is a deliberate choice. Not the default.",
+    body: "Sonnet handles 90% of what you'll throw at it and won't keep you waiting. Move to Opus when the task demands it: deep research, complex code, writing that relies on nuance and context.",
   },
   {
     n: "02",
     heading: "Give every project a memory",
-    body: "Add a CLAUDE.md to any Claude Code project, or a context.md for Claude.ai. Write down what the project is, who it's for, what to avoid. Claude reads it at the start of every session. No repeating yourself.",
+    body: (
+      <>
+        <p>
+          A CLAUDE.md file (or a context.md on Claude.ai) tells Claude what the project is, who it&apos;s for, and what to steer clear of. Claude reads it at the start of every session, so you&apos;re not re-explaining the basics each time.
+        </p>
+        <p className="mt-3">
+          You don&apos;t have to write it by hand. Ask Claude to draft one for you, and do it in plan mode so it proposes the file before writing anything. To switch into plan mode in Claude Code, press <code>Shift+Tab</code> until it shows.
+        </p>
+      </>
+    ),
   },
   {
     n: "03",
@@ -46,7 +55,7 @@ const SETUP_STEPS: SetupStep[] = [
           </code>
         </div>
         <p className="mt-3">
-          Swap the bay name for your discipline. Skills land as slash commands and survive between sessions. No re-pasting.
+          Swap the bay name for your discipline. Skills land as slash commands and stay available between sessions, so there&apos;s nothing to paste back in.
         </p>
       </>
     ),
@@ -54,7 +63,7 @@ const SETUP_STEPS: SetupStep[] = [
   {
     n: "04",
     heading: "Use Projects for ongoing client work",
-    body: "Claude.ai Projects keep your work in one place between sessions. Drop in brand guidelines, research docs, briefs. Whatever Claude needs to stay sharp for that client. One project per client or workstream.",
+    body: "On Claude.ai, a Project keeps everything for a piece of work in one place between sessions. Drop in the brand guidelines, research and briefs that Claude needs to stay useful for that client, and it'll have them to hand every time you pick the work back up. We tend to keep one Project per client or workstream.",
   },
   {
     n: "05",
@@ -82,9 +91,6 @@ const SETUP_STEPS: SetupStep[] = [
           <CommandBox label="Update one plugin" cmd="claude plugin update hangar-<bay>" />
           <CommandBox label="See what landed" cmd="/hangar-general:whats-new" />
         </div>
-        <p className="mt-3 text-[0.85rem] text-ink/60">
-          Whole team? Drop our <code>.claude/settings.json</code> into a repo and everyone gets it on auto-update.
-        </p>
       </>
     ),
   },
@@ -130,7 +136,7 @@ export default async function CockpitPage() {
             your cockpit
           </h2>
           <p className="mt-3 text-ink/70 max-w-prose">
-            Five things that change how well Claude works for you. Do them once.
+            How to get started with Claude Code, and install your first skills
           </p>
         </div>
 
@@ -164,9 +170,6 @@ export default async function CockpitPage() {
             <span className="serif-italic font-normal italic">The skills</span>{" "}
             worth installing
           </h2>
-          <p className="mt-3 text-ink/70 max-w-prose">
-            Picked by discipline. Start with General, add your bay on top.
-          </p>
         </div>
 
         <EssentialSkillsTabs essentials={essentials} />
@@ -184,7 +187,7 @@ export default async function CockpitPage() {
               actually reaching for
             </h2>
             <p className="mt-3 text-ink/60 text-sm max-w-prose">
-              Ranked by copies this week. Real usage, not editorial.
+              Ranked by the number of times people view and copy skills over the last week.
             </p>
           </div>
           <Link

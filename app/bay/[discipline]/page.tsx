@@ -15,12 +15,12 @@ export function generateStaticParams() {
 }
 
 const BAY_LEAD: Record<Discipline, string> = {
-  product: "How we shape and ship product. Discovery, JTBDs, roadmap moves.",
-  design: "Briefs, critiques, systems. How we run the work.",
+  product: "How we shape and ship product. Skills to help with discovery, JTBDs, research synthesis and more.",
+  design: "Briefs, critiques, copy tips... how Claude supports our creative process.",
   dev: "Building and reviewing code with Claude.",
-  "new-business": "Pitches, credentials, response writing. Say something. Win.",
-  general: "Cross-discipline moves. Useful in every bay.",
-  "just-for-fun": "No agenda. No deliverables. Just good prompts worth having.",
+  "new-business": "Pitches, credentials, response writing, relationship building.",
+  general: "Cross-discipline skills, useful in every bay.",
+  "just-for-fun": "No agenda. No deliverables. Just good skills worth having.",
 };
 
 export default async function BayPage({

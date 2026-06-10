@@ -46,7 +46,7 @@ export default function AirshowPage() {
               Look what's flying
             </h1>
             <p className="mt-4 max-w-prose text-[1.05rem] text-ink/85">
-              Things people in the studio have spotted out there. Products, demos, posts, and tools we want everyone to see. Not ours. Worth knowing.
+              Things people in the studio have spotted that have inspired us: products, demos, posts, and tools worth knowing.
             </p>
             <div className="mt-6">
               <a
