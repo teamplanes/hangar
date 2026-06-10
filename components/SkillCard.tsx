@@ -3,6 +3,7 @@ import { type Skill, DISCIPLINE_LABEL, summary } from "@/lib/skills-types";
 import { CARD_BG, CARD_INK } from "@/components/disciplineStyles";
 import { PaperPlane } from "@/components/PaperPlane";
 import { SpiceChip } from "@/components/SpiceMeter";
+import { ProvenanceTag } from "@/components/Provenance";
 
 const TYPE_LABEL: Record<Skill["type"], string> = {
   prompt: "Prompt",
@@ -17,7 +18,6 @@ export function SkillCard({
   skill: Skill;
   variant?: "paper" | "color";
 }) {
-  const isCurated = skill.source?.kind === "curated";
   const isColor = variant === "color";
   const inPack = !!skill.pack;
 
@@ -60,12 +60,11 @@ export function SkillCard({
         {summary(skill, 160)}
       </p>
 
-      {/* Stat strip */}
-      {skill.spice ? (
-        <div className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-1 text-[0.7rem]">
-          <SpiceChip spice={skill.spice} />
-        </div>
-      ) : null}
+      {/* Stat strip: provenance always, spice when set */}
+      <div className="mt-5 flex flex-wrap items-center gap-2 gap-y-1.5 text-[0.7rem]">
+        <ProvenanceTag skill={skill} />
+        {skill.spice ? <SpiceChip spice={skill.spice} /> : null}
+      </div>
 
       {/* Meta row */}
       <div className="mt-4 flex items-center justify-between gap-3 text-[0.8rem]">
@@ -77,21 +76,8 @@ export function SkillCard({
           ))}
         </div>
         <span className="font-mono text-[0.7rem] uppercase tracking-[0.12em] text-ink/70 inline-flex items-center gap-1">
-          {isCurated ? (
-            <>
-              <span className="serif-italic normal-case tracking-normal text-ink">
-                curated
-              </span>
-              <span aria-hidden>↗</span>
-            </>
-          ) : (
-            <>
-              <span className="serif-italic normal-case tracking-normal text-ink">
-                read
-              </span>
-              <span aria-hidden>→</span>
-            </>
-          )}
+          <span className="serif-italic normal-case tracking-normal text-ink">read</span>
+          <span aria-hidden>→</span>
         </span>
       </div>
     </Link>

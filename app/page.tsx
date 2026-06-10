@@ -129,6 +129,23 @@ export default function HomePage() {
         </Link>
       </section>
 
+      {/* PROVENANCE LEGEND */}
+      <section className="flex flex-wrap items-center gap-x-5 gap-y-2 text-[0.72rem] text-ink/70">
+        <span className="font-mono uppercase tracking-[0.14em] text-ink/50">Every skill is tagged:</span>
+        <span className="inline-flex items-center gap-1.5">
+          <span className="inline-block w-2.5 h-2.5 border border-ink/50 bg-mint" aria-hidden />
+          <span><b className="font-semibold">Made at Planes</b> , from scratch</span>
+        </span>
+        <span className="inline-flex items-center gap-1.5">
+          <span className="inline-block w-2.5 h-2.5 border border-ink/50 bg-butter" aria-hidden />
+          <span><b className="font-semibold">Adapted by Planes</b> , reworked from elsewhere</span>
+        </span>
+        <span className="inline-flex items-center gap-1.5">
+          <span className="inline-block w-2.5 h-2.5 border border-ink/50 bg-sky" aria-hidden />
+          <span><b className="font-semibold">Found &amp; shared</b> , used as-is</span>
+        </span>
+      </section>
+
       {/* LATEST */}
       <section>
         <SectionHeader

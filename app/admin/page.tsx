@@ -5,6 +5,7 @@ import { PluginToggle } from "./PluginToggle";
 import { AdminLogin } from "./AdminLogin";
 import { SignOut } from "./SignOut";
 import { SpiceChip } from "@/components/SpiceMeter";
+import { provenanceMeta } from "@/components/Provenance";
 import { isAdmin, adminConfigured } from "@/lib/admin-auth";
 
 export const metadata = { title: "Admin · The Hangar" };
@@ -78,8 +79,8 @@ export default async function AdminPage() {
                   {s.spice ? <SpiceChip spice={s.spice} /> : <span className="text-ink/30">-</span>}
                 </td>
                 <td className="px-4 py-2.5 hidden lg:table-cell">
-                  <span className="font-mono text-[0.65rem] uppercase tracking-[0.12em] text-ink/50">
-                    {s.source?.kind ?? "original"}
+                  <span className="font-mono text-[0.65rem] uppercase tracking-[0.12em] text-ink/60">
+                    {provenanceMeta(s).label}
                   </span>
                 </td>
               </tr>

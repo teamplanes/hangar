@@ -9,8 +9,12 @@ export type Discipline =
 export type SkillType = "prompt" | "skill" | "recipe";
 export type SkillStatus = "draft" | "stable" | "needs-review";
 
+// Provenance:
+//   original = made from scratch by someone at Planes
+//   adapted  = found elsewhere, reworked to suit how we work
+//   curated  = found on the web, shared as-is
 export type SkillSource = {
-  kind: "original" | "curated";
+  kind: "original" | "adapted" | "curated";
   url?: string;
   credit?: string;
 };

@@ -9,6 +9,7 @@ import { Markdown } from "@/components/Markdown";
 import { GiscusStub } from "@/components/Giscus";
 import { CopyButton } from "@/components/CopyButton";
 import { ViewTracker } from "@/components/ViewTracker";
+import { ProvenanceBlock } from "@/components/Provenance";
 import { CARD_BG, SWATCH_CLASS } from "@/components/disciplineStyles";
 import { PaperPlane } from "@/components/PaperPlane";
 import { SkillStatsRail } from "@/components/SkillStats";
@@ -149,45 +150,7 @@ export default async function SkillPage({
           </div>
         </div>
 
-        <div className="border border-ink bg-cream p-6">
-          <div className="font-mono text-[0.7rem] uppercase tracking-[0.18em] text-ink/70 mb-3">
-            Source
-          </div>
-          {skill.source?.kind === "curated" ? (
-            <div className="space-y-2 text-sm">
-              <div className="inline-flex items-center gap-1.5 text-ink">
-                <span aria-hidden>↗</span>
-                <span className="serif-italic text-base">
-                  Curated from elsewhere
-                </span>
-              </div>
-              {skill.source.credit ? (
-                <div className="text-ink/80">
-                  <span className="font-mono text-[0.7rem] uppercase tracking-[0.14em] text-ink/60 mr-2">
-                    Credit
-                  </span>
-                  <span className="font-medium">{skill.source.credit}</span>
-                </div>
-              ) : null}
-              {skill.source.url ? (
-                <div className="break-words">
-                  <a
-                    href={skill.source.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-ink underline decoration-ink/30 hover:decoration-coral text-sm"
-                  >
-                    {skill.source.url}
-                  </a>
-                </div>
-              ) : null}
-            </div>
-          ) : (
-            <div className="serif-italic text-lg text-ink">
-              Written at Planes.
-            </div>
-          )}
-        </div>
+        <ProvenanceBlock skill={skill} />
 
         <div className="border border-ink bg-cream p-6">
           <div className="font-mono text-[0.7rem] uppercase tracking-[0.18em] text-ink/70 mb-3">
