@@ -32,6 +32,18 @@ export const AIRSHOW_CATEGORY_ORDER: AirshowCategory[] = [
 
 export const AIRSHOW: AirshowEntry[] = [
   {
+    title: "Stonk Rider",
+    source: "Stonk Rider",
+    sourceUrl: "https://stonkrider.com/",
+    spottedBy: "julian",
+    spottedOn: "2026-06-10",
+    tags: ["fun", "finance", "interactive"],
+    categories: ["money", "craft"],
+    what: "Ride any stock chart like a Line Rider track. Pick a ticker and a little motocross bike runs the real price line, backflipping up the rallies and piling up through the crashes.",
+    why: "A straight lift of Line Rider, the hit game from fifteen years ago, pointed at real market data. The kind of small, silly idea that lands because it is built so well.",
+    color: "coral",
+  },
+  {
     title: "Arc",
     source: "The Browser Company",
     sourceUrl: "https://arc.net/",
