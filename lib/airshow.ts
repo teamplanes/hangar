@@ -1,4 +1,10 @@
-export type AirshowCategory = "ai" | "craft" | "tools" | "money" | "wellbeing";
+export type AirshowCategory =
+  | "ai"
+  | "craft"
+  | "play"
+  | "tools"
+  | "money"
+  | "wellbeing";
 
 export type AirshowEntry = {
   title: string;
@@ -16,6 +22,7 @@ export type AirshowEntry = {
 export const AIRSHOW_CATEGORY_LABEL: Record<AirshowCategory, string> = {
   ai: "AI tools",
   craft: "Design & craft",
+  play: "Just for fun",
   tools: "Tools we work in",
   money: "Money",
   wellbeing: "Wellbeing",
@@ -25,6 +32,7 @@ export const AIRSHOW_CATEGORY_LABEL: Record<AirshowCategory, string> = {
 export const AIRSHOW_CATEGORY_ORDER: AirshowCategory[] = [
   "ai",
   "craft",
+  "play",
   "tools",
   "money",
   "wellbeing",
@@ -38,10 +46,70 @@ export const AIRSHOW: AirshowEntry[] = [
     spottedBy: "julian",
     spottedOn: "2026-06-10",
     tags: ["fun", "finance", "interactive"],
-    categories: ["money", "craft"],
+    categories: ["money", "play"],
     what: "Ride any stock chart like a Line Rider track. Pick a ticker and a little motocross bike runs the real price line, backflipping up the rallies and piling up through the crashes.",
     why: "A straight lift of Line Rider, the hit game from fifteen years ago, pointed at real market data. The kind of small, silly idea that lands because it is built so well.",
     color: "coral",
+  },
+  {
+    title: "Neal.fun",
+    source: "Neal Agarwal",
+    sourceUrl: "https://neal.fun/",
+    spottedBy: "julian",
+    spottedOn: "2026-06-10",
+    tags: ["toys", "interactive", "web"],
+    categories: ["play"],
+    what: "A long-running collection of interactive toys from Neal Agarwal, like scrolling to the bottom of the deep sea, spending Bill Gates' money, or beating The Password Game.",
+    why: "The benchmark for the well-made web toy. Each one is a tiny, complete idea that someone clearly had fun building.",
+    color: "butter",
+  },
+  {
+    title: "Infinite Craft",
+    source: "Neal Agarwal",
+    sourceUrl: "https://neal.fun/infinite-craft/",
+    spottedBy: "julian",
+    spottedOn: "2026-06-10",
+    tags: ["ai", "game", "generative"],
+    categories: ["play", "ai"],
+    what: "Drag two things together and an AI invents whatever they would combine into, starting from earth, wind, fire and water and spiralling out from there.",
+    why: "A lovely example of AI as a toy rather than a tool. Easy to lose half an hour to it.",
+    color: "mint",
+  },
+  {
+    title: "Radio Garden",
+    source: "Radio Garden",
+    sourceUrl: "https://radio.garden/",
+    spottedBy: "julian",
+    spottedOn: "2026-06-10",
+    tags: ["audio", "map", "radio"],
+    categories: ["play"],
+    what: "Spin a globe dotted with green points and tune straight into a live local radio station anywhere on earth.",
+    why: "A simple idea done beautifully. Surprisingly moving to drop in on a late-night station on the other side of the world.",
+    color: "sky",
+  },
+  {
+    title: "Window Swap",
+    source: "Window Swap",
+    sourceUrl: "https://www.window-swap.com/",
+    spottedBy: "julian",
+    spottedOn: "2026-06-10",
+    tags: ["calm", "video", "web"],
+    categories: ["play"],
+    what: "Open a new window and you are looking out of a stranger's, somewhere in the world, for as long as you like.",
+    why: "Calm rather than silly. A small reminder that the web can slow you down as well as speed you up.",
+    color: "cream",
+  },
+  {
+    title: "Bruno Simon",
+    source: "Bruno Simon",
+    sourceUrl: "https://bruno-simon.com/",
+    spottedBy: "julian",
+    spottedOn: "2026-06-10",
+    tags: ["webgl", "3d", "portfolio"],
+    categories: ["play", "craft"],
+    what: "A personal portfolio you explore by driving a little toy car around a 3D world, bumping into the projects as you go.",
+    why: "The site everyone points to when they talk about playful web craft. It still holds up years later.",
+    color: "butter",
   },
   {
     title: "Arc",
