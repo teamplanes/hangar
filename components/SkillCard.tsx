@@ -54,14 +54,7 @@ export function SkillCard({
       </div>
 
       {/* Meta row */}
-      <div className="mt-4 flex items-center justify-between gap-3 text-[0.8rem]">
-        <div className="flex flex-wrap gap-x-3 gap-y-1 text-ink/65">
-          {(skill.tags ?? []).slice(0, 3).map((t) => (
-            <span key={t} className="font-mono">
-              [{t}]
-            </span>
-          ))}
-        </div>
+      <div className="mt-4 flex items-center justify-end gap-3 text-[0.8rem]">
         <span className="font-mono text-[0.7rem] uppercase tracking-[0.12em] text-ink/70 inline-flex items-center gap-1">
           <span className="serif-italic normal-case tracking-normal text-ink">read</span>
           <span aria-hidden>→</span>
