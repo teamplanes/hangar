@@ -109,10 +109,10 @@ export function FlightSchoolMenu({ active = false }: { active?: boolean }) {
                   href={item.href}
                   onClick={() => setOpen(false)}
                   role="menuitem"
-                  className="block px-5 py-4 hover:bg-butter transition-colors"
+                  className="block px-5 py-3.5 hover:bg-butter transition-colors"
                 >
                   <div className="flex items-baseline justify-between gap-3">
-                    <span className="font-sans font-semibold text-[1.05rem] tracking-tight text-ink normal-case">
+                    <span className="font-sans font-semibold text-[1.0rem] tracking-tight text-ink normal-case">
                       {item.label}
                     </span>
                     <span
@@ -122,7 +122,7 @@ export function FlightSchoolMenu({ active = false }: { active?: boolean }) {
                       →
                     </span>
                   </div>
-                  <div className="mt-0.5 serif-italic text-[0.95rem] text-ink/70 normal-case tracking-normal leading-snug">
+                  <div className="mt-0.5 text-[0.88rem] text-ink/60 normal-case tracking-normal leading-snug">
                     {item.blurb}
                   </div>
                 </Link>
