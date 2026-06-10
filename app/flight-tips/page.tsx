@@ -14,8 +14,8 @@ export default function FlightTipsPage() {
               Flight school
             </div>
             <h1 className="mt-3 text-[2.5rem] sm:text-[3.5rem] lg:text-[4rem] leading-[0.96] font-black tracking-tight">
-              Flight{" "}
-              <span className="serif-italic font-normal italic">Tips</span>
+              <span className="serif-italic font-normal italic">Flight</span>{" "}
+              Tips
             </h1>
             <p className="mt-4 max-w-prose text-[1.05rem] text-ink/80">
               Sharper prompts get sharper answers. Six worked examples below, then a checker that scores your own prompt against the rules of thumb the studio uses.

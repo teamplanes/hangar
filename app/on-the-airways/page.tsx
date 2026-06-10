@@ -38,8 +38,8 @@ export default function OnTheAirwaysPage() {
               Flight school
             </div>
             <h1 className="mt-3 text-[2.5rem] sm:text-[3.5rem] lg:text-[4rem] leading-[0.96] font-black tracking-tight">
-              On the{" "}
-              <span className="serif-italic font-normal italic">airways</span>
+              <span className="serif-italic font-normal italic">On the</span>{" "}
+              airways
             </h1>
             <p className="mt-4 max-w-prose text-[1.05rem] text-ink/85">
               A curated stream of what's worth reading this week from the people the studio already trusts. Vote on sources. Submit your own write-ups to the second feed.

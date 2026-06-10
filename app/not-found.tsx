@@ -8,7 +8,7 @@ export default function NotFound() {
         404
       </div>
       <h1 className="mt-4 text-[3rem] sm:text-[4rem] leading-[0.98] font-black tracking-tight">
-        Nothing in <span className="serif-italic font-normal">this</span> bay
+        <span className="serif-italic font-normal">Nothing</span> in this bay
       </h1>
       <p className="mt-4 text-ink/75">
         The skill you're looking for hasn't been hangared yet.

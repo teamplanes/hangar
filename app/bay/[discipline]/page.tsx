@@ -37,7 +37,7 @@ export default async function BayPage({
   const hasPack = packSkills.length > 0;
 
   return (
-    <div className="space-y-4">
+    <div>
       {/* Hero: bay colour, full width */}
       <section className={`border border-ink ${CARD_BG[d]}`}>
         <div className="px-8 sm:px-12 lg:px-16 py-10 lg:py-14 grid lg:grid-cols-[1.4fr_1fr] gap-8 items-end">
@@ -50,8 +50,8 @@ export default async function BayPage({
               Bay
             </div>
             <h1 className="mt-3 text-[2.5rem] sm:text-[3.5rem] lg:text-[4rem] leading-[0.96] font-black tracking-tight">
-              {DISCIPLINE_LABEL[d]}{" "}
-              <span className="serif-italic font-normal italic">bay</span>
+              <span className="serif-italic font-normal italic">{DISCIPLINE_LABEL[d]}</span>{" "}
+              bay
             </h1>
             <p className="mt-4 max-w-prose text-[1.05rem] text-ink/80">
               {BAY_LEAD[d]}
@@ -116,11 +116,8 @@ export default async function BayPage({
                   Plugin
                 </div>
                 <h2 className="text-[1.5rem] sm:text-[1.8rem] font-black tracking-tight leading-tight">
-                  The{" "}
-                  <span className="serif-italic font-normal italic">
-                    {DISCIPLINE_LABEL[d]}
-                  </span>{" "}
-                  plugin
+                  <span className="serif-italic font-normal italic">The</span>{" "}
+                  {DISCIPLINE_LABEL[d]} plugin
                 </h2>
                 <p className="mt-2 text-[0.93rem] text-ink/70 max-w-prose">
                   {packSkills.length} curated skill

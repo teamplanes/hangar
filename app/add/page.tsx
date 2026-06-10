@@ -12,8 +12,8 @@ export default function AddPage() {
               Contribute
             </div>
             <h1 className="mt-3 text-[2.5rem] sm:text-[3.5rem] lg:text-[4rem] leading-[0.96] font-black tracking-tight">
-              Add to the{" "}
-              <span className="serif-italic font-normal italic">Hangar</span>
+              <span className="serif-italic font-normal italic">Add</span>{" "}
+              to the Hangar
             </h1>
             <p className="mt-4 max-w-prose text-[1.05rem] text-ink/85">
               Bring something you wrote. Or something good you've spotted. Submission opens a pre-filled PR on GitHub. Credit goes back to the original author.

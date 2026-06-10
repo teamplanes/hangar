@@ -23,11 +23,8 @@ export default function HomePage() {
         <div className="grid lg:grid-cols-[1.55fr_1fr]">
           <div className="p-8 sm:p-12 lg:p-16 relative overflow-hidden">
             <h1 className="mt-2 text-[2.5rem] sm:text-[3.5rem] lg:text-[4.25rem] leading-[0.96] tracking-tight font-black text-ink anim-rise" style={{ animationDelay: "60ms" }}>
-              The skills and prompts{" "}
-              <span className="serif-italic font-normal italic">
-                working at Planes
-              </span>{" "}
-              right now
+              <span className="serif-italic font-normal italic">The</span>{" "}
+              skills and prompts working at Planes right now
             </h1>
 
             <p className="mt-7 max-w-prose text-[1.05rem] text-ink/80 leading-relaxed anim-rise" style={{ animationDelay: "160ms" }}>
@@ -129,7 +126,7 @@ export default function HomePage() {
           kicker="01 / Recently hangared"
           title={
             <>
-              Latest <span className="serif-italic font-normal">drops</span>
+              <span className="serif-italic font-normal">Latest</span> drops
             </>
           }
           link={{ href: "/search", label: "Browse the catalogue" }}
@@ -159,8 +156,8 @@ export default function HomePage() {
               kicker={`0${idx + 2} / ${DISCIPLINE_LABEL[d]}`}
               title={
                 <>
-                  {DISCIPLINE_LABEL[d]}{" "}
-                  <span className="serif-italic font-normal">bay</span>
+                  <span className="serif-italic font-normal">{DISCIPLINE_LABEL[d]}</span>{" "}
+                  bay
                 </>
               }
               swatchClass={SWATCH_CLASS[d]}

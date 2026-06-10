@@ -12,7 +12,7 @@ export default function SearchPage() {
           Catalogue
         </div>
         <h1 className="mt-3 text-[2.5rem] sm:text-[3rem] leading-[0.98] font-black tracking-tight">
-          Find a <span className="serif-italic font-normal">specific</span> skill
+          <span className="serif-italic font-normal">Find</span> a specific skill
         </h1>
         <p className="mt-3 text-ink/75">
           Live filter across every bay. Search title, tag, body, even the
