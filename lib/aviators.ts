@@ -20,16 +20,6 @@ export type Aviator = {
 
 export const AVIATORS: Aviator[] = [
   {
-    name: "Simon Willison",
-    handle: "@simonw",
-    link: "https://simonwillison.net",
-    tags: ["writer", "builder"],
-    bio: "Maker of Datasette and the LLM command-line tool. Writes a near-daily blog working through what AI can and can't do yet.",
-    why: "He tries everything and writes it up plainly, so it's an easy way to keep up.",
-    addedBy: "julian",
-    addedOn: "2026-05-04",
-  },
-  {
     name: "Ethan Mollick",
     handle: "@emollick",
     link: "https://www.oneusefulthing.org",
@@ -90,16 +80,6 @@ export const AVIATORS: Aviator[] = [
     addedOn: "2026-06-09",
   },
   {
-    name: "John Maeda",
-    handle: "@johnmaeda",
-    link: "https://maeda.pm",
-    tags: ["designer", "writer"],
-    bio: "Designer and technologist who wrote The Laws of Simplicity and tracks where design and technology meet in his Design in Tech reports.",
-    why: "He is good at explaining where design, code and business overlap, without assuming you are an engineer.",
-    addedBy: "julian",
-    addedOn: "2026-06-09",
-  },
-  {
     name: "Shawn Wang (swyx)",
     handle: "@swyx",
     link: "https://www.latent.space",
@@ -108,26 +88,6 @@ export const AVIATORS: Aviator[] = [
     why: "A good single source if you want to keep up with the AI industry as a whole.",
     addedBy: "julian",
     addedOn: "2026-05-10",
-  },
-  {
-    name: "Linus Lee",
-    handle: "@thesephist",
-    link: "https://thesephist.com",
-    tags: ["builder", "researcher"],
-    bio: "Researcher and engineer at Notion who is always building strange little tools and sharing them.",
-    why: "Watch one of his demos and you'll want to go make something the same evening.",
-    addedBy: "julian",
-    addedOn: "2026-05-07",
-  },
-  {
-    name: "Geoffrey Litt",
-    handle: "@geoffreylitt",
-    link: "https://www.geoffreylitt.com",
-    tags: ["researcher", "writer"],
-    bio: "Researcher at Ink & Switch who thinks about end-user programming and AI as a tool for thought.",
-    why: "He treats AI as something you steer rather than something that does the work for you. His essays are worth saving.",
-    addedBy: "julian",
-    addedOn: "2026-05-08",
   },
   {
     name: "Cassie Kozyrkov",
