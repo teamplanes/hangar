@@ -2,15 +2,20 @@
 title: Shower thought
 discipline: just-for-fun
 type: prompt
-tags: [thinking, ideas, creativity]
+tags:
+  - thinking
+  - ideas
+  - creativity
 added_by: julian
-added_on: 2026-05-27
+added_on: 2026-05-27T00:00:00.000Z
 status: stable
 source:
-  kind: original
+  kind: curated
 spice: lemon-and-herb
 downloads_week: 1
-summary: Take any idea and push it to its logical extreme, what does the world look like if this is completely true?
+summary: >-
+  Take any idea and push it to its logical extreme, what does the world look
+  like if this is completely true?
 ---
 
 ## What it does

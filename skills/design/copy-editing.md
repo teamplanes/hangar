@@ -1,15 +1,19 @@
 ---
-title: "Copy Editing"
+title: Copy Editing
 discipline: design
 type: prompt
-tags: ["copy", "editing", "writing", "polish"]
+tags:
+  - copy
+  - editing
+  - writing
+  - polish
 added_by: julian
-added_on: 2026-05-27
+added_on: 2026-05-27T00:00:00.000Z
 status: stable
 source:
   kind: curated
-  url: https://github.com/coreyhaines31/marketingskills
-  credit: "Corey Haines / marketingskills"
+  url: 'https://github.com/coreyhaines31/marketingskills'
+  credit: Corey Haines / marketingskills
 spice: lemon-and-herb
 usage_count: 0
 downloads_week: 12

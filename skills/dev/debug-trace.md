@@ -2,16 +2,21 @@
 title: Debug trace
 discipline: dev
 type: recipe
-tags: [debugging, errors, troubleshooting]
+tags:
+  - debugging
+  - errors
+  - troubleshooting
 added_by: julian
-added_on: 2026-05-27
+added_on: 2026-05-27T00:00:00.000Z
 status: stable
 source:
-  kind: original
+  kind: curated
 spice: medium
 downloads_week: 13
 pack: true
-summary: Systematic debugging, state the error, form hypotheses in order of likelihood, and test each one before jumping to a fix.
+summary: >-
+  Systematic debugging, state the error, form hypotheses in order of likelihood,
+  and test each one before jumping to a fix.
 ---
 
 ## What it does

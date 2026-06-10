@@ -2,15 +2,20 @@
 title: Roadmap brief
 discipline: product
 type: prompt
-tags: [roadmap, planning, strategy]
+tags:
+  - roadmap
+  - planning
+  - strategy
 added_by: julian
-added_on: 2026-05-27
+added_on: 2026-05-27T00:00:00.000Z
 status: stable
 source:
-  kind: original
+  kind: curated
 spice: mild
 downloads_week: 9
-summary: Turn a pile of feature requests and strategic goals into a clear one-page roadmap frame with themes, sequencing rationale, and open questions.
+summary: >-
+  Turn a pile of feature requests and strategic goals into a clear one-page
+  roadmap frame with themes, sequencing rationale, and open questions.
 ---
 
 ## What it does

@@ -2,16 +2,21 @@
 title: Ten names
 discipline: just-for-fun
 type: prompt
-tags: [naming, creativity, brainstorm]
+tags:
+  - naming
+  - creativity
+  - brainstorm
 added_by: julian
-added_on: 2026-05-27
+added_on: 2026-05-27T00:00:00.000Z
 status: stable
 source:
-  kind: original
+  kind: curated
 spice: lemon-and-herb
 downloads_week: 2
 pack: true
-summary: Generate 10 genuinely unusual name options for anything, products, features, projects, teams, with a brief rationale for each.
+summary: >-
+  Generate 10 genuinely unusual name options for anything, products, features,
+  projects, teams, with a brief rationale for each.
 ---
 
 ## What it does

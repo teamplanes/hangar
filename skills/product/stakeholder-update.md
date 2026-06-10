@@ -2,15 +2,20 @@
 title: Stakeholder update
 discipline: product
 type: prompt
-tags: [communication, stakeholders, reporting]
+tags:
+  - communication
+  - stakeholders
+  - reporting
 added_by: julian
-added_on: 2026-05-27
+added_on: 2026-05-27T00:00:00.000Z
 status: stable
 source:
-  kind: original
+  kind: curated
 spice: lemon-and-herb
 downloads_week: 5
-summary: Turn scrappy progress notes into a clean, confident stakeholder update with status, decisions, blockers, and next steps.
+summary: >-
+  Turn scrappy progress notes into a clean, confident stakeholder update with
+  status, decisions, blockers, and next steps.
 ---
 
 ## What it does

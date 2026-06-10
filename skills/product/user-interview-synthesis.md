@@ -2,16 +2,21 @@
 title: User interview synthesis
 discipline: product
 type: recipe
-tags: [research, interviews, synthesis]
+tags:
+  - research
+  - interviews
+  - synthesis
 added_by: julian
-added_on: 2026-05-27
+added_on: 2026-05-27T00:00:00.000Z
 status: stable
 source:
-  kind: original
+  kind: curated
 spice: mild
 downloads_week: 21
 pack: true
-summary: Paste raw interview notes and get structured themes, supporting quotes, tensions, and recommended next steps.
+summary: >-
+  Paste raw interview notes and get structured themes, supporting quotes,
+  tensions, and recommended next steps.
 ---
 
 ## What it does

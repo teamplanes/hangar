@@ -2,15 +2,20 @@
 title: Explain it simply
 discipline: just-for-fun
 type: prompt
-tags: [explanation, simplicity, learning]
+tags:
+  - explanation
+  - simplicity
+  - learning
 added_by: julian
-added_on: 2026-05-27
+added_on: 2026-05-27T00:00:00.000Z
 status: stable
 source:
-  kind: original
+  kind: curated
 spice: lemon-and-herb
 downloads_week: 2
-summary: Explain any concept, technology, or idea as if to a smart 12-year-old, no jargon, no condescension, genuinely clear.
+summary: >-
+  Explain any concept, technology, or idea as if to a smart 12-year-old, no
+  jargon, no condescension, genuinely clear.
 ---
 
 ## What it does

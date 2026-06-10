@@ -1,21 +1,29 @@
 ---
-title: "Humanizer"
+title: Humanizer
 discipline: general
 type: skill
-tags: ["writing", "editing", "ai-detection", "polish", "voice"]
+tags:
+  - writing
+  - editing
+  - ai-detection
+  - polish
+  - voice
 added_by: henry
-added_on: 2026-06-07
+added_on: 2026-06-07T00:00:00.000Z
 status: stable
 source:
   kind: curated
-  url: https://github.com/blader/humanizer
-  credit: "blader / humanizer (MIT)"
+  url: 'https://github.com/blader/humanizer'
+  credit: blader / humanizer (MIT)
 spice: medium
 usage_count: 0
 downloads_week: 14
 downloads_prev_week: 0
 pack: true
-summary: Strip the tells out of AI-generated writing so it reads like a person wrote it. Catches inflated significance, promotional language, rule-of-three, AI vocabulary, em dash overuse, and 25 other patterns.
+summary: >-
+  Strip the tells out of AI-generated writing so it reads like a person wrote
+  it. Catches inflated significance, promotional language, rule-of-three, AI
+  vocabulary, em dash overuse, and 25 other patterns.
 ---
 
 > Shared by Henry after CJ flagged it. Based on Wikipedia's "Signs of AI writing" guide, maintained by WikiProject AI Cleanup. It enforces the no em dash rule for you, among a lot else.

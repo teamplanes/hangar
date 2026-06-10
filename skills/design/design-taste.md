@@ -1,17 +1,26 @@
 ---
-title: "Design taste (anti-slop frontend)"
+title: Design taste (anti-slop frontend)
 discipline: design
 type: skill
-tags: ["frontend", "design", "taste", "landing-pages", "anti-slop"]
+tags:
+  - frontend
+  - design
+  - taste
+  - landing-pages
+  - anti-slop
 added_by: julian
-added_on: 2026-06-10
+added_on: 2026-06-10T00:00:00.000Z
 status: stable
 source:
   kind: curated
-  url: https://github.com/Leonxlnx/taste-skill
-  credit: "Leonxlnx / taste-skill (MIT)"
+  url: 'https://github.com/Leonxlnx/taste-skill'
+  credit: Leonxlnx / taste-skill (MIT)
 spice: medium
-summary: Stops Claude shipping generic, templated frontend slop. It reads the brief, declares a design direction, reaches for real design systems where they exist, and avoids the AI defaults (purple gradients, three equal cards, Inter + slate-900).
+summary: >-
+  Stops Claude shipping generic, templated frontend slop. It reads the brief,
+  declares a design direction, reaches for real design systems where they exist,
+  and avoids the AI defaults (purple gradients, three equal cards, Inter +
+  slate-900).
 ---
 
 > An external skill by Leonxlnx, distributed through its own installer, not our marketplace. This is a catalogue entry: what it does and how to get it. Browse-only here.

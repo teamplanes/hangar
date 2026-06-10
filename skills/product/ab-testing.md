@@ -1,15 +1,19 @@
 ---
-title: "A/B Testing"
+title: A/B Testing
 discipline: product
 type: skill
-tags: ["experimentation", "testing", "growth", "conversion"]
+tags:
+  - experimentation
+  - testing
+  - growth
+  - conversion
 added_by: julian
-added_on: 2026-05-27
+added_on: 2026-05-27T00:00:00.000Z
 status: stable
 source:
   kind: curated
-  url: https://github.com/coreyhaines31/marketingskills
-  credit: "Corey Haines / marketingskills"
+  url: 'https://github.com/coreyhaines31/marketingskills'
+  credit: Corey Haines / marketingskills
 spice: medium
 usage_count: 0
 downloads_week: 14

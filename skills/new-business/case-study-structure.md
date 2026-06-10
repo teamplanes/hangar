@@ -2,16 +2,21 @@
 title: Case study structure
 discipline: new-business
 type: recipe
-tags: [case-studies, portfolio, credentials]
+tags:
+  - case-studies
+  - portfolio
+  - credentials
 added_by: julian
-added_on: 2026-05-27
+added_on: 2026-05-27T00:00:00.000Z
 status: stable
 source:
-  kind: original
+  kind: curated
 spice: mild
 downloads_week: 15
 pack: true
-summary: Structure a client project as a compelling, shareable case study, with a clear problem, an honest account of the work, and a result worth citing.
+summary: >-
+  Structure a client project as a compelling, shareable case study, with a clear
+  problem, an honest account of the work, and a result worth citing.
 ---
 
 ## What it does

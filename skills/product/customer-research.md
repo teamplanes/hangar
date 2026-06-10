@@ -1,15 +1,19 @@
 ---
-title: "Customer Research"
+title: Customer Research
 discipline: product
 type: skill
-tags: ["research", "customers", "insights", "discovery"]
+tags:
+  - research
+  - customers
+  - insights
+  - discovery
 added_by: julian
-added_on: 2026-05-27
+added_on: 2026-05-27T00:00:00.000Z
 status: stable
 source:
   kind: curated
-  url: https://github.com/coreyhaines31/marketingskills
-  credit: "Corey Haines / marketingskills"
+  url: 'https://github.com/coreyhaines31/marketingskills'
+  credit: Corey Haines / marketingskills
 spice: mild
 usage_count: 0
 downloads_week: 8

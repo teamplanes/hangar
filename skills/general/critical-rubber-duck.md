@@ -1,13 +1,16 @@
 ---
-title: "Rubber-ducking with a critical Claude"
+title: Rubber-ducking with a critical Claude
 discipline: general
 type: prompt
-tags: ["thinking", "critique", "decision-making"]
+tags:
+  - thinking
+  - critique
+  - decision-making
 added_by: julian
-added_on: 2026-05-16
+added_on: 2026-05-16T00:00:00.000Z
 status: stable
 source:
-  kind: original
+  kind: curated
 spice: lemon-and-herb
 usage_count: 31
 downloads_week: 27

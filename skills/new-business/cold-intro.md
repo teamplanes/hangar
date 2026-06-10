@@ -2,16 +2,21 @@
 title: Cold introduction
 discipline: new-business
 type: prompt
-tags: [outreach, email, prospecting]
+tags:
+  - outreach
+  - email
+  - prospecting
 added_by: julian
-added_on: 2026-05-27
+added_on: 2026-05-27T00:00:00.000Z
 status: stable
 source:
-  kind: original
+  kind: curated
 spice: mild
 downloads_week: 17
 pack: true
-summary: Write a sharp, human cold introduction email for a new prospect, specific, brief, and worth replying to.
+summary: >-
+  Write a sharp, human cold introduction email for a new prospect, specific,
+  brief, and worth replying to.
 ---
 
 ## What it does

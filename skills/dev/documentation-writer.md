@@ -2,15 +2,20 @@
 title: Documentation writer
 discipline: dev
 type: prompt
-tags: [documentation, readability, handoff]
+tags:
+  - documentation
+  - readability
+  - handoff
 added_by: julian
-added_on: 2026-05-27
+added_on: 2026-05-27T00:00:00.000Z
 status: stable
 source:
-  kind: original
+  kind: curated
 spice: mild
 downloads_week: 8
-summary: Turn a function, module, or system into clear documentation written for the person who hasn't read the code.
+summary: >-
+  Turn a function, module, or system into clear documentation written for the
+  person who hasn't read the code.
 ---
 
 ## What it does

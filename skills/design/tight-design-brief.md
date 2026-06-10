@@ -1,13 +1,16 @@
 ---
-title: "Writing a tight design brief"
+title: Writing a tight design brief
 discipline: design
 type: prompt
-tags: ["briefs", "kickoff", "client"]
+tags:
+  - briefs
+  - kickoff
+  - client
 added_by: julian
-added_on: 2026-05-20
+added_on: 2026-05-20T00:00:00.000Z
 status: stable
 source:
-  kind: original
+  kind: curated
 spice: mild
 usage_count: 14
 downloads_week: 23

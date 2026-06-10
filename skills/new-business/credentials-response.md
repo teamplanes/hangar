@@ -1,13 +1,17 @@
 ---
-title: "Drafting a credentials response for an RFP"
+title: Drafting a credentials response for an RFP
 discipline: new-business
 type: prompt
-tags: ["rfp", "pitch", "credentials", "writing"]
+tags:
+  - rfp
+  - pitch
+  - credentials
+  - writing
 added_by: julian
-added_on: 2026-05-17
+added_on: 2026-05-17T00:00:00.000Z
 status: draft
 source:
-  kind: original
+  kind: curated
 spice: lemon-and-herb
 usage_count: 6
 downloads_week: 19

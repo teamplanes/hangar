@@ -1,13 +1,17 @@
 ---
-title: "Turning user research transcripts into JTBDs"
+title: Turning user research transcripts into JTBDs
 discipline: product
 type: prompt
-tags: ["research", "jtbd", "synthesis", "discovery"]
+tags:
+  - research
+  - jtbd
+  - synthesis
+  - discovery
 added_by: julian
-added_on: 2026-05-18
+added_on: 2026-05-18T00:00:00.000Z
 status: stable
 source:
-  kind: original
+  kind: curated
 spice: mild
 usage_count: 11
 downloads_week: 28

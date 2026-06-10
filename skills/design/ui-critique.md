@@ -2,16 +2,22 @@
 title: UI critique
 discipline: design
 type: prompt
-tags: [critique, review, ux, ui]
+tags:
+  - critique
+  - review
+  - ux
+  - ui
 added_by: julian
-added_on: 2026-05-27
+added_on: 2026-05-27T00:00:00.000Z
 status: stable
 source:
-  kind: original
+  kind: curated
 spice: mild
 downloads_week: 10
 pack: true
-summary: Get a structured, numbered critique of a UI with specific, actionable feedback across hierarchy, clarity, consistency, and accessibility.
+summary: >-
+  Get a structured, numbered critique of a UI with specific, actionable feedback
+  across hierarchy, clarity, consistency, and accessibility.
 ---
 
 ## What it does

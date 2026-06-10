@@ -2,16 +2,19 @@
 title: Email polish
 discipline: general
 type: prompt
-tags: [email, writing, communication]
+tags:
+  - email
+  - writing
+  - communication
 added_by: julian
-added_on: 2026-05-27
+added_on: 2026-05-27T00:00:00.000Z
 status: stable
 source:
-  kind: original
+  kind: curated
 spice: lemon-and-herb
 downloads_week: 18
 pack: true
-summary: Rewrite a draft email to be clearer, shorter, and more likely to get a reply.
+summary: 'Rewrite a draft email to be clearer, shorter, and more likely to get a reply.'
 ---
 
 ## What it does

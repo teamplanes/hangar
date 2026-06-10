@@ -1,15 +1,19 @@
 ---
-title: "Anthropic's prompt-caching pattern for long-running agents"
+title: Anthropic's prompt-caching pattern for long-running agents
 discipline: dev
 type: skill
-tags: ["claude-api", "caching", "performance", "cost"]
+tags:
+  - claude-api
+  - caching
+  - performance
+  - cost
 added_by: julian
-added_on: 2026-05-15
+added_on: 2026-05-15T00:00:00.000Z
 status: stable
 source:
   kind: curated
-  url: "https://docs.anthropic.com/en/docs/build-with-claude/prompt-caching"
-  credit: "Anthropic docs"
+  url: 'https://docs.anthropic.com/en/docs/build-with-claude/prompt-caching'
+  credit: Anthropic docs
 spice: extra-hot
 usage_count: 8
 downloads_week: 20

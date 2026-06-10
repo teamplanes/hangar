@@ -2,15 +2,20 @@
 title: Commit message writer
 discipline: dev
 type: prompt
-tags: [git, commits, documentation]
+tags:
+  - git
+  - commits
+  - documentation
 added_by: julian
-added_on: 2026-05-27
+added_on: 2026-05-27T00:00:00.000Z
 status: stable
 source:
-  kind: original
+  kind: curated
 spice: lemon-and-herb
 downloads_week: 9
-summary: Write a clear conventional commit message from a diff or plain description of what changed.
+summary: >-
+  Write a clear conventional commit message from a diff or plain description of
+  what changed.
 ---
 
 ## What it does

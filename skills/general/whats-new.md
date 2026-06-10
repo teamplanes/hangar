@@ -1,16 +1,22 @@
 ---
-title: "What's new in the Hangar"
+title: What's new in the Hangar
 discipline: general
 type: skill
-tags: ["hangar", "updates", "discovery", "meta"]
+tags:
+  - hangar
+  - updates
+  - discovery
+  - meta
 added_by: julian
-added_on: 2026-06-08
+added_on: 2026-06-08T00:00:00.000Z
 status: stable
 source:
   kind: original
 spice: mild
 pack: true
-summary: Show a rundown of the skills most recently added to The Hangar, what each does and how to run it, so you know what you just got after a plugin update.
+summary: >-
+  Show a rundown of the skills most recently added to The Hangar, what each does
+  and how to run it, so you know what you just got after a plugin update.
 ---
 
 > Run this after Claude tells you plugins updated (`/reload-plugins`). Claude Code won't tell you what's new in an update, this fills that gap.

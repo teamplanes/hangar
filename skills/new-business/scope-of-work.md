@@ -2,15 +2,20 @@
 title: Scope of work
 discipline: new-business
 type: recipe
-tags: [proposals, scoping, contracts]
+tags:
+  - proposals
+  - scoping
+  - contracts
 added_by: julian
-added_on: 2026-05-27
+added_on: 2026-05-27T00:00:00.000Z
 status: stable
 source:
-  kind: original
+  kind: curated
 spice: mild
 downloads_week: 6
-summary: Turn a brief or conversation notes into a clear scope of work with deliverables, assumptions, exclusions, and a timeline shape.
+summary: >-
+  Turn a brief or conversation notes into a clear scope of work with
+  deliverables, assumptions, exclusions, and a timeline shape.
 ---
 
 ## What it does

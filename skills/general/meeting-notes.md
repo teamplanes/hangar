@@ -2,15 +2,20 @@
 title: Meeting notes
 discipline: general
 type: prompt
-tags: [meetings, communication, actions]
+tags:
+  - meetings
+  - communication
+  - actions
 added_by: julian
-added_on: 2026-05-27
+added_on: 2026-05-27T00:00:00.000Z
 status: stable
 source:
-  kind: original
+  kind: curated
 spice: lemon-and-herb
 downloads_week: 2
-summary: Turn bullet notes from a meeting into a structured summary with decisions, actions, owners, and open questions.
+summary: >-
+  Turn bullet notes from a meeting into a structured summary with decisions,
+  actions, owners, and open questions.
 ---
 
 ## What it does

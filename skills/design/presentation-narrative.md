@@ -2,15 +2,20 @@
 title: Presentation narrative
 discipline: design
 type: recipe
-tags: [presentations, storytelling, decks]
+tags:
+  - presentations
+  - storytelling
+  - decks
 added_by: julian
-added_on: 2026-05-27
+added_on: 2026-05-27T00:00:00.000Z
 status: stable
 source:
-  kind: original
+  kind: curated
 spice: lemon-and-herb
 downloads_week: 3
-summary: Turn a set of slide ideas or bullet points into a coherent narrative arc with a clear opening, logical flow, and a strong close.
+summary: >-
+  Turn a set of slide ideas or bullet points into a coherent narrative arc with
+  a clear opening, logical flow, and a strong close.
 ---
 
 ## What it does

@@ -11,7 +11,7 @@ added_by: julian
 added_on: 2026-05-19T00:00:00.000Z
 status: stable
 source:
-  kind: original
+  kind: curated
 spice: medium
 usage_count: 22
 downloads_week: 30

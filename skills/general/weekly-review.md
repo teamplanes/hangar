@@ -2,15 +2,20 @@
 title: Weekly review
 discipline: general
 type: recipe
-tags: [productivity, planning, reflection]
+tags:
+  - productivity
+  - planning
+  - reflection
 added_by: julian
-added_on: 2026-05-27
+added_on: 2026-05-27T00:00:00.000Z
 status: stable
 source:
-  kind: original
+  kind: curated
 spice: lemon-and-herb
 downloads_week: 3
-summary: A structured weekly review, what got done, what didn't, what to carry forward, and what next week needs.
+summary: >-
+  A structured weekly review, what got done, what didn't, what to carry forward,
+  and what next week needs.
 ---
 
 ## What it does
