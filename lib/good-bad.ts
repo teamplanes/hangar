@@ -76,6 +76,10 @@ export function checkPrompt(input: string): Check[] {
   const lower = t.toLowerCase();
   const wordCount = t.split(/\s+/).filter(Boolean).length;
 
+  // Nothing pasted yet: every check is unmet, so the panel reads 0 of 7
+  // rather than falsely passing the negative checks.
+  const empty = wordCount === 0;
+
   const hasRole = /\byou are|\bact as|\byour role\b/i.test(t);
   const hasOutputFormat =
     /\b(format|json|markdown|table|bullets?|list|csv|sentences?|paragraphs?|words? max|word limit|max(imum)? \d+|rank(?:ed)?|categori[sz]e)\b/i.test(
@@ -117,7 +121,7 @@ export function checkPrompt(input: string): Check[] {
       key: "verbs",
       label: "Specific verbs",
       hint: "Swap 'help' and 'improve' for verbs you'd use in a brief (rank, critique, rewrite, compare).",
-      passed: !hasVagueVerb,
+      passed: !empty && !hasVagueVerb,
     },
     {
       key: "examples",
