@@ -1,5 +1,4 @@
 import { AddSkillForm } from "@/components/AddSkillForm";
-import { PaperPlane } from "@/components/PaperPlane";
 
 export const metadata = { title: "Add to the Hangar" };
 
@@ -19,9 +18,6 @@ export default function AddPage() {
             <p className="mt-4 max-w-prose text-[1.05rem] text-ink/85">
               Bring something you wrote. Or something good you've spotted. Submission opens a pre-filled PR on GitHub. Credit goes back to the original author.
             </p>
-          </div>
-          <div className="text-ink/40 hidden lg:flex justify-end plane-glide">
-            <PaperPlane size={120} />
           </div>
         </div>
       </header>

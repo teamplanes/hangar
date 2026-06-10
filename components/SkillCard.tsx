@@ -1,15 +1,8 @@
 import Link from "next/link";
 import { type Skill, DISCIPLINE_LABEL, summary } from "@/lib/skills-types";
 import { CARD_BG, CARD_INK } from "@/components/disciplineStyles";
-import { PaperPlane } from "@/components/PaperPlane";
 import { SpiceChip } from "@/components/SpiceMeter";
 import { ProvenanceTag } from "@/components/Provenance";
-
-const TYPE_LABEL: Record<Skill["type"], string> = {
-  prompt: "Prompt",
-  skill: "Skill",
-  recipe: "Recipe",
-};
 
 export function SkillCard({
   skill,
@@ -35,19 +28,13 @@ export function SkillCard({
       ].join(" ")}
     >
       {/* Top label rail */}
-      <div className="flex items-center justify-between gap-3 font-mono text-[0.65rem] uppercase tracking-[0.16em] text-ink/70">
-        <span className="inline-flex items-center gap-2">
-          <PaperPlane size={11} className="text-ink" />
-          {TYPE_LABEL[skill.type]}
-        </span>
-        <span className="inline-flex items-center gap-2">
-          {inPack && (
-            <span className="inline-block border border-ink/50 px-1.5 py-px text-[0.6rem] uppercase tracking-[0.14em] text-ink/80">
-              In Plugin
-            </span>
-          )}
-          {DISCIPLINE_LABEL[skill.discipline]}
-        </span>
+      <div className="flex items-center justify-end gap-3 font-mono text-[0.65rem] uppercase tracking-[0.16em] text-ink/70">
+        {inPack && (
+          <span className="inline-block border border-ink/50 px-1.5 py-px text-[0.6rem] uppercase tracking-[0.14em] text-ink/80">
+            In Plugin
+          </span>
+        )}
+        {DISCIPLINE_LABEL[skill.discipline]}
       </div>
 
       {/* Title */}

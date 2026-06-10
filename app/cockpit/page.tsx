@@ -232,7 +232,6 @@ export default async function CockpitPage() {
                 </div>
                 <div className="font-mono text-[0.65rem] uppercase tracking-[0.12em] text-ink/50 mt-0.5">
                   {DISCIPLINE_LABEL[s.discipline]}
-                  {s.type ? ` · ${s.type}` : ""}
                 </div>
               </div>
 

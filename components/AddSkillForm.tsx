@@ -9,7 +9,6 @@ import {
   type SkillStatus,
 } from "@/lib/skills-types";
 import { GITHUB_NEW_FILE_BASE } from "@/lib/config";
-import { PaperPlane } from "@/components/PaperPlane";
 
 type FormState = {
   title: string;
@@ -336,8 +335,8 @@ export function AddSkillForm() {
       {/* ASIDE */}
       <aside className="space-y-6 lg:sticky lg:top-32 lg:self-start">
         <div className="border border-ink bg-cream p-6">
-          <div className="font-mono text-[0.7rem] uppercase tracking-[0.18em] text-ink/70 flex items-center gap-2">
-            <PaperPlane size={11} /> What happens on submit
+          <div className="font-mono text-[0.7rem] uppercase tracking-[0.18em] text-ink/70">
+            What happens on submit
           </div>
           <ol className="mt-3 space-y-2 text-sm text-ink/85">
             <li>

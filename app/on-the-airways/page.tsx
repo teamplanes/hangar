@@ -1,6 +1,5 @@
 import { ARTICLES, SOURCES } from "@/lib/latest";
 import { LatestClient } from "@/components/LatestClient";
-import { PaperPlane } from "@/components/PaperPlane";
 import { GITHUB_NEW_FILE_BASE } from "@/lib/config";
 
 export const metadata = { title: "On the Airways · The Hangar" };
@@ -55,9 +54,6 @@ export default function OnTheAirwaysPage() {
                 <span aria-hidden>＋</span> Submit a write-up
               </a>
             </div>
-          </div>
-          <div className="text-ink/30 hidden lg:flex justify-end plane-glide">
-            <PaperPlane size={84} />
           </div>
         </div>
       </section>

@@ -7,7 +7,6 @@ import {
   featuredSkill,
 } from "@/lib/skills";
 import { SkillCard } from "@/components/SkillCard";
-import { PaperPlane } from "@/components/PaperPlane";
 import { SWATCH_CLASS } from "@/components/disciplineStyles";
 import { FeaturedSpotlight } from "@/components/FeaturedSpotlight";
 import { CommandBox } from "@/components/CommandBox";
@@ -94,13 +93,8 @@ export default function HomePage() {
       {featured ? (
         <section className="relative py-10 lg:py-14 bg-ink" style={{ width: "100vw", marginLeft: "calc(50% - 50vw)" }}>
           <div className="mx-auto max-w-page px-6 lg:px-10">
-            <div className="mb-6 flex items-baseline justify-between gap-3">
-              <div className="font-mono text-[0.72rem] uppercase tracking-[0.18em] text-cream/80">
-                00 / Skill spotlight
-              </div>
-              <div className="font-mono text-[0.7rem] uppercase tracking-[0.16em] text-cream/55 hidden sm:block">
-                Featured pick · the board ranks by real copies
-              </div>
+            <div className="mb-6 font-mono text-[0.72rem] uppercase tracking-[0.18em] text-cream/80">
+              Skill spotlight
             </div>
             <FeaturedSpotlight skill={featured} />
           </div>
@@ -110,8 +104,8 @@ export default function HomePage() {
       {/* STAY CURRENT reminder */}
       <section className="border border-ink bg-sky px-6 sm:px-10 py-7 grid lg:grid-cols-[1fr_auto] gap-6 lg:gap-10 items-center">
         <div>
-          <div className="flex items-center gap-2 font-mono text-[0.7rem] uppercase tracking-[0.18em] text-ink/70">
-            <span aria-hidden>↻</span> Already flying?
+          <div className="font-mono text-[0.7rem] uppercase tracking-[0.18em] text-ink/70">
+            Already flying?
           </div>
           <p className="mt-2 text-[0.95rem] text-ink/85 leading-snug max-w-prose">
             New skills land here often. Turn auto-update on once so installed plugins refresh themselves, or pull the latest any time and see what landed.
@@ -120,7 +114,7 @@ export default function HomePage() {
             href="/cockpit"
             className="mt-3 inline-block font-mono text-[0.72rem] uppercase tracking-[0.14em] text-ink/70 hover:text-ink underline decoration-ink/30 underline-offset-4 hover:decoration-ink"
           >
-            How to stay current →
+            How to have your plug-ins update automatically →
           </Link>
         </div>
         <div className="flex flex-col gap-2.5 w-full lg:w-[360px]">
@@ -206,9 +200,6 @@ export default function HomePage() {
             <Link href="/add" className="btn-ink font-mono uppercase tracking-[0.14em] text-sm">
               <span aria-hidden>＋</span> Add to the Hangar
             </Link>
-            <div className="hidden lg:block text-ink/50 plane-glide">
-              <PaperPlane size={32} />
-            </div>
           </div>
         </div>
       </section>

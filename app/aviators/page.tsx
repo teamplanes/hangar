@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { AVIATORS, AVIATOR_TAG_LABEL } from "@/lib/aviators";
-import { PaperPlane } from "@/components/PaperPlane";
 import { GITHUB_NEW_FILE_BASE } from "@/lib/config";
 
 export const metadata = { title: "Aviators · The Hangar" };
@@ -51,9 +50,6 @@ export default function AviatorsPage() {
                 <span aria-hidden>＋</span> Suggest an Aviator
               </a>
             </div>
-          </div>
-          <div className="text-ink/30 hidden lg:flex justify-end plane-glide">
-            <PaperPlane size={72} />
           </div>
         </div>
       </section>

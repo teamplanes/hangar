@@ -2,7 +2,6 @@ import Link from "next/link";
 import { type Skill, DISCIPLINE_LABEL, summary } from "@/lib/skills-types";
 import { CARD_BG, SWATCH_CLASS } from "@/components/disciplineStyles";
 import { SpiceChip } from "@/components/SpiceMeter";
-import { PaperPlane } from "@/components/PaperPlane";
 
 export function FeaturedSpotlight({ skill }: { skill: Skill }) {
   return (
@@ -38,16 +37,10 @@ export function FeaturedSpotlight({ skill }: { skill: Skill }) {
           <div className="serif-italic text-2xl mt-2 leading-snug">
             This week&apos;s pick from the {DISCIPLINE_LABEL[skill.discipline]} bay.
           </div>
-          <p className="mt-4 text-ink/70 text-sm leading-relaxed">
-            Hand-picked to put in front of the studio. Browse the{" "}
-            <Link href="/top-skills" className="underline decoration-ink/30 hover:decoration-coral">
-              live board
-            </Link>{" "}
-            to see what people are actually copying.
+          <p className="mt-4 text-ink/75 text-[0.95rem] leading-relaxed">
+            {skill.spotlight_note ??
+              "Hand-picked to put in front of the studio this week."}
           </p>
-          <div className="mt-6 text-ink/40 flex justify-end plane-glide">
-            <PaperPlane size={36} />
-          </div>
         </aside>
       </div>
     </section>

@@ -11,14 +11,12 @@ import { CopyButton } from "@/components/CopyButton";
 import { ViewTracker } from "@/components/ViewTracker";
 import { ProvenanceBlock } from "@/components/Provenance";
 import { CARD_BG, SWATCH_CLASS } from "@/components/disciplineStyles";
-import { PaperPlane } from "@/components/PaperPlane";
 import { SkillStatsRail } from "@/components/SkillStats";
 
 export function generateStaticParams() {
   return allSkills().map((s) => ({ slug: s.slug }));
 }
 
-const TYPE_LABEL = { prompt: "Prompt", skill: "Skill", recipe: "Recipe" } as const;
 const STATUS_LABEL = {
   draft: "Draft",
   stable: "Stable",
@@ -61,11 +59,8 @@ export default async function SkillPage({
           {skill.title}
         </h1>
 
-        {/* Type / Status / Author row */}
+        {/* Status / Author row */}
         <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-1 font-mono text-[0.72rem] uppercase tracking-[0.14em] text-ink/70">
-          <span className="inline-flex items-center gap-1.5">
-            <PaperPlane size={11} /> {TYPE_LABEL[skill.type]}
-          </span>
           {skill.status ? (
             <span>{STATUS_LABEL[skill.status]}</span>
           ) : null}
@@ -157,7 +152,6 @@ export default async function SkillPage({
             Metadata
           </div>
           <dl className="text-sm divide-y divide-ink/15">
-            <Row k="Type" v={TYPE_LABEL[skill.type]} />
             {skill.status ? <Row k="Status" v={STATUS_LABEL[skill.status]} /> : null}
             {skill.added_by ? <Row k="Added by" v={`@${skill.added_by}`} /> : null}
             {skill.added_on ? <Row k="Added on" v={skill.added_on} /> : null}

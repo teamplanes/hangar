@@ -16,6 +16,7 @@ source:
 spice: mild
 downloads_week: 24
 featured: true
+spotlight_note: "We're finding this skill is helping us to focus our research on several projects at the moment, letting us move from a broad business objective to a specific product challenge and research goal."
 summary: >-
   Turn a vague problem description into a sharp, well-scoped statement with user
   context, root cause, and a measurable success signal.

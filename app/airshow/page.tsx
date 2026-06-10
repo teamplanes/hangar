@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { AIRSHOW } from "@/lib/airshow";
-import { PaperPlane } from "@/components/PaperPlane";
 import { GITHUB_NEW_FILE_BASE } from "@/lib/config";
 
 export const metadata = { title: "Airshow · The Hangar" };
@@ -59,9 +58,6 @@ export default function AirshowPage() {
                 <span aria-hidden>＋</span> Submit a spot
               </a>
             </div>
-          </div>
-          <div className="text-ink/30 hidden lg:flex justify-end plane-glide">
-            <PaperPlane size={96} />
           </div>
         </div>
       </section>

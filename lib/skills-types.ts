@@ -61,6 +61,7 @@ export type SkillFrontmatter = {
   added_on?: string;
   status?: SkillStatus;
   source?: SkillSource;
+  spotlight_note?: string;
   summary?: string;
   spice?: Spice;
   usage_count?: number;
