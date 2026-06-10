@@ -151,9 +151,12 @@ export function FlightSchoolMenu({ active = false }: { active?: boolean }) {
                   role="menuitem"
                   className="block px-5 py-3.5 hover:bg-butter transition-colors"
                 >
-                  <div className="flex items-baseline justify-between gap-3">
-                    <span className="font-sans font-semibold text-[1.0rem] tracking-tight text-ink normal-case">
-                      {item.label}
+                  <div className="flex items-center justify-between gap-3">
+                    <span className="inline-flex items-center gap-2.5">
+                      {item.icon}
+                      <span className="font-sans font-semibold text-[1.0rem] tracking-tight text-ink normal-case">
+                        {item.label}
+                      </span>
                     </span>
                     <span
                       className="font-mono text-ink/40 group-hover:text-ink transition"
@@ -162,7 +165,7 @@ export function FlightSchoolMenu({ active = false }: { active?: boolean }) {
                       →
                     </span>
                   </div>
-                  <div className="mt-0.5 text-[0.88rem] text-ink/60 normal-case tracking-normal leading-snug">
+                  <div className="mt-0.5 ml-[1.625rem] text-[0.88rem] text-ink/60 normal-case tracking-normal leading-snug">
                     {item.blurb}
                   </div>
                 </Link>
