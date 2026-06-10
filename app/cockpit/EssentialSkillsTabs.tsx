@@ -5,15 +5,16 @@ import { type Skill, DISCIPLINE_LABEL, DISCIPLINES } from "@/lib/skills-types";
 import { SWATCH_CLASS } from "@/components/disciplineStyles";
 import { SkillCard } from "@/components/SkillCard";
 
-const TAB_ORDER = ["general", ...DISCIPLINES] as const;
+const TAB_ORDER = ["all", ...DISCIPLINES] as const;
 type TabKey = (typeof TAB_ORDER)[number];
 
 const TAB_LABEL: Record<TabKey, string> = {
-  general: "General",
+  all: "All",
   product: DISCIPLINE_LABEL.product,
   design: DISCIPLINE_LABEL.design,
   dev: DISCIPLINE_LABEL.dev,
   "new-business": DISCIPLINE_LABEL["new-business"],
+  general: DISCIPLINE_LABEL.general,
   "just-for-fun": DISCIPLINE_LABEL["just-for-fun"],
 };
 
@@ -22,8 +23,15 @@ export function EssentialSkillsTabs({
 }: {
   essentials: Record<string, Skill[]>;
 }) {
-  const [active, setActive] = useState<TabKey>("general");
-  const skills = essentials[active] ?? [];
+  const [active, setActive] = useState<TabKey>("all");
+
+  // "All" shows every essential across bays, deduped by slug.
+  const allEssentials = Array.from(
+    new Map(
+      DISCIPLINES.flatMap((d) => essentials[d] ?? []).map((s) => [s.slug.join("/"), s]),
+    ).values(),
+  );
+  const skills = active === "all" ? allEssentials : essentials[active] ?? [];
 
   return (
     <div>
@@ -31,7 +39,7 @@ export function EssentialSkillsTabs({
       <div className="flex flex-wrap gap-0 border border-ink overflow-hidden mb-8">
         {TAB_ORDER.map((tab) => {
           const isActive = tab === active;
-          const swatch = tab === "general" ? null : SWATCH_CLASS[tab as keyof typeof SWATCH_CLASS];
+          const swatch = tab === "all" ? null : SWATCH_CLASS[tab as keyof typeof SWATCH_CLASS];
           return (
             <button
               key={tab}

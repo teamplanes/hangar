@@ -10,6 +10,7 @@ import { SkillCard } from "@/components/SkillCard";
 import { PaperPlane } from "@/components/PaperPlane";
 import { SWATCH_CLASS } from "@/components/disciplineStyles";
 import { FeaturedSpotlight } from "@/components/FeaturedSpotlight";
+import { CommandBox } from "@/components/CommandBox";
 
 export default function HomePage() {
   const skills = allSkills();
@@ -107,43 +108,25 @@ export default function HomePage() {
       ) : null}
 
       {/* STAY CURRENT reminder */}
-      <section className="border border-ink bg-sky px-6 sm:px-10 py-5 flex flex-col sm:flex-row sm:items-center gap-4 justify-between">
-        <div className="flex items-start gap-3">
-          <span className="text-xl leading-none" aria-hidden>↻</span>
-          <div>
-            <div className="font-mono text-[0.7rem] uppercase tracking-[0.18em] text-ink/70">
-              Already flying?
-            </div>
-            <p className="mt-1 text-[0.95rem] text-ink/85 leading-snug">
-              New skills land here often. Turn on auto-update (<code className="font-mono text-[0.85em]">/plugin</code>) so installed plugins refresh themselves, or pull now with{" "}
-              <code className="font-mono text-[0.85em]">claude plugin marketplace update</code>. Then run{" "}
-              <code className="font-mono text-[0.85em]">/hangar-general:whats-new</code> for the rundown.
-            </p>
+      <section className="border border-ink bg-sky px-6 sm:px-10 py-7 grid lg:grid-cols-[1fr_auto] gap-6 lg:gap-10 items-center">
+        <div>
+          <div className="flex items-center gap-2 font-mono text-[0.7rem] uppercase tracking-[0.18em] text-ink/70">
+            <span aria-hidden>↻</span> Already flying?
           </div>
+          <p className="mt-2 text-[0.95rem] text-ink/85 leading-snug max-w-prose">
+            New skills land here often. Turn auto-update on once so installed plugins refresh themselves, or pull the latest any time and see what landed.
+          </p>
+          <Link
+            href="/cockpit"
+            className="mt-3 inline-block font-mono text-[0.72rem] uppercase tracking-[0.14em] text-ink/70 hover:text-ink underline decoration-ink/30 underline-offset-4 hover:decoration-ink"
+          >
+            How to stay current →
+          </Link>
         </div>
-        <Link
-          href="/cockpit"
-          className="btn-ink font-mono uppercase tracking-[0.14em] text-sm shrink-0 self-start sm:self-auto"
-        >
-          How to stay current →
-        </Link>
-      </section>
-
-      {/* PROVENANCE LEGEND */}
-      <section className="flex flex-wrap items-center gap-x-5 gap-y-2 text-[0.72rem] text-ink/70">
-        <span className="font-mono uppercase tracking-[0.14em] text-ink/50">Every skill is tagged:</span>
-        <span className="inline-flex items-center gap-1.5">
-          <span className="inline-block w-2.5 h-2.5 border border-ink/50 bg-mint" aria-hidden />
-          <span><b className="font-semibold">Made at Planes</b> , from scratch</span>
-        </span>
-        <span className="inline-flex items-center gap-1.5">
-          <span className="inline-block w-2.5 h-2.5 border border-ink/50 bg-butter" aria-hidden />
-          <span><b className="font-semibold">Adapted by Planes</b> , reworked from elsewhere</span>
-        </span>
-        <span className="inline-flex items-center gap-1.5">
-          <span className="inline-block w-2.5 h-2.5 border border-ink/50 bg-sky" aria-hidden />
-          <span><b className="font-semibold">Found &amp; shared</b> , used as-is</span>
-        </span>
+        <div className="flex flex-col gap-2.5 w-full lg:w-[360px]">
+          <CommandBox label="Pull the latest" cmd="claude plugin marketplace update" />
+          <CommandBox label="See what landed" cmd="/hangar-general:whats-new" />
+        </div>
       </section>
 
       {/* LATEST */}

@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { allSkills, DISCIPLINE_LABEL } from "@/lib/skills";
 import { rankedSkills } from "@/lib/leaderboard";
+import { CommandBox } from "@/components/CommandBox";
 import { SWATCH_CLASS } from "@/components/disciplineStyles";
 import { SpiceChip } from "@/components/SpiceMeter";
 import { packByDiscipline } from "@/lib/cockpit";
@@ -62,16 +63,27 @@ const SETUP_STEPS: SetupStep[] = [
     body: (
       <>
         <p>
-          New skills land in The Hangar all the time. Turn on auto-update once and Claude pulls the latest at the start of each session (you&apos;ll get a <code>/reload-plugins</code> nudge when something new arrives). Run <code>/plugin</code>, open Marketplaces, select planes-hangar, enable auto-update. Or add to your settings:
+          New skills land in The Hangar all the time. Turn auto-update on once and Claude pulls the latest at the start of each session (you&apos;ll get a <code>/reload-plugins</code> nudge when something new arrives). In <code>/plugin</code> &rarr; Marketplaces &rarr; planes-hangar &rarr; enable auto-update, or drop this into your settings:
         </p>
-        <code className="block bg-ink/8 border border-ink/15 px-3 py-2 mt-3 font-mono text-[0.72rem] leading-snug whitespace-pre-wrap">{`"extraKnownMarketplaces": {
+        <div className="mt-3 max-w-xl">
+          <CommandBox
+            multiline
+            cmd={`"extraKnownMarketplaces": {
   "planes-hangar": {
     "source": { "source": "github", "repo": "teamplanes/hangar" },
     "autoUpdate": true
   }
-}`}</code>
-        <p className="mt-3">
-          Prefer to pull manually? <code>claude plugin marketplace update</code> then <code>claude plugin update hangar-&lt;bay&gt;</code>. After an update, run <code>/hangar-general:whats-new</code> for a rundown of what landed. Whole team? Drop our <code>.claude/settings.json</code> into a repo and everyone gets it on auto-update.
+}`}
+          />
+        </div>
+        <p className="mt-4">Or pull manually any time:</p>
+        <div className="mt-2 grid sm:grid-cols-3 gap-2.5">
+          <CommandBox label="Pull the latest" cmd="claude plugin marketplace update" />
+          <CommandBox label="Update one plugin" cmd="claude plugin update hangar-<bay>" />
+          <CommandBox label="See what landed" cmd="/hangar-general:whats-new" />
+        </div>
+        <p className="mt-3 text-[0.85rem] text-ink/60">
+          Whole team? Drop our <code>.claude/settings.json</code> into a repo and everyone gets it on auto-update.
         </p>
       </>
     ),
