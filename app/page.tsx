@@ -24,7 +24,7 @@ export default function HomePage() {
         <div className="grid lg:grid-cols-[1.55fr_1fr]">
           <div className="p-8 sm:p-12 lg:p-16 relative overflow-hidden">
             <h1 className="mt-2 text-[2.5rem] sm:text-[3.5rem] lg:text-[4.25rem] leading-[0.96] tracking-tight font-black text-ink anim-rise" style={{ animationDelay: "60ms" }}>
-              The skills, prompts and AI set-ups{" "}
+              The skills and prompts{" "}
               <span className="serif-italic font-normal italic">
                 working at Planes
               </span>{" "}
