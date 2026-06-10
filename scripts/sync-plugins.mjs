@@ -63,13 +63,21 @@ for (const file of files) {
     continue;
   }
 
+  if (!wanted.has(bay)) wanted.set(bay, new Set());
+  wanted.get(bay).add(slug);
+
+  // Hand-placed full bundles (real skills with assets/scripts, or skills whose
+  // plugin SKILL.md frontmatter must be preserved) are marked plugin_source:
+  // bundled. Protect them from pruning (added to `wanted` above) but never
+  // regenerate or overwrite them.
+  if (data.plugin_source === "bundled") {
+    continue;
+  }
+
   const outDir = path.join(pluginDir, "skills", slug);
   fs.mkdirSync(outDir, { recursive: true });
   const fm = { name: slug, description: deriveDescription(data, content) };
   fs.writeFileSync(path.join(outDir, "SKILL.md"), matter.stringify(content.trim() + "\n", fm));
-
-  if (!wanted.has(bay)) wanted.set(bay, new Set());
-  wanted.get(bay).add(slug);
   written++;
 }
 
