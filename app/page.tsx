@@ -23,8 +23,8 @@ export default function HomePage() {
         <div className="grid lg:grid-cols-[1.55fr_1fr]">
           <div className="p-8 sm:p-12 lg:p-16 relative overflow-hidden">
             <h1 className="mt-2 text-[2.5rem] sm:text-[3.5rem] lg:text-[4.25rem] leading-[0.96] tracking-tight font-black text-ink anim-rise" style={{ animationDelay: "60ms" }}>
-              <span className="serif-italic font-normal italic">The</span>{" "}
-              skills and prompts working at Planes right now
+              <span className="serif-italic font-normal italic">The skills and prompts</span>{" "}
+              working at Planes right now
             </h1>
 
             <p className="mt-7 max-w-prose text-[1.05rem] text-ink/80 leading-relaxed anim-rise" style={{ animationDelay: "160ms" }}>

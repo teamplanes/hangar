@@ -116,8 +116,8 @@ export default async function BayPage({
                   Plugin
                 </div>
                 <h2 className="text-[1.5rem] sm:text-[1.8rem] font-black tracking-tight leading-tight">
-                  <span className="serif-italic font-normal italic">The</span>{" "}
-                  {DISCIPLINE_LABEL[d]} plugin
+                  <span className="serif-italic font-normal italic">The {DISCIPLINE_LABEL[d]}</span>{" "}
+                  plugin
                 </h2>
                 <p className="mt-2 text-[0.93rem] text-ink/70 max-w-prose">
                   {packSkills.length} curated skill

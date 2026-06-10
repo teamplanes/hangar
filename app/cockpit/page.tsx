@@ -110,8 +110,8 @@ export default async function CockpitPage() {
             The Cockpit
           </div>
           <h1 className="text-[2.5rem] sm:text-[3.5rem] lg:text-[4rem] leading-[0.96] font-black tracking-tight text-cream">
-            <span className="serif-italic font-normal italic">How</span>{" "}
-            to fly with Claude at Planes
+            <span className="serif-italic font-normal italic">How to fly</span>{" "}
+            with Claude at Planes
           </h1>
           <p className="mt-6 max-w-2xl text-[1.05rem] text-cream/75 leading-relaxed">
             Your out-of-the-box skills, set up. These are some of the best skills we've found and started reaching for regularly. Where it made sense, we've shaped them around how we already work at Planes.
@@ -161,8 +161,8 @@ export default async function CockpitPage() {
             02 / Essential skills
           </div>
           <h2 className="text-[1.8rem] sm:text-[2.25rem] font-black tracking-tight leading-[1.05]">
-            <span className="serif-italic font-normal italic">The</span>{" "}
-            skills worth installing
+            <span className="serif-italic font-normal italic">The skills</span>{" "}
+            worth installing
           </h2>
           <p className="mt-3 text-ink/70 max-w-prose">
             Picked by discipline. Start with General, add your bay on top.
@@ -180,8 +180,8 @@ export default async function CockpitPage() {
               03 / Top skills
             </div>
             <h2 className="text-[1.8rem] sm:text-[2.25rem] font-black tracking-tight leading-[1.05]">
-              <span className="serif-italic font-normal italic">What</span>{" "}
-              people are actually reaching for
+              <span className="serif-italic font-normal italic">What people are</span>{" "}
+              actually reaching for
             </h2>
             <p className="mt-3 text-ink/60 text-sm max-w-prose">
               Ranked by copies this week. Real usage, not editorial.
