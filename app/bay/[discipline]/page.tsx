@@ -7,7 +7,7 @@ import {
   type Discipline,
 } from "@/lib/skills";
 import { SkillCard } from "@/components/SkillCard";
-import { CARD_BG, SWATCH_CLASS } from "@/components/disciplineStyles";
+import { CARD_BG, CARD_BORDER, SWATCH_CLASS } from "@/components/disciplineStyles";
 import { PackInstallCmds } from "./PackInstallCmds";
 
 export function generateStaticParams() {
@@ -37,7 +37,7 @@ export default async function BayPage({
   const hasPack = packSkills.length > 0;
 
   return (
-    <div>
+    <div className="space-y-4">
       {/* Hero: bay colour, full width */}
       <section className={`border border-ink ${CARD_BG[d]}`}>
         <div className="px-8 sm:px-12 lg:px-16 py-10 lg:py-14 grid lg:grid-cols-[1.4fr_1fr] gap-8 items-end">
@@ -51,7 +51,7 @@ export default async function BayPage({
             </div>
             <h1 className="mt-3 text-[2.5rem] sm:text-[3.5rem] lg:text-[4rem] leading-[0.96] font-black tracking-tight">
               {DISCIPLINE_LABEL[d]}{" "}
-              <span className="serif-italic font-normal italic">bay</span>.
+              <span className="serif-italic font-normal italic">bay</span>
             </h1>
             <p className="mt-4 max-w-prose text-[1.05rem] text-ink/80">
               {BAY_LEAD[d]}
@@ -101,14 +101,12 @@ export default async function BayPage({
         </div>
       </section>
 
-      {/* ── Plugin ───────────────────────────────────────────── */}
+      {/* ── Plugin: framed in the bay colour to set it apart from the inventory ── */}
       {hasPack && (
-        <section className="border-x border-b border-ink bg-cream">
-          {/* Header: bay-colour accent stripe on the left, install commands on the right */}
-          <div className={`border-b border-ink/15 flex`}>
-            {/* Colour stripe */}
-            <div className={`w-1.5 shrink-0 ${CARD_BG[d]}`} aria-hidden />
-            <div className="flex-1 px-8 sm:px-12 lg:px-16 py-10 grid lg:grid-cols-[1fr_auto] gap-8 items-start">
+        <section className={`border-[6px] ${CARD_BORDER[d]} bg-cream`}>
+          {/* Header */}
+          <div className="border-b border-ink/15">
+            <div className="px-8 sm:px-12 lg:px-16 py-10 grid lg:grid-cols-[1fr_auto] gap-8 items-start">
               <div>
                 <div className="flex items-center gap-2 font-mono text-[0.72rem] uppercase tracking-[0.18em] text-ink/60 mb-2">
                   <span
@@ -148,7 +146,7 @@ export default async function BayPage({
 
       {/* ── Inventory ────────────────────────────────────────── */}
       {inventorySkills.length > 0 && (
-        <section className="border-x border-b border-ink bg-cream">
+        <section className="border border-ink bg-cream">
           <div className="px-8 sm:px-12 lg:px-16 py-7 border-b border-ink/15 flex items-baseline justify-between gap-6">
             <div>
               <div className="font-mono text-[0.72rem] uppercase tracking-[0.18em] text-ink/55 mb-0.5">

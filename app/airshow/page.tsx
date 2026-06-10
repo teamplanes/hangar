@@ -41,9 +41,9 @@ export default function AirshowPage() {
               Eyes up
             </div>
             <h1 className="mt-3 text-[2.5rem] sm:text-[3.5rem] lg:text-[4rem] leading-[0.96] font-black tracking-tight">
-              <span className="serif-italic font-normal italic">Airshow.</span>
+              <span className="serif-italic font-normal italic">Airshow</span>
               <br />
-              Look what's flying.
+              Look what's flying
             </h1>
             <p className="mt-4 max-w-prose text-[1.05rem] text-ink/85">
               Things people in the studio have spotted out there. Products, demos, posts, and tools we want everyone to see. Not ours. Worth knowing.

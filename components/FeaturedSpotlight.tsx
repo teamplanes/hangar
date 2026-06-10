@@ -35,7 +35,7 @@ export function FeaturedSpotlight({ skill }: { skill: Skill }) {
             Why this, why now
           </div>
           <div className="serif-italic text-2xl mt-2 leading-snug">
-            This week&apos;s pick from the {DISCIPLINE_LABEL[skill.discipline]} bay.
+            This week&apos;s pick from the {DISCIPLINE_LABEL[skill.discipline]} bay
           </div>
           <p className="mt-4 text-ink/75 text-[0.95rem] leading-relaxed">
             {skill.spotlight_note ??

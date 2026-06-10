@@ -27,7 +27,7 @@ export default function HomePage() {
               <span className="serif-italic font-normal italic">
                 working at Planes
               </span>{" "}
-              right now.
+              right now
             </h1>
 
             <p className="mt-7 max-w-prose text-[1.05rem] text-ink/80 leading-relaxed anim-rise" style={{ animationDelay: "160ms" }}>
@@ -51,7 +51,7 @@ export default function HomePage() {
               By bay
             </div>
             <div className="serif-italic text-2xl text-ink mt-1">
-              Find your skills.
+              Find your skills
             </div>
 
             <ul className="mt-6 space-y-3">
@@ -129,7 +129,7 @@ export default function HomePage() {
           kicker="01 / Recently hangared"
           title={
             <>
-              Latest <span className="serif-italic font-normal">drops</span>.
+              Latest <span className="serif-italic font-normal">drops</span>
             </>
           }
           link={{ href: "/search", label: "Browse the catalogue" }}
@@ -160,7 +160,7 @@ export default function HomePage() {
               title={
                 <>
                   {DISCIPLINE_LABEL[d]}{" "}
-                  <span className="serif-italic font-normal">bay</span>.
+                  <span className="serif-italic font-normal">bay</span>
                 </>
               }
               swatchClass={SWATCH_CLASS[d]}

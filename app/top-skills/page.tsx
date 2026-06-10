@@ -21,7 +21,7 @@ export default async function TopSkillsPage() {
             </div>
             <h1 className="mt-3 text-[2.5rem] sm:text-[3.5rem] lg:text-[4rem] leading-[0.96] font-black tracking-tight">
               Top{" "}
-              <span className="serif-italic font-normal italic">Skills</span>.
+              <span className="serif-italic font-normal italic">Skills</span>
             </h1>
             <p className="mt-4 max-w-prose text-[1.05rem] text-ink/85">
               Ranked by how often people copy each skill&apos;s body this week, the

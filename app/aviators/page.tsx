@@ -33,9 +33,9 @@ export default function AviatorsPage() {
               Cleared for take-off
             </div>
             <h1 className="mt-3 text-[2.5rem] sm:text-[3.5rem] lg:text-[4rem] leading-[0.96] font-black tracking-tight">
-              <span className="serif-italic font-normal italic">Aviators.</span>
+              <span className="serif-italic font-normal italic">Aviators</span>
               <br />
-              Worth following.
+              Worth following
             </h1>
             <p className="mt-4 max-w-prose text-[1.05rem] text-ink/85">
               People we read, listen to and steal from. A curated short-list across writing, research, design and engineering. Updated when the studio finds someone new.

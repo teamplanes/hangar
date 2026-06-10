@@ -15,7 +15,7 @@ export default function FlightTipsPage() {
             </div>
             <h1 className="mt-3 text-[2.5rem] sm:text-[3.5rem] lg:text-[4rem] leading-[0.96] font-black tracking-tight">
               Flight{" "}
-              <span className="serif-italic font-normal italic">Tips</span>.
+              <span className="serif-italic font-normal italic">Tips</span>
             </h1>
             <p className="mt-4 max-w-prose text-[1.05rem] text-ink/80">
               Sharper prompts get sharper answers. Six worked examples below, then a checker that scores your own prompt against the rules of thumb the studio uses.
@@ -26,7 +26,7 @@ export default function FlightTipsPage() {
               In one line
             </div>
             <div className="serif-italic text-2xl text-ink mt-2 leading-snug">
-              Sharper prompt, sharper answer.
+              Sharper prompt, sharper answer
             </div>
             <p className="mt-4 text-ink/80 text-sm leading-relaxed">
               Every example below is a real moment we've seen go from average to surprisingly useful with a few small moves.
@@ -87,7 +87,7 @@ export default function FlightTipsPage() {
           </div>
           <h2 className="mt-2 text-[2rem] sm:text-[2.5rem] leading-tight font-black tracking-tight">
             Score a{" "}
-            <span className="serif-italic font-normal">real</span> one.
+            <span className="serif-italic font-normal">real</span> one
           </h2>
           <p className="mt-3 max-w-prose text-ink/80">
             Paste a prompt you'd actually send. The checker flags what's missing. It won't rewrite for you, that's your job (or Claude's).

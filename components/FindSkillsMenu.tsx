@@ -112,7 +112,7 @@ export function FindSkillsMenu({
                   </div>
                   <span className="font-mono text-ink/40 text-sm" aria-hidden>→</span>
                 </div>
-                <div className="mt-0.5 ml-[1.375rem] serif-italic text-[0.9rem] text-ink/60 normal-case tracking-normal leading-snug">
+                <div className="mt-0.5 ml-[1.375rem] text-[0.88rem] text-ink/60 normal-case tracking-normal leading-snug">
                   Everything across the hangar.
                 </div>
               </Link>
@@ -137,7 +137,7 @@ export function FindSkillsMenu({
                     </div>
                     <span className="font-mono text-ink/40 text-sm" aria-hidden>→</span>
                   </div>
-                  <div className="mt-0.5 ml-[1.375rem] serif-italic text-[0.9rem] text-ink/60 normal-case tracking-normal leading-snug">
+                  <div className="mt-0.5 ml-[1.375rem] text-[0.88rem] text-ink/60 normal-case tracking-normal leading-snug">
                     {BAY_BLURB[d]}
                   </div>
                 </Link>

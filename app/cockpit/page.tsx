@@ -111,7 +111,7 @@ export default async function CockpitPage() {
           </div>
           <h1 className="text-[2.5rem] sm:text-[3.5rem] lg:text-[4rem] leading-[0.96] font-black tracking-tight text-cream">
             How to fly with Claude{" "}
-            <span className="serif-italic font-normal italic">at Planes</span>.
+            <span className="serif-italic font-normal italic">at Planes</span>
           </h1>
           <p className="mt-6 max-w-2xl text-[1.05rem] text-cream/75 leading-relaxed">
             Your out-of-the-box skills, set up. These are some of the best skills we've found and started reaching for regularly. Where it made sense, we've shaped them around how we already work at Planes.
@@ -127,7 +127,7 @@ export default async function CockpitPage() {
           </div>
           <h2 className="text-[1.8rem] sm:text-[2.25rem] font-black tracking-tight leading-[1.05]">
             Set up your{" "}
-            <span className="serif-italic font-normal italic">cockpit</span>.
+            <span className="serif-italic font-normal italic">cockpit</span>
           </h2>
           <p className="mt-3 text-ink/70 max-w-prose">
             Five things that change how well Claude works for you. Do them once.
@@ -162,7 +162,7 @@ export default async function CockpitPage() {
           </div>
           <h2 className="text-[1.8rem] sm:text-[2.25rem] font-black tracking-tight leading-[1.05]">
             The skills worth{" "}
-            <span className="serif-italic font-normal italic">installing</span>.
+            <span className="serif-italic font-normal italic">installing</span>
           </h2>
           <p className="mt-3 text-ink/70 max-w-prose">
             Picked by discipline. Start with General, add your bay on top.
@@ -182,7 +182,7 @@ export default async function CockpitPage() {
             <h2 className="text-[1.8rem] sm:text-[2.25rem] font-black tracking-tight leading-[1.05]">
               What people are{" "}
               <span className="serif-italic font-normal italic">actually</span>{" "}
-              reaching for.
+              reaching for
             </h2>
             <p className="mt-3 text-ink/60 text-sm max-w-prose">
               Ranked by copies this week. Real usage, not editorial.

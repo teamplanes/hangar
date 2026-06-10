@@ -20,6 +20,16 @@ export const CARD_BG: Record<Discipline, string> = {
   "just-for-fun": "bg-[#e8d5ff]",
 };
 
+// Bay-colour border, used to frame the plugin block on bay pages.
+export const CARD_BORDER: Record<Discipline, string> = {
+  product: "border-sky",
+  design: "border-coral",
+  dev: "border-mint",
+  "new-business": "border-butter",
+  general: "border-cream-deep",
+  "just-for-fun": "border-[#e8d5ff]",
+};
+
 // Text color tuned for legibility on the card bg
 export const CARD_INK: Record<Discipline, string> = {
   product: "text-ink",
