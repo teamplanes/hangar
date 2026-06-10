@@ -5,39 +5,40 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Planes palette, pulled from the brand deck
+        // Planes palette, exact hex from the brand deck
         ink: {
-          DEFAULT: "#141414",
-          soft: "#2a2a2a",
-          muted: "#5e5b54",
+          DEFAULT: "#1e1e1e",
+          soft: "#3a3a3a",
+          muted: "#6b6b6b",
         },
         cream: {
-          DEFAULT: "#f4f1e9",
-          deep: "#ece7d8",
-          edge: "#d9d3c1",
+          DEFAULT: "#f4f3f1",
+          deep: "#eceae6",
+          edge: "#dedbd5",
         },
+        white: "#ffffff",
         sky: {
-          DEFAULT: "#b7e3f4",
-          deep: "#8fcfe7",
+          DEFAULT: "#afedff",
+          deep: "#7fdcf6",
         },
         butter: {
-          DEFAULT: "#f7e48f",
-          deep: "#e7cf63",
+          DEFAULT: "#ffe787",
+          deep: "#f6d65a",
         },
         coral: {
-          DEFAULT: "#f26a6a",
-          deep: "#d44a4a",
+          DEFAULT: "#ff7780",
+          deep: "#ef5b66",
         },
         mint: {
-          DEFAULT: "#97e2bb",
-          deep: "#62c594",
+          DEFAULT: "#a7ffd0",
+          deep: "#73edb0",
         },
         // bays
-        "bay-product": "#b7e3f4",
-        "bay-design": "#f26a6a",
-        "bay-dev": "#97e2bb",
-        "bay-new-business": "#f7e48f",
-        "bay-general": "#ece7d8",
+        "bay-product": "#afedff",
+        "bay-design": "#ff7780",
+        "bay-dev": "#a7ffd0",
+        "bay-new-business": "#ffe787",
+        "bay-general": "#eceae6",
       },
       fontFamily: {
         sans: ["var(--font-sans)", "ui-sans-serif", "system-ui", "sans-serif"],

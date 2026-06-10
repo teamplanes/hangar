@@ -4,78 +4,52 @@
 
 /* ─── Planes brand fonts ─── */
 
-/* Museo Sans — body + headings */
+/* Mint Grotesk — headings + body. Regular (400-500) + real Bold (600-900). */
 @font-face {
-  font-family: "Museo Sans";
-  src: url("/fonts/planes/Museo%20Sans/MuseoSans-300.otf") format("opentype");
-  font-weight: 300;
+  font-family: "Mint Grotesk";
+  src: url("/fonts/planes/MintGrotesk-Regular.otf") format("opentype");
+  font-weight: 400 500;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "Museo Sans";
-  src: url("/fonts/planes/Museo%20Sans/MuseoSans_500.otf") format("opentype");
-  font-weight: 500;
+  font-family: "Mint Grotesk";
+  src: url("/fonts/planes/MintGrotesk-Bold.woff2") format("woff2");
+  font-weight: 600 900;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "Museo Sans";
-  src: url("/fonts/planes/Museo%20Sans/MuseoSans_500_Italic.otf") format("opentype");
-  font-weight: 500;
+  font-family: "Mint Grotesk";
+  src: url("/fonts/planes/MintGrotesk-BoldItalic.woff2") format("woff2");
+  font-weight: 600 900;
   font-style: italic;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Museo Sans";
-  src: url("/fonts/planes/Museo%20Sans/MuseoSans_700.otf") format("opentype");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Museo Sans";
-  src: url("/fonts/planes/Museo%20Sans/MuseoSans_900.otf") format("opentype");
-  font-weight: 900;
-  font-style: normal;
   font-display: swap;
 }
 
-/* Museo Slab — italic display accents */
+/* PP Hatton — ultralight italic display accents (the italic word in headings) */
 @font-face {
-  font-family: "Museo Slab";
-  src: url("/fonts/planes/Museo%20Slab/Museo%20Slab%20500%20Italic.otf") format("opentype");
-  font-weight: 500;
+  font-family: "PP Hatton";
+  src: url("/fonts/planes/PPHatton-UltralightItalic.otf") format("opentype");
+  font-weight: 200 300;
   font-style: italic;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Museo Slab";
-  src: url("/fonts/planes/Museo%20Slab/Museo%20Slab%20700%20Italic.otf") format("opentype");
-  font-weight: 700;
-  font-style: italic;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Museo Slab";
-  src: url("/fonts/planes/Museo%20Slab/Museo%20Slab%20500.otf") format("opentype");
-  font-weight: 500;
-  font-style: normal;
   font-display: swap;
 }
 
 :root {
-  --font-sans: "Museo Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
-  --font-serif: "Museo Slab", "Museo Sans", ui-serif, Georgia, serif;
+  --font-sans: "Mint Grotesk", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+  --font-serif: "PP Hatton", Georgia, "Times New Roman", serif;
   --font-mono: ui-monospace, "JetBrains Mono", SFMono-Regular, Menlo, Consolas, monospace;
 
-  --ink: #141414;
-  --cream: #f4f1e9;
-  --cream-deep: #ece7d8;
-  --sky: #b7e3f4;
-  --butter: #f7e48f;
-  --coral: #f26a6a;
-  --mint: #97e2bb;
+  /* Planes brand palette (exact hex from the brand deck) */
+  --ink: #1e1e1e;
+  --cream: #f4f3f1;       /* light neutral page background (grain sits on top) */
+  --cream-deep: #eceae6;
+  --white: #ffffff;
+  --sky: #afedff;
+  --butter: #ffe787;
+  --coral: #ff7780;
+  --mint: #a7ffd0;
 }
 
 /* --- Paper background with fine grain --- */
@@ -84,8 +58,7 @@ body {
   background: var(--cream);
   color: var(--ink);
   font-family: var(--font-sans);
-  font-weight: 500;
-  font-feature-settings: "ss01", "cv11";
+  font-weight: 400;
 }
 
 body {
