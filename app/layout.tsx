@@ -42,7 +42,7 @@ export default function RootLayout({
             <div className="flex items-center gap-2 sm:gap-3">
               <Link
                 href="/search"
-                className="inline-flex items-center gap-1.5 px-3 py-2 border border-ink hover:bg-ink hover:text-cream transition font-mono text-[0.72rem] uppercase tracking-[0.16em]"
+                className="btn-ghost text-sm font-mono uppercase tracking-[0.14em]"
                 aria-label="Search"
               >
                 <SearchIcon />
