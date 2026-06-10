@@ -160,6 +160,18 @@ export const AIRSHOW: AirshowEntry[] = [
     color: "butter",
   },
   {
+    title: "CollectivAlly",
+    source: "CollectivAlly",
+    sourceUrl: "https://collectivally.com/",
+    spottedBy: "julian",
+    spottedOn: "2026-06-10",
+    tags: ["accessibility", "ai", "research"],
+    categories: ["ai", "craft"],
+    what: "Accessibility testing that runs your site past eight AI personas built from real research with disabled and neurodivergent people, then reports the barriers they hit on a real task, with fixes.",
+    why: "A thoughtful use of AI personas. It sits between slow user testing and shallow automated checkers, and keeps real people's input at the centre.",
+    color: "sky",
+  },
+  {
     title: "Arc",
     source: "The Browser Company",
     sourceUrl: "https://arc.net/",
