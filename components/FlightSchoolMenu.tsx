@@ -3,26 +3,66 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
+function Svg({ children }: { children: React.ReactNode }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      className="w-4 h-4 shrink-0 text-ink"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={1.6}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden
+    >
+      {children}
+    </svg>
+  );
+}
+
 const ITEMS = [
   {
     href: "/aviators",
     label: "Aviators",
     blurb: "People worth following.",
+    icon: <Svg><path d="M12 3.5l2.4 5 5.4.6-4 3.7 1.1 5.3L12 15.4 7.1 18.1l1.1-5.3-4-3.7 5.4-.6z" /></Svg>,
   },
   {
     href: "/airshow",
     label: "Airshow",
     blurb: "Things spotted in the wild.",
+    icon: (
+      <Svg>
+        <path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z" />
+        <circle cx="12" cy="12" r="2.6" />
+      </Svg>
+    ),
   },
   {
     href: "/flight-tips",
     label: "Flight Tips",
     blurb: "Sharper prompts, sharper answers.",
+    icon: (
+      <Svg>
+        <path d="M9.5 17.5h5" />
+        <path d="M10 20.5h4" />
+        <path d="M12 3.5a5.5 5.5 0 0 0-3.3 9.9c.6.5 1 1.2 1.1 1.9h4.4c.1-.7.5-1.4 1.1-1.9A5.5 5.5 0 0 0 12 3.5z" />
+      </Svg>
+    ),
   },
   {
     href: "/on-the-airways",
     label: "On the Airways",
     blurb: "Latest reading from across AI.",
+    icon: (
+      <Svg>
+        <circle cx="12" cy="12" r="1.8" />
+        <path d="M8.2 8.2a5.4 5.4 0 0 0 0 7.6" />
+        <path d="M15.8 8.2a5.4 5.4 0 0 1 0 7.6" />
+        <path d="M5.6 5.6a9 9 0 0 0 0 12.8" />
+        <path d="M18.4 5.6a9 9 0 0 1 0 12.8" />
+      </Svg>
+    ),
   },
 ] as const;
 
