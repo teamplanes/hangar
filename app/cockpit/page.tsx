@@ -81,7 +81,7 @@ const SETUP_STEPS: SetupStep[] = [
 export default async function CockpitPage() {
   const skills = allSkills();
   const { ranked } = await rankedSkills();
-  const topSkills = ranked.slice(0, 12);
+  const topSkills = ranked.slice(0, 5);
 
   const essentials = packByDiscipline(skills);
 
@@ -177,10 +177,10 @@ export default async function CockpitPage() {
             </p>
           </div>
           <Link
-            href="/search"
+            href="/top-skills"
             className="font-mono text-[0.78rem] uppercase tracking-[0.14em] text-ink/70 hover:text-ink underline decoration-ink/30 underline-offset-4 hover:decoration-ink"
           >
-            Browse all skills →
+            See the full board →
           </Link>
         </div>
 
