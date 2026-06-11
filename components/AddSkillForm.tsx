@@ -62,7 +62,9 @@ function todayISO(): string {
 function buildMarkdown(s: FormState): string {
   const tags = s.tags
     .split(",")
-    .map((t) => t.trim())
+    // Strip stray quotes/brackets a contributor may have typed, so we don't
+    // double-encode them into the YAML (e.g. ["\"feature\""]).
+    .map((t) => t.replace(/^[\s["']+|[\s\]"']+$/g, ""))
     .filter(Boolean);
   const tagsLine =
     tags.length > 0 ? `[${tags.map((t) => JSON.stringify(t)).join(", ")}]` : "[]";
