@@ -4,6 +4,7 @@ import { SignOut } from "./SignOut";
 import { AdminTable, type AdminRow } from "./AdminTable";
 import { provenanceMeta } from "@/components/Provenance";
 import { isAdmin, adminConfigured } from "@/lib/admin-auth";
+import { githubConfigured } from "@/lib/github-write";
 
 export const metadata = { title: "Admin · The Hangar" };
 
@@ -49,6 +50,18 @@ export default async function AdminPage() {
           <SignOut />
         </p>
       </div>
+
+      {!githubConfigured() ? (
+        <div className="border border-ink bg-coral/30 px-5 py-4 text-sm">
+          <div className="font-mono text-[0.7rem] uppercase tracking-[0.16em] text-ink">
+            Saving is off
+          </div>
+          <p className="mt-1.5 text-ink/85 max-w-prose">
+            <code className="font-mono">GITHUB_TOKEN</code> has no value at runtime, so Bay, plugin and edit changes can&apos;t be written to the repo. Set a valid token (with contents read &amp; write on{" "}
+            <code className="font-mono">teamplanes/hangar</code>) in the Vercel project&apos;s environment variables, then redeploy.
+          </p>
+        </div>
+      ) : null}
 
       <AdminTable rows={rows} />
     </div>

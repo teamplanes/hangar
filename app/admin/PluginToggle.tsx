@@ -11,11 +11,13 @@ export function PluginToggle({
 }) {
   const [inPlugin, setInPlugin] = useState(initial);
   const [status, setStatus] = useState<"idle" | "saving" | "saved" | "error">("idle");
+  const [errorMsg, setErrorMsg] = useState("");
 
   async function toggle() {
     if (status === "saving") return;
     const next = !inPlugin;
     setStatus("saving");
+    setErrorMsg("");
     try {
       const res = await fetch("/api/toggle-plugin", {
         method: "POST",
@@ -23,13 +25,14 @@ export function PluginToggle({
         body: JSON.stringify({ slug, inPlugin: next }),
       });
       const json = await res.json();
-      if (!res.ok) throw new Error(json.error);
+      if (!res.ok) throw new Error(json.error || `Failed (${res.status})`);
       setInPlugin(next);
       setStatus("saved");
       setTimeout(() => setStatus("idle"), 1600);
-    } catch {
+    } catch (e) {
+      setErrorMsg(e instanceof Error ? e.message : String(e));
       setStatus("error");
-      setTimeout(() => setStatus("idle"), 2500);
+      setTimeout(() => setStatus("idle"), 6000);
     }
   }
 
@@ -55,13 +58,19 @@ export function PluginToggle({
           aria-hidden
         />
       </button>
-      <span className="font-mono text-[0.65rem] uppercase tracking-[0.14em] text-ink/60 w-20">
+      <span
+        className={[
+          "font-mono text-[0.65rem] uppercase tracking-[0.14em] w-20",
+          status === "error" ? "text-coral cursor-help" : "text-ink/60",
+        ].join(" ")}
+        title={status === "error" ? errorMsg : undefined}
+      >
         {status === "saving"
           ? "saving…"
           : status === "saved"
             ? "synced ✓"
             : status === "error"
-              ? "error"
+              ? "error ⓘ"
               : inPlugin
                 ? "in plugin"
                 : "bay only"}
