@@ -125,6 +125,16 @@ export function AddSkillForm() {
   const filename = `skills/${s.discipline}/${slugify(s.title || "untitled-skill")}.md`;
   const canSubmit = Object.keys(errors).length === 0;
 
+  const FIELD_LABEL: Partial<Record<keyof FormState, string>> = {
+    title: "Title",
+    body: "The skill body",
+    sourceUrl: "Original URL",
+    sourceCredit: "Credit",
+  };
+  const missing = (Object.keys(errors) as (keyof FormState)[]).map(
+    (k) => FIELD_LABEL[k] ?? k,
+  );
+
   function update<K extends keyof FormState>(key: K, value: FormState[K]) {
     setS((prev) => ({ ...prev, [key]: value }));
   }
@@ -323,6 +333,11 @@ export function AddSkillForm() {
           >
             Reset
           </button>
+          {!canSubmit ? (
+            <p className="w-full font-mono text-[0.72rem] uppercase tracking-[0.14em] text-coral">
+              Still needed before you can open the PR: {missing.join(", ")}
+            </p>
+          ) : null}
         </div>
 
         {showPreview ? (
