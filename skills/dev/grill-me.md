@@ -2,7 +2,7 @@
 title: "Grill Me"
 discipline: dev
 type: skill
-tags: ["\"feature\"", "\"scoping\"", "\"refining\"", "\"building\"", "\"product\""]
+tags: ["feature", "scoping", "refining", "building", "product"]
 added_by: josh
 added_on: 2026-06-11
 status: draft
