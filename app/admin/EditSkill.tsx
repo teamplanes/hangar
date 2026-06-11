@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import {
   SPICE_ORDER,
   SPICE_LABEL,
@@ -105,15 +106,17 @@ export function EditSkill({
         Edit
       </button>
 
-      {open ? (
-        <div
-          className="fixed inset-0 z-50 flex items-start justify-center overflow-y-auto bg-ink/40 p-4 sm:p-8"
-          onMouseDown={(e) => {
-            if (e.target === e.currentTarget && status !== "saving") setOpen(false);
-          }}
-        >
-          <div className="w-full max-w-2xl border border-ink bg-cream shadow-paper-sm my-4">
-            <div className="flex items-center justify-between border-b border-ink px-6 py-4">
+      {open
+        ? createPortal(
+            <div
+              className="fixed inset-0 z-[100] flex items-center justify-center bg-ink/40 p-4 sm:p-6"
+              onMouseDown={(e) => {
+                if (e.target === e.currentTarget && status !== "saving")
+                  setOpen(false);
+              }}
+            >
+              <div className="flex w-full max-w-2xl max-h-[88vh] flex-col border border-ink bg-cream shadow-paper-sm">
+                <div className="flex shrink-0 items-center justify-between border-b border-ink px-6 py-4">
               <div>
                 <div className="font-mono text-[0.65rem] uppercase tracking-[0.16em] text-ink/60">
                   Edit skill
@@ -135,7 +138,7 @@ export function EditSkill({
               </button>
             </div>
 
-            <div className="p-6 space-y-5">
+            <div className="flex-1 overflow-y-auto p-6 space-y-5">
               <Field label="Title">
                 <input
                   value={title}
@@ -238,7 +241,7 @@ export function EditSkill({
                 <textarea
                   value={body}
                   onChange={(e) => setBody(e.target.value)}
-                  rows={14}
+                  rows={10}
                   className="input-paper resize-y font-mono text-[13px]"
                 />
               </Field>
@@ -250,26 +253,28 @@ export function EditSkill({
               ) : null}
             </div>
 
-            <div className="flex items-center justify-end gap-3 border-t border-ink px-6 py-4">
-              <button
-                type="button"
-                onClick={() => status !== "saving" && setOpen(false)}
-                className="btn-ghost text-sm"
-              >
-                Cancel
-              </button>
-              <button
-                type="button"
-                onClick={save}
-                disabled={status === "saving" || !title.trim()}
-                className="btn-ink disabled:opacity-40 disabled:cursor-not-allowed"
-              >
-                {status === "saving" ? "Saving…" : "Save changes →"}
-              </button>
-            </div>
-          </div>
-        </div>
-      ) : null}
+                <div className="flex shrink-0 items-center justify-end gap-3 border-t border-ink px-6 py-4">
+                  <button
+                    type="button"
+                    onClick={() => status !== "saving" && setOpen(false)}
+                    className="btn-ghost text-sm"
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    type="button"
+                    onClick={save}
+                    disabled={status === "saving" || !title.trim()}
+                    className="btn-ink disabled:opacity-40 disabled:cursor-not-allowed"
+                  >
+                    {status === "saving" ? "Saving…" : "Save changes →"}
+                  </button>
+                </div>
+              </div>
+            </div>,
+            document.body,
+          )
+        : null}
     </>
   );
 }
