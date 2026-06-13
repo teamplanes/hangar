@@ -12,16 +12,51 @@ export * from "./skills-types";
 
 const SKILLS_DIR = path.join(process.cwd(), "skills");
 
-function walk(dir: string): string[] {
+// A skill is either a standalone `<slug>.md` file, or a folder containing a
+// `SKILL.md` (plus any number of extra files that travel with it). When a
+// folder has a SKILL.md it's treated as ONE skill; its sibling files are not
+// surfaced as skills of their own.
+type FoundSkill = {
+  skillFile: string;
+  dir: string | null;
+  files: { name: string; path: string }[];
+};
+
+function listFilesRecursive(dir: string): string[] {
+  const out: string[] = [];
+  for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
+    const full = path.join(dir, e.name);
+    if (e.isDirectory()) out.push(...listFilesRecursive(full));
+    else if (e.isFile()) out.push(full);
+  }
+  return out;
+}
+
+function collect(dir: string): FoundSkill[] {
   if (!fs.existsSync(dir)) return [];
   const entries = fs.readdirSync(dir, { withFileTypes: true });
-  const files: string[] = [];
+  const hasSkillMd = entries.some((e) => e.isFile() && e.name === "SKILL.md");
+
+  if (hasSkillMd) {
+    const skillFile = path.join(dir, "SKILL.md");
+    const files = listFilesRecursive(dir)
+      .filter((f) => f !== skillFile)
+      .map((f) => ({
+        name: path.relative(dir, f),
+        path: path.relative(process.cwd(), f),
+      }))
+      .sort((a, b) => a.name.localeCompare(b.name));
+    return [{ skillFile, dir, files }];
+  }
+
+  const found: FoundSkill[] = [];
   for (const entry of entries) {
     const full = path.join(dir, entry.name);
-    if (entry.isDirectory()) files.push(...walk(full));
-    else if (entry.isFile() && entry.name.endsWith(".md")) files.push(full);
+    if (entry.isDirectory()) found.push(...collect(full));
+    else if (entry.isFile() && entry.name.endsWith(".md"))
+      found.push({ skillFile: full, dir: null, files: [] });
   }
-  return files;
+  return found;
 }
 
 function coerceDate(v: unknown): string | undefined {
@@ -34,13 +69,15 @@ let cache: Skill[] | null = null;
 
 export function allSkills(): Skill[] {
   if (cache) return cache;
-  const files = walk(SKILLS_DIR);
-  const skills: Skill[] = files.map((filepath) => {
-    const raw = fs.readFileSync(filepath, "utf8");
+  const found = collect(SKILLS_DIR);
+  const skills: Skill[] = found.map(({ skillFile, dir, files }) => {
+    const raw = fs.readFileSync(skillFile, "utf8");
     const { data, content } = matter(raw);
     const fm = data as SkillFrontmatter & Record<string, unknown>;
-    const rel = path.relative(SKILLS_DIR, filepath).replace(/\.md$/, "");
-    const slug = rel.split(path.sep);
+    const relTarget = dir
+      ? path.relative(SKILLS_DIR, dir)
+      : path.relative(SKILLS_DIR, skillFile).replace(/\.md$/, "");
+    const slug = relTarget.split(path.sep);
     return {
       ...fm,
       added_on: coerceDate(fm.added_on),
@@ -50,6 +87,7 @@ export function allSkills(): Skill[] {
       slug,
       href: `/skill/${slug.join("/")}`,
       body: content.trim(),
+      files: files.length ? files : undefined,
     };
   });
   skills.sort((a, b) => {

@@ -8,7 +8,7 @@ import {
   type SkillType,
   type SkillStatus,
 } from "@/lib/skills-types";
-import { GITHUB_NEW_FILE_BASE } from "@/lib/config";
+import { GITHUB_NEW_FILE_BASE, GITHUB_UPLOAD_BASE } from "@/lib/config";
 
 type FormState = {
   title: string;
@@ -377,6 +377,24 @@ export function AddSkillForm() {
               {filename}
             </div>
           </div>
+        </div>
+        <div className="border border-ink bg-sky p-6 text-sm">
+          <div className="font-mono text-[0.7rem] uppercase tracking-[0.18em] text-ink/80">
+            Multi-file skill?
+          </div>
+          <p className="mt-3 leading-relaxed">
+            This form takes a single skill body. If your skill is a folder, a{" "}
+            <span className="font-mono">SKILL.md</span> plus extra files, add it as a folder instead:{" "}
+            <a
+              href={GITHUB_UPLOAD_BASE}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline decoration-ink/30 underline-offset-4 hover:decoration-coral font-medium"
+            >
+              upload the folder on GitHub ↗
+            </a>
+            . Drop it into a new <span className="font-mono">&lt;bay&gt;/&lt;your-skill&gt;/</span> folder, with the main file named <span className="font-mono">SKILL.md</span>.
+          </p>
         </div>
         <div className="border border-ink bg-butter p-6 text-sm">
           <div className="font-mono text-[0.7rem] uppercase tracking-[0.18em] text-ink/80">

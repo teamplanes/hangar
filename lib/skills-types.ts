@@ -75,6 +75,10 @@ export type Skill = SkillFrontmatter & {
   slug: string[];
   href: string;
   body: string;
+  // For folder skills (a directory with SKILL.md plus extra files), the
+  // sibling files that travel with it. `name` is relative to the skill
+  // folder; `path` is relative to the repo root (for linking on GitHub).
+  files?: { name: string; path: string }[];
 };
 
 export const DISCIPLINES: Discipline[] = [

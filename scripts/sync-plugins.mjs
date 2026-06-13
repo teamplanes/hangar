@@ -17,13 +17,20 @@ const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), "..")
 const SKILLS_DIR = path.join(ROOT, "skills");
 const PLUGINS_DIR = path.join(ROOT, "plugins");
 
-function walk(dir) {
+// A skill is a standalone `<slug>.md` file, or a folder containing SKILL.md
+// (plus extra files that travel with it). Mirror the site loader's logic.
+function collect(dir) {
   if (!fs.existsSync(dir)) return [];
+  const entries = fs.readdirSync(dir, { withFileTypes: true });
+  if (entries.some((e) => e.isFile() && e.name === "SKILL.md")) {
+    return [{ skillFile: path.join(dir, "SKILL.md"), dir }];
+  }
   const out = [];
-  for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
+  for (const e of entries) {
     const full = path.join(dir, e.name);
-    if (e.isDirectory()) out.push(...walk(full));
-    else if (e.isFile() && e.name.endsWith(".md")) out.push(full);
+    if (e.isDirectory()) out.push(...collect(full));
+    else if (e.isFile() && e.name.endsWith(".md"))
+      out.push({ skillFile: full, dir: null });
   }
   return out;
 }
@@ -41,19 +48,19 @@ function deriveDescription(data, body) {
   return text.length > 400 ? text.slice(0, 397) + "..." : text;
 }
 
-const files = walk(SKILLS_DIR);
+const units = collect(SKILLS_DIR);
 const wanted = new Map(); // bay -> Set(slug) of pack skills we generated
 let written = 0;
 
-for (const file of files) {
-  const raw = fs.readFileSync(file, "utf8");
+for (const { skillFile, dir } of units) {
+  const raw = fs.readFileSync(skillFile, "utf8");
   const { data, content } = matter(raw);
   if (data.pack !== true) continue;
 
   const bay = data.discipline;
-  const slug = path.basename(file, ".md");
+  const slug = dir ? path.basename(dir) : path.basename(skillFile, ".md");
   if (!bay) {
-    console.warn(`! ${path.relative(ROOT, file)} has pack:true but no discipline — skipped`);
+    console.warn(`! ${path.relative(ROOT, skillFile)} has pack:true but no discipline — skipped`);
     continue;
   }
 
@@ -75,7 +82,14 @@ for (const file of files) {
   }
 
   const outDir = path.join(pluginDir, "skills", slug);
+  fs.rmSync(outDir, { recursive: true, force: true });
   fs.mkdirSync(outDir, { recursive: true });
+
+  // Folder skills: copy every sibling file across (preserving structure), then
+  // overwrite SKILL.md with the plugin-shaped frontmatter (name + description).
+  if (dir) {
+    fs.cpSync(dir, outDir, { recursive: true });
+  }
   const fm = { name: slug, description: deriveDescription(data, content) };
   fs.writeFileSync(path.join(outDir, "SKILL.md"), matter.stringify(content.trim() + "\n", fm));
   written++;

@@ -12,6 +12,9 @@ import { ViewTracker } from "@/components/ViewTracker";
 import { ProvenanceBlock } from "@/components/Provenance";
 import { CARD_BG, SWATCH_CLASS } from "@/components/disciplineStyles";
 import { SkillStatsRail } from "@/components/SkillStats";
+import { GITHUB_OWNER, GITHUB_REPO, GITHUB_DEFAULT_BRANCH } from "@/lib/config";
+
+const REPO_BLOB = `https://github.com/${GITHUB_OWNER}/${GITHUB_REPO}/blob/${GITHUB_DEFAULT_BRANCH}`;
 
 export function generateStaticParams() {
   return allSkills().map((s) => ({ slug: s.slug }));
@@ -94,7 +97,9 @@ export default async function SkillPage({
         <div className="mt-6 border-t border-ink pt-6">
           <CopyButton text={skill.body} label="Copy skill body" trackSlug={skill.slug.join("/")} />
           <span className="ml-3 font-mono text-[0.7rem] uppercase tracking-[0.14em] text-ink/60">
-            paste into Claude, or drop the file into a Claude Code skills dir
+            {skill.files && skill.files.length > 0
+              ? "this skill ships extra files — install via the plugin to get all of them"
+              : "paste into Claude, or drop the file into a Claude Code skills dir"}
           </span>
         </div>
 
@@ -146,6 +151,34 @@ export default async function SkillPage({
         </div>
 
         <ProvenanceBlock skill={skill} />
+
+        {skill.files && skill.files.length > 0 ? (
+          <div className="border border-ink bg-cream p-6">
+            <div className="font-mono text-[0.7rem] uppercase tracking-[0.18em] text-ink/70 mb-1">
+              Bundled files
+            </div>
+            <p className="text-[0.78rem] text-ink/60 leading-snug mb-3">
+              This is a multi-file skill. These travel with it in the plugin.
+            </p>
+            <ul className="space-y-1.5">
+              <li>
+                <span className="font-mono text-[0.8rem] text-ink">SKILL.md</span>
+              </li>
+              {skill.files.map((f) => (
+                <li key={f.path}>
+                  <a
+                    href={`${REPO_BLOB}/${f.path}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-mono text-[0.8rem] text-ink/80 hover:text-coral underline decoration-ink/20 underline-offset-4 hover:decoration-coral break-all"
+                  >
+                    {f.name} ↗
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ) : null}
 
         <div className="border border-ink bg-cream p-6">
           <div className="font-mono text-[0.7rem] uppercase tracking-[0.18em] text-ink/70 mb-3">
