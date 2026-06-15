@@ -35,8 +35,12 @@ function collect(dir) {
   return out;
 }
 
-// Derive a one-line plugin description from summary, else first real paragraph.
+// Derive the plugin description: a skill's own `description` (the Claude Code
+// trigger text) wins, then a Hangar `summary`, then the first real paragraph.
 function deriveDescription(data, body) {
+  if (data.description && String(data.description).trim()) {
+    return String(data.description).trim().replace(/\s+/g, " ");
+  }
   if (data.summary && String(data.summary).trim()) {
     return String(data.summary).trim().replace(/\s+/g, " ");
   }
