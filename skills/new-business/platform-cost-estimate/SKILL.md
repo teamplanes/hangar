@@ -23,7 +23,7 @@ tags:
   - estimating
   - scoping
   - notion
-added_by: julian
+added_by: fiona
 added_on: '2026-06-15'
 status: draft
 summary: >-
@@ -80,7 +80,7 @@ Assemble the numbers into the structure in `references/notion-page-structure.md`
 
 - **Baseline fixed platform costs**: per service, what is included and the likely monthly cost at this scale. Apply free tiers and usage credits first, then overage. Many services sit in free or low-fixed tiers for small products, so do not inflate this.
 - **AI / usage costs**: cost per unit (e.g. per report) across a budget-to-premium model range, then monthly cost at expected volume. Note that batching halves token cost and prompt caching cuts repeated-context cost by ~90%.
-- **People time**: maintenance as days per month, shown at both the full senior day rate and a discounted retainer rate. Use the current Planes rates in the catalogue and flag the retainer discount as "to confirm" unless told otherwise.
+- **People time**: maintenance as days per month, shown at both the full senior day rate and a discounted retainer rate. Ask the team for Planes' current day rate (it is not stored in this skill) and flag the retainer discount as "to confirm" unless told otherwise.
 - **Light / moderate / heavy scenarios**: a table showing how hard costs move with volume.
 - **Thresholds**: the specific points (seat counts, connection counts, MAU, event volumes, compliance tiers) where a cost steps up, grounded in the actual plan limits found in research.
 - **Variables and caveats**: what swings the cost, and honest framing that these are estimates, not quotes.

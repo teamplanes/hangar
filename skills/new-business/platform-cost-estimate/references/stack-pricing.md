@@ -82,7 +82,7 @@ Rates are USD per 1M tokens (input / output). Sources: https://platform.claude.c
 ### Other services that come up (research live if chosen)
 Twilio (SMS / OTP, per message), Algolia (hosted search), Sentry (error monitoring, an alternative to PostHog), Bynder or similar DAM (media), Cloudflare, and domain/TLD renewal. None have seed pricing here; research them live if the user adds them.
 
-## People time (Planes internal)
-- Full senior developer day rate: 1,050 GBP.
-- Retainer: a committed package (commonly 4 days/month) usually carries a reduction. Show both the full rate and an illustrative discounted rate (default 15% off = 892.50 GBP/day) and flag the discount percentage as "to confirm" unless the user states it.
+## People time
+- Day rate: this skill does not store Planes' day rate. Ask the team for the current published senior day rate (or check the internal rate card) and use that figure. Do not guess one.
+- Retainer: a committed package (commonly 4 days/month) usually carries a reduction. Show both the full rate and a discounted rate, taking the current discount from the team, and flag the discount percentage as "to confirm" unless the user states it.
 - Typical maintenance effort: bug fixes / dependency updates / security patches 1 to 2 days/month, monitoring / incident response 0.5 to 1 day/month, minor iterations as needed. Roughly 2 to 4 days/month total.
