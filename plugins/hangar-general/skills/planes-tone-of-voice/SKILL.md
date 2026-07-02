@@ -43,6 +43,7 @@ Same voice, different volume. Read the room before you set it.
 
 - **Bold** when selling the vision: pitches, hero lines, marketing. Short, punchy, a little swagger.
 - **Plain** when doing the work: playbacks, working sessions, product copy, status updates. Clear and grounded, less swagger.
+- **Thought leadership** on LinkedIn, talks, and insight pieces: teach, take a position, coin a frame. See the recipe below.
 
 Both are confident, human, and honest. Neither is hype, and neither is corporate.
 
@@ -51,29 +52,55 @@ Both are confident, human, and honest. Neither is hype, and neither is corporate
 - **The turn.** A soft, expected setup, then a bold turn. For the key moment, not every line.
   - "Not just usable. Unstoppable."
   - "We don't just launch features. We launch businesses."
+- **The yet pivot.** State the accepted truth, then pivot on "yet" or "but" to the real problem. Our sharpest thought-leadership move.
+  - "Businesses are moving faster with AI, yet very few are moving forward."
+  - "Everyone is adopting AI, yet almost nobody is becoming AI-native."
+  - "AI is the biggest growth opportunity in a generation, but most businesses are stuck betting it on marginal gains."
 - **A real hook, not a warm-up.** Open with the point or a sharp line, never "Hi, I'm X and today we'll cover..." or "In today's fast-moving landscape".
 - **Proof, plainly stated.** "102 products shipped. 9 award recognitions. 2.2M+ users reached." Let the numbers carry it.
 - **The pairing.** A quiet kicker over a bold headline (in decks: serif italic kicker, bold sans headline). The kicker sets up, the headline lands.
 - **One thing.** Every deck, section, or email leaves one idea behind. Know what it is before you write.
 
+## Writing for LinkedIn and talks
+
+The thought-leadership recipe, drawn from how we actually post.
+
+1. **Open on the reader's reality, in their words.** Second person, plain. "You got the mandate, you bought the tools, you rolled them out across the business. And yet the returns aren't showing up."
+2. **One idea per line.** Short paragraphs with space between them. Let each line land.
+3. **Name the tension with a yet pivot and a stat.** "AI is being adopted faster than any technology before it, and yet only 5% of companies are seeing meaningful value."
+4. **Pivot on a question.** "The reason?" "So how do you get out of it?"
+5. **Take a position, and coin a frame if it earns one.** "We call it single-player mode." "Treating AI as infrastructure the whole business runs on."
+6. **Point to our work last, and lightly.** "Swipe to learn how we helped Lewis Silkin place the right bet." Never open with the sell.
+
+Avoid: "thrilled to announce", hashtag stacks, exclamation marks, and posting a brochure. Teach something.
+
 ## Real Planes lines (voiceprints)
 
-Pattern-match the rhythm of these, do not copy them wholesale.
+Pattern-match the rhythm, do not copy them wholesale.
 
+Positioning:
+- "Make ideas move."
+- "The product studio for the AI age."
 - "We build digital product businesses that launch in weeks and grow for years."
 - "The speed of startups, the strength of enterprise."
-- "We make ideas move."
+- "The future is moving fast. You should too."
+- "To stay ahead, you need to lead the wave, not chase it."
+
+Point of view:
 - "We don't just do experiments. We build businesses that scale."
 - "Most digital products miss the mark. We know how to launch and win."
-- "The market is flooded with MVPs that don't move."
+- "We call it single-player mode. And most businesses are stuck in it."
+- "When everyone has the same models, your edge isn't the technology. It's the expertise, the data, and the trust you've already built."
 - "That means real traction, not just nice wireframes."
-- "With speed. For scale. Backed by strategy."
-- "Dare to fail."
+
+Human and warm:
+- "Designed to support people for the long term, not the length of a prescription."
 - "It's a bit messy, because the rules of the game change as we grow."
+- "Dare to fail."
 
 ## Words
 
-**Sound like us:** launch, ship, build, move, scale, real, traction, bold, fast, with intent, dare to fail, get stuck in, speed of startups, strength of enterprise.
+**Sound like us:** launch, ship, build, move, scale, real, traction, bold, fast, with intent, AI-native, make ideas move, lead the wave, move forward, dare to fail, get stuck in, speed of startups, strength of enterprise.
 
 **Cut on sight:** leverage, seamless, robust, cutting-edge, world-class, best-in-class, revolutionary, game-changing, empower, unlock, elevate, synergy, streamline, optimize, utilize, facilitate, innovative, passionate about, partnered with, "proven track record", "full potential", "collaborate closely", "in today's landscape".
 
@@ -99,6 +126,7 @@ Pattern-match the rhythm of these, do not copy them wholesale.
 
 ## Who we are (keep copy true to this)
 
+- **What we are:** the product studio for the AI age. We design, build and launch AI-native products. Three modes: Explore, Launch, Evolve.
 - **Proposition:** We build digital product businesses that launch in weeks and grow for years. The speed of startups, the strength of enterprise.
 - **Vision:** Creating accelerated possibilities for all.
 - **Mission:** Launch often, learn together, lead by example.
