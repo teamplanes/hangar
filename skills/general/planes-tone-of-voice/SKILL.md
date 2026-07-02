@@ -73,16 +73,16 @@ Both are confident, human, and honest. Neither is hype, and neither is corporate
 
 ## Signature moves
 
-- **The turn.** A soft, expected setup, then a bold turn. For the key moment, not every line.
-  - "Not just usable. Unstoppable."
-  - "We don't just launch features. We launch businesses."
-- **The yet pivot.** State the accepted truth, then pivot on "yet" or "but" to the real problem. Our sharpest thought-leadership move.
-  - "Businesses are moving faster with AI, yet very few are moving forward."
-  - "Everyone is adopting AI, yet almost nobody is becoming AI-native."
-  - "AI is the biggest growth opportunity in a generation, but most businesses are stuck betting it on marginal gains."
+**Contrast is the engine.** Most Planes lines set one thing against another: clarity against complexity, outcomes against output, what a thing shows against where it takes you. The moves below are all versions of that. Use one per moment, never stacked.
+
+- **The turn.** A soft, expected setup, then a bold turn. "Not just usable. Unstoppable." "We don't just launch features. We launch businesses."
+- **The yet pivot.** State the accepted truth, then pivot on "yet" or "but" to the real problem. Our sharpest thought-leadership move. "Everyone is adopting AI, yet almost nobody is becoming AI-native." "AI is the biggest growth opportunity in a generation, but most businesses are stuck betting it on marginal gains."
+- **X, not Y.** Terse, parallel principle labels that say what we do by naming what we don't. Best for approach and principles. "Ship in slices, not phases." "Build for outcomes, not output." "AI that's useful, not decorative." "Guide people to a decision, don't just show them the options."
+- **Coin it and own it.** Name the idea in a few words, then repeat it so it sticks. "Complexity into clarity." "Digital confidence." "Single-player mode." "The adoption gap."
+- **Name the risk, own the fix.** In pitches, say the problem plainly as something live, then take the fix. "Customers trust you, but the digital experience is undermining that. This isn't theoretical. The risk is live right now."
 - **A real hook, not a warm-up.** Open with the point or a sharp line, never "Hi, I'm X and today we'll cover..." or "In today's fast-moving landscape".
-- **Proof, plainly stated.** "102 products shipped. 9 award recognitions. 2.2M+ users reached." Let the numbers carry it.
-- **The pairing.** A quiet kicker over a bold headline (in decks: serif italic kicker, bold sans headline). The kicker sets up, the headline lands.
+- **Proof, plainly stated.** "102 products shipped. 9 award recognitions. 2.2M+ users reached." Numbers carry it. In decks, proof is often shown, not told: a client logo wall, or a testimonial with the key phrase in bold.
+- **The pairing.** A quiet kicker over a bold headline, sometimes a bold word and a serif-italic word in one line ("**Customer** *objectives*"). The kicker sets up, the headline lands.
 - **One thing.** Every deck, section, or email leaves one idea behind. Know what it is before you write.
 
 ## Writing for LinkedIn and talks
@@ -98,6 +98,19 @@ The thought-leadership recipe, drawn from how we actually post.
 
 Avoid: "thrilled to announce", hashtag stacks, exclamation marks, and posting a brochure. Teach something.
 
+## Writing decks and pitches
+
+How a Planes pitch tends to move:
+
+1. **Open on momentum, not a logo.** "From scale-ups to household names, we bring the momentum to move complex product challenges forward."
+2. **Name the opportunity, or the live risk.** "Customers trust you, but the digital experience is undermining that. The risk is live right now."
+3. **Show you heard the brief, then reframe it** in a coined phrase. "What we've heard from your brief", then the one idea that changes how they see it.
+4. **Approach as X-not-Y principles.** "Start with real needs. De-risk early and often. Make it real, fast. Ship in slices, not phases. Build for outcomes, not output."
+5. **Proof by association and a bolded testimonial line,** not stat-stuffing.
+6. **Close on partnership and impact.** "We'd relish building and launching it with you, fast and with impact."
+
+Push back on one thing in the brief. We win by being the studio that said the true thing. See [[credentials-response]].
+
 ## Real Planes lines (voiceprints)
 
 Pattern-match the rhythm, do not copy them wholesale.
@@ -105,7 +118,9 @@ Pattern-match the rhythm, do not copy them wholesale.
 Positioning:
 - "Make ideas move."
 - "The product studio for the AI age."
-- "We build digital product businesses that launch in weeks and grow for years."
+- "We bring the momentum to move complex product challenges forward."
+- "We help organisations turn complexity into clarity."
+- "We don't start with pages or templates. We start with purpose, users and the problems that need solving."
 - "The speed of startups, the strength of enterprise."
 - "The future is moving fast. You should too."
 - "To stay ahead, you need to lead the wave, not chase it."
@@ -115,7 +130,15 @@ Point of view:
 - "Most digital products miss the mark. We know how to launch and win."
 - "We call it single-player mode. And most businesses are stuck in it."
 - "When everyone has the same models, your edge isn't the technology. It's the expertise, the data, and the trust you've already built."
-- "That means real traction, not just nice wireframes."
+- "The existing site shows what's available. The new one should take people somewhere."
+- "This isn't a theoretical issue. The risk is live right now."
+
+Approach and principles:
+- "Make it real, fast."
+- "Ship in slices, not phases."
+- "Build for outcomes, not output."
+- "Start with real needs. De-risk early and often."
+- "With speed. For scale. Backed by strategy."
 
 Human and warm:
 - "Designed to support people for the long term, not the length of a prescription."
