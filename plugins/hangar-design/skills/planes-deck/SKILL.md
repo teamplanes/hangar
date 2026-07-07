@@ -30,6 +30,24 @@ Not for: Google Slides / Keynote / PowerPoint decks (this is HTML), or a client'
 3. Replace the example slides with your content, one section at a time. Keep the `<style>`, `<script>`, and the chrome (progress bar, runhead, overview) untouched.
 4. Present straight from the browser, or export a PDF (below).
 
+## Brand tokens
+
+Already wired into the template as CSS variables. Listed here for reference; use the variables, not raw hex, when editing.
+
+| Token | Hex | Use |
+|---|---|---|
+| `--paper` | `#F4F3F1` | Page background, off-white with grain |
+| `--ink` | `#1E1E1E` | All headlines and body text |
+| `--white` | `#FFFFFF` | White |
+| `--blue` | `#AFEDFF` | Accent |
+| `--mint` | `#A7FFD0` | Accent |
+| `--yellow` | `#FFE787` | Accent |
+| `--coral` | `#FF7780` | Accent |
+
+Colour rule: ink text on paper, white and the accent panels; white text on ink or black. Never colour the body text. Accents carry dividers, chips, colour panels and the odd emphasis, not paragraphs.
+
+Type: Mint Grotesk for headlines and body (`--font-display`, `--font-body`); PP Hatton italic for kickers and big numerals (`--font-serif`). Sizes are fluid `clamp()` (headline--md is `clamp(2.2rem, 5.2vw, 4.4rem)`, body is `clamp(.95rem, 1.15vw, 1.2rem)`). Never hardcode px.
+
 ## Slide layouts
 
 Each slide is `<section class="slide slide--TYPE" data-accent="blue|mint|yellow|coral" data-title="Overview label">`. Add `data-fill="accent"` for a full-colour panel (used on cover, dividers, demo). `data-title` is the label in the overview grid.
@@ -51,11 +69,13 @@ The template ships one working example of each of these. The CSS also contains `
 
 **Accent rhythm:** give each section one accent and rotate across sections (blue → mint → yellow → coral) so the deck has momentum. Content slides sit on paper; the accent shows on dividers, chips and colour panels.
 
-**Screenshots:** drop images into any `<figure>` slot as a `data:` URI. Downscale to about 1600px wide and use JPEG to keep the file light. Placeholders use `class="... is-empty"` with a `.ph` label.
+**Screenshots:** drop images into any `<figure>` slot as a base64 `data:` URI. Downscale first to keep the file light, for example `sips -s format jpeg -s formatOptions 78 -Z 1600 in.png --out out.jpg`, then embed `data:image/jpeg;base64,<...>`. Placeholders use `class="... is-empty"` with a `.ph` label.
 
-## Voice
+## Voice and story
 
 Write every line in Planes' voice: confident, plain, honest, no em dashes, sentence case. Use the **planes-tone-of-voice** skill. One idea per slide; cut hard.
+
+Pairs with **presentation-narrative** for the deck's arc and story before you build. A playback usually runs 15 to 25 slides: cover, agenda, a divider per section, a live-demo holding slide where relevant, and a closing asks slide.
 
 ## Export to PDF
 
