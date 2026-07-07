@@ -7,7 +7,7 @@ description: >-
   slide deck with Planes fonts, colours, transitions and layouts, or asks to
   "make a deck like the Lewis Silkin playback" or "build a deck in the Planes
   style".
-title: Planes deck
+title: Planes HTML Deck Builder
 discipline: design
 type: skill
 tags:
@@ -34,7 +34,7 @@ summary: >-
   workflow and PDF export.
 ---
 
-# Planes deck
+# Planes HTML Deck Builder
 
 ## Overview
 
@@ -42,12 +42,25 @@ A single self-contained HTML file that presents like the studio's playback decks
 
 **Do not rebuild the CSS or JS.** The look people like lives in the template's `<style>` and `<script>`. Keep them as-is and only edit the `<section class="slide">` blocks.
 
+Example of the kind of deck this builds: [the Lewis Silkin playback](https://drive.google.com/file/d/1jZnStVosWk22wO0AqqSRQodI9OxYwSR8/view?usp=sharing).
+
 ## When to use
 
 - A client playback, pitch, demo, strategy readout, or any deck that should look like Planes.
 - Someone asks for "a deck like the [X] playback" or "in the Planes style".
 
 Not for: Google Slides / Keynote / PowerPoint decks (this is HTML), or a client's own brand (match theirs).
+
+## Before you build: check Roger
+
+A deck is only as good as the facts in it. Before you write a line of copy, check **Roger** (Planes' org memory) for the client's real details, so the deck starts from truth instead of plausible-sounding invention.
+
+- `catch-me-up` on the project scope for the standing brief: what it is, where it is, open questions, who owns what.
+- `search-memory` and `search-artifacts` for the specifics you are about to put on a slide: the numbers, the names, the current status, the decisions already made.
+- Pull real client and partner names, live figures, and dates from Roger. Never invent a statistic to fill a stats slide. If Roger does not have a number, say so and leave it out rather than guess. A wrong figure on a client playback is worse than no figure.
+- If someone has left or a name has changed, Roger is where you catch it before the client does.
+
+This is the difference between a deck that looks like Planes and one that is right.
 
 ## Quick start
 
@@ -90,12 +103,19 @@ Each slide is `<section class="slide slide--TYPE" data-accent="blue|mint|yellow|
 | Timeline | `slide--timeline` | Click-through milestones; each screenshot is its own step |
 | Questions | `slide--questions` | Numbered list with ownership chips (`chip--you` filled, `chip--us` outline) |
 | Live demo | `slide--demo` | Holding slide to switch away from to the real product |
+| Achievements | `slide--achievements` | 3-up proof grid: `.ach-cell` with a `.label` and `.body` |
+| Grid | `slide--grid` | 2-up or 4-up cards via `.duo-grid` / `.quad-grid`, each a `.three-col` with `.idx`, `.label`, `.body` |
+| Split | `slide--split` | Two panes side by side; add `.pane--fill` to flood one half with the accent (the "on paper / on colour" beat) |
+| Logo wall | `slide--logos` | Client logos in an even auto-fit grid (`.logo-wall` > `.logo-cell`), monochrome. The "trusted by" / proof-by-association slide |
+| Closing | `slide--closing` | An asks checklist: `.ask-list` > `.ask` with an arrow `.mark` svg. "What we need from you" |
 
-The template ships one working example of each of these. The CSS also contains `slide--achievements` (3-up grid), `slide--grid` (2-up / 4-up via `.duo-grid` / `.quad-grid`), `slide--split` (half paper, half colour), and `slide--closing` (an asks checklist). Copy those from a recent deck if you need them.
+The template ships one working example of every layout above.
 
 **Accent rhythm:** give each section one accent and rotate across sections (blue → mint → yellow → coral) so the deck has momentum. Content slides sit on paper; the accent shows on dividers, chips and colour panels.
 
 **Screenshots:** drop images into any `<figure>` slot as a base64 `data:` URI. Downscale first to keep the file light, for example `sips -s format jpeg -s formatOptions 78 -Z 1600 in.png --out out.jpg`, then embed `data:image/jpeg;base64,<...>`. Placeholders use `class="... is-empty"` with a `.ph` label.
+
+**Logos and the wordmark:** client logos go in a `slide--logos` wall, one per `.logo-cell`, on an even auto-fit grid. Use a single monochrome treatment (the CSS greyscales them and drops them to a low opacity) so the wall reads as one calm set, not a ransom note of brand colours. Embed each as a base64 SVG or PNG in the `.logo-cell img`; a text fallback in the cell is fine while you gather assets. The PLANES wordmark is the wavy `.wordmark` spans on the cover, styled by the template. Leave it as it is. No decorative doodles, illustrations or flight paths anywhere in the deck: the brand is the type, the colour and the space.
 
 ## Voice and story
 

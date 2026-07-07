@@ -635,6 +635,12 @@ body::after{
 .slide--log.is-active .log-stack figure{animation:log-set .6s var(--ease) both;}
 .slide--log.is-active .log-stack .pg-front{animation-delay:.08s;}
 @keyframes log-set{from{opacity:0;transform:translate(-50%,-46%) rotate(0deg) scale(.97);}}
+
+/* ---------- LOGO WALL ---------- */
+.slide--logos .headline{margin-bottom:clamp(1.4rem,4vh,2.6rem);}
+.logo-wall{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:clamp(1.4rem,3vw,3rem);align-items:center;width:100%;}
+.logo-cell{display:grid;place-items:center;aspect-ratio:5/2;font-family:var(--font-display);font-weight:700;font-size:clamp(1rem,1.4vw,1.3rem);color:var(--ink);opacity:.6;}
+.logo-cell img{max-width:100%;max-height:56%;height:auto;filter:grayscale(1);}
 </style>
 </head>
 <body>
@@ -778,6 +784,67 @@ body::after{
     <p class="demo-tag eyebrow"><span class="dot"></span>Live demo</p>
     <h2 class="headline">Let's look at<br>the real thing.</h2>
     <p class="body">Switching across now. We'll come back here after.</p>
+  </section>
+
+
+  <!-- ACHIEVEMENTS (calm 3-up grid of wins) -->
+  <section class="slide slide--achievements" data-accent="coral" data-title="Achievements">
+    <h2 class="headline headline--md">What we've achieved.</h2>
+    <div class="ach-grid">
+      <div class="ach-cell"><div class="label">First win</div><p class="body">One or two plain sentences. State it, don't sell it.</p></div>
+      <div class="ach-cell"><div class="label">Second win</div><p class="body">One or two plain sentences.</p></div>
+      <div class="ach-cell"><div class="label">Third win</div><p class="body">One or two plain sentences.</p></div>
+      <div class="ach-cell"><div class="label">Fourth win</div><p class="body">One or two plain sentences.</p></div>
+      <div class="ach-cell"><div class="label">Fifth win</div><p class="body">One or two plain sentences.</p></div>
+    </div>
+  </section>
+
+  <!-- GRID: two-up (swap .duo-grid for .quad-grid and add cells for four-up) -->
+  <section class="slide slide--grid" data-accent="mint" data-title="Two up">
+    <h2 class="headline headline--md">Two things to weigh.</h2>
+    <p class="lead-note">An optional serif-italic setup line.</p>
+    <div class="duo-grid">
+      <div class="three-col"><span class="idx">01</span><div class="label">Option one</div><p class="body">A short description.</p></div>
+      <div class="three-col"><span class="idx">02</span><div class="label">Option two</div><p class="body">A short description.</p></div>
+    </div>
+  </section>
+
+  <!-- COLOUR SPLIT (half paper, half accent panel) -->
+  <section class="slide slide--split" data-accent="yellow" data-title="Colour split">
+    <div class="pane">
+      <p class="kicker">On paper</p>
+      <h2 class="headline headline--md">The setup.</h2>
+      <p class="body">Supporting detail on the paper side.</p>
+    </div>
+    <div class="pane pane--fill">
+      <p class="kicker">On colour</p>
+      <h2 class="headline headline--md">The payoff.</h2>
+    </div>
+  </section>
+
+  <!-- LOGO WALL (replace each cell with a monochrome/ink logo <img>) -->
+  <section class="slide slide--logos" data-accent="blue" data-title="Logo wall">
+    <h2 class="headline headline--md">Trusted by</h2>
+    <div class="logo-wall">
+      <div class="logo-cell">Client</div>
+      <div class="logo-cell">Client</div>
+      <div class="logo-cell">Client</div>
+      <div class="logo-cell">Client</div>
+      <div class="logo-cell">Client</div>
+      <div class="logo-cell">Client</div>
+      <div class="logo-cell">Client</div>
+      <div class="logo-cell">Client</div>
+    </div>
+  </section>
+
+  <!-- CLOSING / ASKS (checklist of what you need) -->
+  <section class="slide slide--closing" data-accent="coral" data-title="What we need from you">
+    <h2 class="headline headline--md">What we need from you.</h2>
+    <div class="ask-list">
+      <div class="ask"><span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12h14M13 6l6 6-6 6"/></svg></span>The first thing we need to move forward.</div>
+      <div class="ask"><span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12h14M13 6l6 6-6 6"/></svg></span>The second thing.</div>
+      <div class="ask"><span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12h14M13 6l6 6-6 6"/></svg></span>The third thing.</div>
+    </div>
   </section>
 
 </main>
