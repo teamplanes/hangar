@@ -43,37 +43,87 @@ Same voice, different volume. Read the room before you set it.
 
 - **Bold** when selling the vision: pitches, hero lines, marketing. Short, punchy, a little swagger.
 - **Plain** when doing the work: playbacks, working sessions, product copy, status updates. Clear and grounded, less swagger.
+- **Thought leadership** on LinkedIn, talks, and insight pieces: teach, take a position, coin a frame. See the recipe below.
 
 Both are confident, human, and honest. Neither is hype, and neither is corporate.
 
 ## Signature moves
 
-- **The turn.** A soft, expected setup, then a bold turn. For the key moment, not every line.
-  - "Not just usable. Unstoppable."
-  - "We don't just launch features. We launch businesses."
+**Contrast is the engine.** Most Planes lines set one thing against another: clarity against complexity, outcomes against output, what a thing shows against where it takes you. The moves below are all versions of that. Use one per moment, never stacked.
+
+- **The turn.** A soft, expected setup, then a bold turn. "Not just usable. Unstoppable." "We don't just launch features. We launch businesses."
+- **The yet pivot.** State the accepted truth, then pivot on "yet" or "but" to the real problem. Our sharpest thought-leadership move. "Everyone is adopting AI, yet almost nobody is becoming AI-native." "AI is the biggest growth opportunity in a generation, but most businesses are stuck betting it on marginal gains."
+- **X, not Y.** Terse, parallel principle labels that say what we do by naming what we don't. Best for approach and principles. "Ship in slices, not phases." "Build for outcomes, not output." "AI that's useful, not decorative." "Guide people to a decision, don't just show them the options."
+- **Coin it and own it.** Name the idea in a few words, then repeat it so it sticks. "Complexity into clarity." "Digital confidence." "Single-player mode." "The adoption gap."
+- **Name the risk, own the fix.** In pitches, say the problem plainly as something live, then take the fix. "Customers trust you, but the digital experience is undermining that. This isn't theoretical. The risk is live right now."
 - **A real hook, not a warm-up.** Open with the point or a sharp line, never "Hi, I'm X and today we'll cover..." or "In today's fast-moving landscape".
-- **Proof, plainly stated.** "102 products shipped. 9 award recognitions. 2.2M+ users reached." Let the numbers carry it.
-- **The pairing.** A quiet kicker over a bold headline (in decks: serif italic kicker, bold sans headline). The kicker sets up, the headline lands.
+- **Proof, plainly stated.** "102 products shipped. 9 award recognitions. 2.2M+ users reached." Numbers carry it. In decks, proof is often shown, not told: a client logo wall, or a testimonial with the key phrase in bold.
+- **The pairing.** A quiet kicker over a bold headline, sometimes a bold word and a serif-italic word in one line ("**Customer** *objectives*"). The kicker sets up, the headline lands.
 - **One thing.** Every deck, section, or email leaves one idea behind. Know what it is before you write.
+
+## Writing for LinkedIn and talks
+
+The thought-leadership recipe, drawn from how we actually post.
+
+1. **Open on the reader's reality, in their words.** Second person, plain. "You got the mandate, you bought the tools, you rolled them out across the business. And yet the returns aren't showing up."
+2. **One idea per line.** Short paragraphs with space between them. Let each line land.
+3. **Name the tension with a yet pivot and a stat.** "AI is being adopted faster than any technology before it, and yet only 5% of companies are seeing meaningful value."
+4. **Pivot on a question.** "The reason?" "So how do you get out of it?"
+5. **Take a position, and coin a frame if it earns one.** "We call it single-player mode." "Treating AI as infrastructure the whole business runs on."
+6. **Point to our work last, and lightly.** "Swipe to learn how we helped Lewis Silkin place the right bet." Never open with the sell.
+
+Avoid: "thrilled to announce", hashtag stacks, exclamation marks, and posting a brochure. Teach something.
+
+## Writing decks and pitches
+
+How a Planes pitch tends to move:
+
+1. **Open on momentum, not a logo.** "From scale-ups to household names, we bring the momentum to move complex product challenges forward."
+2. **Name the opportunity, or the live risk.** "Customers trust you, but the digital experience is undermining that. The risk is live right now."
+3. **Show you heard the brief, then reframe it** in a coined phrase. "What we've heard from your brief", then the one idea that changes how they see it.
+4. **Approach as X-not-Y principles.** "Start with real needs. De-risk early and often. Make it real, fast. Ship in slices, not phases. Build for outcomes, not output."
+5. **Proof by association and a bolded testimonial line,** not stat-stuffing.
+6. **Close on partnership and impact.** "We'd relish building and launching it with you, fast and with impact."
+
+Push back on one thing in the brief. We win by being the studio that said the true thing. See [[credentials-response]].
 
 ## Real Planes lines (voiceprints)
 
-Pattern-match the rhythm of these, do not copy them wholesale.
+Pattern-match the rhythm, do not copy them wholesale.
 
-- "We build digital product businesses that launch in weeks and grow for years."
+Positioning:
+- "Make ideas move."
+- "The product studio for the AI age."
+- "We bring the momentum to move complex product challenges forward."
+- "We help organisations turn complexity into clarity."
+- "We don't start with pages or templates. We start with purpose, users and the problems that need solving."
 - "The speed of startups, the strength of enterprise."
-- "We make ideas move."
+- "The future is moving fast. You should too."
+- "To stay ahead, you need to lead the wave, not chase it."
+
+Point of view:
 - "We don't just do experiments. We build businesses that scale."
 - "Most digital products miss the mark. We know how to launch and win."
-- "The market is flooded with MVPs that don't move."
-- "That means real traction, not just nice wireframes."
+- "We call it single-player mode. And most businesses are stuck in it."
+- "When everyone has the same models, your edge isn't the technology. It's the expertise, the data, and the trust you've already built."
+- "The existing site shows what's available. The new one should take people somewhere."
+- "This isn't a theoretical issue. The risk is live right now."
+
+Approach and principles:
+- "Make it real, fast."
+- "Ship in slices, not phases."
+- "Build for outcomes, not output."
+- "Start with real needs. De-risk early and often."
 - "With speed. For scale. Backed by strategy."
-- "Dare to fail."
+
+Human and warm:
+- "Designed to support people for the long term, not the length of a prescription."
 - "It's a bit messy, because the rules of the game change as we grow."
+- "Dare to fail."
 
 ## Words
 
-**Sound like us:** launch, ship, build, move, scale, real, traction, bold, fast, with intent, dare to fail, get stuck in, speed of startups, strength of enterprise.
+**Sound like us:** launch, ship, build, move, scale, real, traction, bold, fast, with intent, AI-native, make ideas move, lead the wave, move forward, dare to fail, get stuck in, speed of startups, strength of enterprise.
 
 **Cut on sight:** leverage, seamless, robust, cutting-edge, world-class, best-in-class, revolutionary, game-changing, empower, unlock, elevate, synergy, streamline, optimize, utilize, facilitate, innovative, passionate about, partnered with, "proven track record", "full potential", "collaborate closely", "in today's landscape".
 
@@ -99,6 +149,7 @@ Pattern-match the rhythm of these, do not copy them wholesale.
 
 ## Who we are (keep copy true to this)
 
+- **What we are:** the product studio for the AI age. We design, build and launch AI-native products. Three modes: Explore, Launch, Evolve.
 - **Proposition:** We build digital product businesses that launch in weeks and grow for years. The speed of startups, the strength of enterprise.
 - **Vision:** Creating accelerated possibilities for all.
 - **Mission:** Launch often, learn together, lead by example.
