@@ -115,48 +115,6 @@ export const ARTICLES: Article[] = [
     votes: 96,
     comments: 11,
   },
-  {
-    title: "How I built a discovery report generator from a single prompt",
-    summary:
-      "Notes on the messy iteration loop. Includes the prompt, the eval rubric and the three things that broke when a client tried it.",
-    source: "Internal write-up",
-    sourceHandle: "@maddie",
-    url: "#",
-    publishedOn: "2026-05-24",
-    tags: ["discovery", "tooling", "product"],
-    feed: "submitted",
-    submittedBy: "maddie",
-    votes: 23,
-    comments: 6,
-  },
-  {
-    title: "Three prompts that saved our credentials sprint",
-    summary:
-      "What we used on the last pitch, what didn't work, and what we'd run again. A short field report from the New Business bench.",
-    source: "Internal write-up",
-    sourceHandle: "@sam",
-    url: "#",
-    publishedOn: "2026-05-22",
-    tags: ["pitch", "credentials", "new-business"],
-    feed: "submitted",
-    submittedBy: "sam",
-    votes: 18,
-    comments: 4,
-  },
-  {
-    title: "Notes from the AI Engineer summit",
-    summary:
-      "Five things from the New York summit worth bringing back to the studio. Light on hype, heavy on practical patterns.",
-    source: "Internal write-up",
-    sourceHandle: "@julian",
-    url: "#",
-    publishedOn: "2026-05-19",
-    tags: ["events", "summary"],
-    feed: "submitted",
-    submittedBy: "julian",
-    votes: 31,
-    comments: 9,
-  },
 ];
 
 export const SOURCES: Source[] = [
